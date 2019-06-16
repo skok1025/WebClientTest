@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	var txt1,txt2,txt3,txt4,txt5;
+	
+	function init(){
+	
+		 txt1 = window.document.form1.txt1;
+		 txt2 = window.document.form1.txt2;
+		 txt3 = window.document.form1.txt3;
+		 txt4 = window.document.form1.txt4;
+		 txt5 = window.document.form1.txt5;
+		
+		 /*  
+		 키보드 관련 이벤트
+		 - onkeyXXX
+		 - 폼 관련 태그들만 사용한다. (포커스를 가지는 태그에만 적용가능) + <a>
+		 1. onkeydown
+		 	- 키를 눌렀을 때 발생
+		 	- 현재 눌린 문자와는 상관없이 물리적인 키에만 반응
+		 	- 물리키에 반응
+		 
+		 2. onkeyup
+		 	- 키를 떼었을 때 발생
+		 	- 물리키에 반응
+		 	
+		 --------------------------	
+		 3. onkeypress
+		 	- 키를 눌렀을 때 발생
+		 	- 문자키에 반응
+		 	- 문자키에 반응
+		 */
+		 
+		txt1.onkeydown = function(){
+			//console.log("keydown");
+			//console.log(event.keyCode);
+		};
+			 
+		txt1.onkeyup = function(){
+			//console.log("keyup"); 
+		};
+
+		txt1.onkeypress = function(){
+			//console.log("keypress"); 
+			console.log(event.keyCode);
+		};
+		
+		// 현재 입력된 값이 사용되는 업무 > keyup
+		// 현재 입력된 값과 상관없는 업무 > ekydouwn(**) oor keyup                   
+		txt2.onkeyup = function(){	
+			txt3.value = txt2.value;
+		}
+		
+		txt3.onkeydown = function(){	
+			
+			if(event.keyCode == 37){ // 좌
+				window.document.body.bgColor = "red";
+			} else if(event.keyCode == 38){// 상
+				window.document.body.bgColor = "blue";
+			} else if(event.keyCode == 39){ // 으
+				window.document.body.bgColor = "yellow";
+			} else if(event.keyCode == 40){ // 하
+				window.document.body.bgColor = "black";
+			} 
+			
+		}
+		
+		txt4.onkeyup = function(){
+			// 금지어 사용 불가 (바보)
+			
+			if(txt4.value.indexOf("바보")>-1){
+				
+				//1.
+				//alert("금지어 사용 금지!!");
+				
+				//2.
+				/* window.document.body.bgColor = "red";
+				txt4.readOnly = true;
+				alert("금지어를 사용했습니다. 삭제바랍니다.\n 계속하시려면 텍스트 박스를 더블클릭하세요.");
+				txt4.ondblclick = function(){
+					window.document.body.bgColor = "white";
+					txt4.readOnly = false;	
+				}; */
+				
+				// 3. 
+				// 강제로 금지어 마스킹 > replace
+				txt4.value = txt4.value.replace("바보","**");
+				
+			}
+			
+		};
+		
+		txt5.onkeydown = function(){
+			
+			// 특수키 조합
+			// event.ctrlKey
+			// event.altKey
+			// event.shiftKey
+			
+			// Ctrl + Y (89)
+			
+			//alert(event.keyCode);
+			
+			if(event.keyCode == 89 && event.ctrlKey){
+				alert("통과");
+			}
+			
+		};
+		
+		 
+	} // init
+	
+	// window 객체 접근은 시점과 무관 (언제든 접근 가능)
+	// window 객체의 이벤트는 전역 이벤트 동작 (포커스가 어디에 있는지 상관없이 항상 발생하는 이벤트)
+	window.onkeydown = function(){
+		if(event.keyCode == 65){
+			alert("발생");
+		}
+	};
+
+</script>
+</head>
+<body onload = "init();">
+
+	<!-- 
+	
+	-->
+
+	<form name="form1">
+		<input type="text" name="txt1" /> <hr/>
+		<input type="text" name="txt2" /> <hr/>
+		<input type="text" name="txt3" /> <hr/>
+		<input type="text" name="txt4" /> <hr/>
+		<input type="text" name="txt5" /> <hr/>
+	
+	</form>
+
+</body>
+</html>

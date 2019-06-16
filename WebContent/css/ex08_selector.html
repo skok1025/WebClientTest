@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	
+	/* 선택자 충돌 : 동일한 표현의 선택자를 1회 이상 선언해도 상관없다. (비권장)*/
+	/* div { color: red; }
+	div { font-style: italic;}
+ 	*/
+ 	
+ 	/* 속성 충돌 : 동일한 속성이 반복되면 마지막 적용한 속성이 화면에 출력 - 덮어쓰기*/
+	/* div {
+	color: blue;
+	}
+ 	div {
+	color: red;
+	}
+ 	*/
+ 	/* 속성 충돌 : 여러개의 선택자가 1개 태그에 적용되는 경우(아주 흔함) > 속성 충돌 발생 */
+ 	
+ 	/*
+ 	선택자 우선순위
+ 	- 서로 다른 선택자가 하나의 태그에 같은 속성을 적용했을 때 누구를 적용할지 -> 우선순위
+ 	- 코드 작성 순서와는 상관 없음
+ 	
+ 	우선순위 점수 계산 방식
+ 	- 점수의 합이 가장 높은 선택자가 적용
+ 	1. 태그 : 1점
+ 	2. 클래스 : 10점
+ 	3. 아이디 : 100점
+ 	*/
+ 	/* 상자1   
+ 	1. div{} - 1점
+ 	2. div.box{} - 11점
+ 	3. .box{} - 10점 
+ 	4. div#box1{} - 101점
+ 	5. #box1{} - 100점
+ 	6. div#box1.box{} - 111점
+ 	7. #box1.box{} - 110점
+ 	
+ 	*/
+ 	
+ 	#box1{ color: yellow;}
+ 	.box{color: red;}
+ 	div {color: blue;}
+ 	
+</style>
+</head>
+<body>
+
+	<div>
+		<div class= "box" id="box1">상자1</div>
+		<div>상자2</div>
+		<div class= "box">상자3</div>
+		
+	</div>
+
+</body>
+</html>

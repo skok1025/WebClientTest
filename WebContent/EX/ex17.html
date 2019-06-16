@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#main{
+		border: 10px solid black;
+		width: 714px;
+		height: 100px;
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+	
+	#main:hover>.box{
+		transform: translate(0px,0px);
+	}
+	
+	.box{
+		width: 100px;
+		height: 100px;
+		float: left;
+		transition: all 1s;
+	}
+	#box1{ 
+		transform: translate(0px,0px);
+		z-index: 7;
+	}
+	#box2{
+		transform: translate(-100px,0px);
+		z-index: 6;
+	}
+	#box3{
+		transform: translate(-200px,0px);
+		z-index: 5;
+	}
+	#box4{
+		transform: translate(-300px,0px);
+		z-index: 4;
+	}
+	#box5{
+		transform: translate(-400px,0px);
+		z-index: 3;
+	}
+	#box6{
+		transform: translate(-500px,0px);
+		z-index: 2;
+	}
+	#box7{
+		transform: translate(-600px,0px);
+		z-index: 1;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+
+	<div id="main">
+		<div id="box1" class="box" style="background-color: red"></div>
+		<div id="box2" class="box" style="background-color: blue"></div>
+		<div id="box3" class="box" style="background-color: orange;"></div>
+		<div id="box4" class="box" style="background-color: yellow;"></div>
+		<div id="box5" class="box" style="background-color: black;"></div>
+		<div id="box6" class="box" style="background-color: orange;"></div>
+		<div id="box7" class="box" style="background-color: aqua;"></div>
+	
+	</div>
+
+</body>
+</html>

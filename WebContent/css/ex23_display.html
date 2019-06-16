@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	/*  
+	display
+	- 요소의 출력 방식을 제어
+	- none : 안보이게 
+	- block : 블럭 태그
+	- inline : 인라인 태그 
+	- inline-block : 인라인 태그 (+크기(여백) 조절)
+	
+	*/
+
+   #cat2 {
+      display: none; /* 랜더링 결과를 만들지 마세요. 출력 안함 + 자리 없앰 */
+   }
+   
+   .box{
+         border: 1px solid black;
+         width: 150px;
+         height: 150px;
+         display: inline; /* 해당 태그를 인라인 태그처럼 출력하세요  */
+   }
+   
+   .link{
+	   	border: 1px solid black;
+	   	display: block;  /* 해당 태그를 블럭 태그처럼 출력하세요  */
+		width: 100px;
+		height: 100px;
+   }
+   
+   #menu ul{
+   		width:500px;
+   		border: 0px solid black;
+   		padding: 0px;
+   }
+   
+   #menu ul li{
+   		border: 0px solid red;
+   		outline: 0px solid red;
+   		display: inline-block; /* 성질(인라인) + 크기 조절 */
+   		width: 125px;
+   		text-align: center;
+   		padding-top: 10px;
+   		padding-bottom: 10px;
+   		
+   		background-color: #eee;
+   		border-top: 10px solid #ddd;
+   		border-bottom: 10px solid #ddd;
+   		font-size: 14px;
+   		color: #777;
+   }
+   
+   #menu ul li:hover{
+   		border-top-color:tomato;
+   		border-bottom-color:tomato;
+   		background-color: #ffe5d4;
+   		color: #444;
+   		font-weight: bold;
+   		cursor: pointer;
+   }
+   
+   
+
+</style>
+</head>
+<body>
+
+   <!-- ex23_display.htm -->
+
+	<nav id="menu">
+		<ul>
+			<li>회원</li><li>관리자</li><li>게시판</li><li>통계</li>
+		</ul>
+	</nav>
+
+   <h1>블럭 태그</h1>
+   <div id="box1" class="box">상자1</div>
+   <div id="box2" class="box">상자2</div>
+   <div id="box3" class="box">상자3</div>
+   
+   <h1>인라인 태그</h1>
+   
+   <a href="#" id="link1" class="link">링크1</a>
+   <a href="#" id="link2" class="link">링크2</a>
+   <a href="#" id="link3" class="link">링크3</a>
+   
+   <hr>
+   
+   <img src="../images/cat01.jpg" id="cat1" />
+   <img src="../images/cat02.jpg" id="cat2" />
+   <img src="../images/cat03.jpg" id="cat3" />
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var cbAll, cb;
+
+	window.onload = function(){
+		
+		cbAll = document.all.cbAll; // 단일객체
+		cb = document.all.cb; // 배열 
+		
+		cbAll.onchange = function(){
+			//alert(cbAll.checked);
+			
+			if(cbAll.checked){
+				for(var i=0; i< cb.length; i++){
+					cb[i].checked = true;
+				}
+			} else{
+				for(var i=0; i< cb.length; i++){
+					cb[i].checked = false;
+				}
+			}
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+	
+	<h1>주소록</h1>
+	
+	<input type="button" value="체크 항목 지우기" id="btn1" />
+	
+	<table id="tbl1" class="table">
+		<tr>
+			<th><input type="checkbox" name="cbAll"/></th>
+			<th>번호</th>
+			<th>이름</th>
+			<th>주소</th>
+			<th>나이</th>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="cb"/></td>
+			<td>001</td>
+			<td>홍길동</td>
+			<td>서울시 강남구 역삼동</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="cb"/></td>
+			<td>001</td>
+			<td>아무개</td>
+			<td>서울시 강남구 역삼동</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="cb"/></td>
+			<td>001</td>
+			<td>이미자</td>
+			<td>서울시 강남구 역삼동</td>
+			<td>25</td>
+		</tr>
+		
+	</table>
+	
+</body>
+</html>

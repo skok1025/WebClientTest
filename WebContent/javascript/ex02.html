@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+
+<script>
+	//alert("하나");
+	//alert("둘");
+	//document.getElementById("txt1").value = "홍길동"; 뜨지 않는다.
+</script>
+
+</head>
+<body>
+	<h1>자바스크립트의 실행순서</h1>
+	
+	<input type="text" id="txt1" />
+	
+	<script>
+		//alert("셋");
+		document.getElementById("txt1").value = "홍길동";
+	</script>
+	
+	<p>위 -> 아래</p>
+	<p>현재 페이지 : 언어 3종류(HTML, CSS, JavaScript) -> 실행순서?</p>
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	form input{
+		display: block;
+		margin-bottom: 10px;
+	}
+
+</style>
+<script>
+	var n = 1;
+	var btn2;
+	var btn3,btn4,txt2,btn5, index=0;
+	var color = ["red","orange","yellow","green","blue"];
+	var cat;
+	
+	window.onload = function(){
+		
+		cat = document.images["cat"];
+		btn1 = document.form1.btn1;
+		txt1 = document.form1.txt1;
+		btn2 = document.form1.btn2;
+		
+		txt2 = document.form1.txt2;
+		
+		btn3 = document.form1.btn3;
+		btn4 = document.form1.btn4;
+		
+		btn5 = document.form1.btn5;
+		
+		
+		
+		btn1.onclick = function(){
+			
+			// 타이머 함수
+			// 1. window.setTimeout(함수,시간)
+			// 2. window.setInterval(함수,시간)
+			
+			//setTimeout("alert('test')",3000)
+			//setTimeout(test,3000); // 요즘(실명 함수 호출)
+			/* 
+			setTimeout{function(){
+							alert('test');
+									},3000};
+									 */
+			/* setTimeout(function(){
+				location.href = "http://naver.com";
+			},10000); */
+			
+		};
+		
+		btn2.onclick = function(){
+			//alert(txt1.size);
+			//for(var i = 20; i<200; i++){
+			//	txt1.size = i;
+			//}
+			
+			/* setTimeout(
+				function(){
+					txt1.size+=1;
+				},100		
+			); */
+			
+			//incSize();
+			setInterval(function(){
+				txt1.size+=1;
+				window.moveBy(1,1);
+			},100);
+			
+		};
+		
+		
+		function incSize(){
+			setTimeout(
+					function(){
+						txt1.size+=1;
+						incSize();
+					},100		
+			);
+		}
+		
+		
+		setInterval(function(){
+			txt1.value = (new Date()).toLocaleTimeString();
+		},1000);
+		
+		/* setInterval(function(){
+			txt1.value = n;
+			n++;
+		},100); */
+		
+		var timer=0;
+		btn3.onclick = function(){
+			if(timer == 0){
+				timer = setInterval(function(){
+					txt2.value = n;
+					n++;
+				},100);
+				console.log(timer);
+			}
+		};
+		
+		btn4.onclick = function(){
+			// clearInterval
+			
+			//clearInterval(타이머 ID);
+			clearInterval(timer);
+			timer = 0;
+		};
+		
+		btn5.onclick = function(){
+			/*
+			for(var i=0; i<10000; i++){
+				document.body.bgColor = color[index];
+				index++;
+				if(index >= color.length) index = 0;
+			}
+			*/
+			
+			setInterval(function(){
+				document.body.bgColor = color[index];
+				index++;
+				if(index >= color.length) index = 0;
+			},500);
+			
+			
+		};
+		
+		n = 1;
+		timer = 0;
+		
+		cat.onclick = function(){
+			if(timer == 0){ // 멈춤 상태
+				timer = setInterval(function(){
+					cat.src = "../images/catty0"+n+".png";
+					n++;
+					if(n >= 10) n = 1;
+				},100);
+			} else{		// 동작중..
+				clearInterval(timer);
+				timer = 0;
+			}
+		};
+		
+		
+		
+	};
+	
+	function test(){
+		alert('test');
+	}
+	
+</script>
+</head>
+<body>
+
+	
+	
+	<form name="form1">
+		<input type="text" name="txt1" />
+		<input type="button" value="테스트" name="btn1" />
+		<input type="button" value="테스트" name="btn2" />
+	
+		<hr />
+		
+		<input type="text" name="txt2" />
+		<input type="button" value="시작" name="btn3" />
+		<input type="button" value="멈춤" name="btn4" />
+		
+		<hr />
+		<input type="button" value="테스트" name="btn5" />
+	
+		<hr />
+		<img src="../images/catty01.png" name="cat" />
+	
+	</form>
+
+</body>
+</html>

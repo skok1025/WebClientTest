@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var btn1,btn2;
+	
+	window.onload = function(){
+		btn1 = document.getElementById("btn1");	
+		btn2 = document.getElementById("btn2");
+		
+		// 이벤트 처리
+		// 1. BOM
+		//		a. <input onclick="">
+		// 		b. btn1.onclick = function;
+		
+		// 2. BOM
+		// 		a. addEventListener(이벤트 종류, 함수);
+		/* 
+		btn1.onclick = function(){
+			alert("버튼1");
+		};
+		
+		btn2.addEventListener("click",function(){
+			alert("버튼2");
+		});
+		 */
+		 
+		 // BOM 이벤트 모델은 이벤트 1개에 함수 1개만 매핑이 가능하다.
+		btn1.onclick = f1;
+		btn1.onclick = f2;  // 덮어쓰기
+		//btn1.onclick += f3;
+		
+		// DOM 이벤트 모델은 이벤트 1개에 함수 n개 매핑이 가능하다.
+		// - 이벤트에 걸린 함수들을 목록으로 관리 (Invocation list)
+		btn2.addEventListener("click",f1);
+		btn2.addEventListener("click",f2);// 누적
+		btn2.addEventListener("click",f3);// 누적
+		
+		btn2.removeEventListener("click",f2); // 제거
+		
+		
+		
+	};
+	
+	
+	function f1(){ alert("하나");}
+	function f2(){ alert("둘");}
+	function f3(){ alert("셋");}
+	
+</script>
+</head>
+<body>
+
+	<input type="button" value="버튼1" id="btn1" />
+	<input type="button" value="버튼2" id="btn2" />
+
+</body>
+</html>

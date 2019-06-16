@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	/*  
+	float
+	-기존 출력 형태를 깨고, 기존의 위치에서 벗어나 원래 라인의 좌측 끝이나 우측 끝으로 이동해라
+	*/
+	#pic{
+		float:left;
+		margin: 20px 10px;
+	}
+
+	#word{
+		color: red;
+		font-weight: bold;
+	}
+	
+	h1, p {
+		width: 600px;
+	}
+	
+	h1{
+		border-bottom: 1px solid gray;
+		text-align: left;
+	}
+	
+	h1>span{
+		font-size: 14px;
+		font-weight: normal;
+		/* border: 0px solid red;
+		text-align: right;
+		display: inline-block;
+		width: 450px; */
+		float: right;
+		margin-top: 20px;
+	}
+	
+	/* 블럭 태그를 가로로 배치 
+	1. display : inline(inline-block)
+	2. float : left(right) ******
+	*/
+	.box{
+		border: 5px solid gray;
+		width: 100px;
+		height: 100px;
+		float: left;
+	}
+	
+	#box1{background-color:red; }
+	#box2{background-color:orange; }
+	#box3{background-color:yellow; }
+	#box4{background-color:green; }
+	#box5{background-color:blue; }
+	
+	#pet > img{
+		border: 1px solid black;
+		float: left; 
+	}
+	
+</style>
+</head>
+<body>
+	<h1>회사 소개<span>관리자에게 연락하기</span></h1>
+	
+	<p>
+		<img src="../images/man_01.png" id="pic">
+		자유한국당은 17일 서울시 산하 서울교통공사 직원들의 친인척 채용 등 비리 의혹을 정조준하며 국정조사 등을 추진하겠다고 밝혔다. 
+
+한국당 김용태 사무총장은 이날 오전 국회에서 기자회견을 열고 "서울시 교통공사 정규직 채용 과정에서 기회는 평등하지 못하고, 과정도 공정하지 못했다"며 "조직적이고 계획적인 채용 범죄이기에 국정조사를 통해 철저히 파헤칠 것"이라고 말했다. 
+
+한국당은 전날 유민봉 의원의 문제 제기로 시작된 서울교통공사 관련 채용 비리 문제를 당 차원에서 화력을 집중하는 모양새다. 앞서 한국당은 이 사태를 민주노총 등이 개입한 권력형 채용비리'로 보고, 모든 공공기관·공기업 내 직원 친인척 채용 및 정규직 전환 현황의 전수조사를 촉구한 바 있다. 
+
+김 사무총장은 이 자리에서 노조가 '친인척 직원 현황' 조사에 거부하라며 직원들이게 내려보낸 것으로 추정되는 통신문을 스크린 화면에 띄운 후 "민노총이 (조사에) 절대 응하지 말라고 <span id="word">공문</span>을 내려보냈다"며 "전체 직원의 11.2%만 조사했더니 그 중에 108명이 무기계약직에서 정규직으로 전환된 친인척인 것으로 나타났다"고 지적했다. 
+
+그러면서 "이를 토대로 계산해보면 무기계약직에서 정규직으로 전환된 총 1285명 중 1000명 정도로 87% 이상에 가족 및 친인척인 것을 알 수 있다"고 강조했다. 
+
+정규직 전환 업무를 총괄한 담당자의 가족 관련 비리 의혹도 새로 제기됐다. 
+
+김 사무총장은 "서울교통공사에서 정규직 전환의 모든 과정을 총괄한 기획처장은 김모씨는 현재 인사처장으로 근무하고 있다"며 "김씨의 부인은 서울교통공사 식당 찬모(반찬 만드는 일을 맡아 하는 사람)로 무기계약직이었지만, 정규직이 됐다"고 말했다. 
+	</p>
+
+	<h1>상자(float 사용이 가장 많음)</h1>
+
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4" class="box">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	<div style="clear: both;"></div>
+	<p>다른 내용입니다.</p>
+	
+	<h1>애완동물</h1>
+	<div id="pet">
+		<img src="../images/cat01.jpg">
+		<img src="../images/dog01.jpg">
+		<img src="../images/cat02.jpg">
+		<img src="../images/dog02.jpg">
+		<img src="../images/cat03.jpg">
+	</div>
+		<div style="clear: both"></div>
+	
+	<div>추가 내용입니다.</div>
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	#main{
+		border:10px solid red;
+		width: 150px;
+		height: 250px;
+		overflow: hidden;
+	}
+	
+	.card{
+		border: 1px solid black;
+		width: 150px;
+		height: 250px;
+		float: left;
+	}
+	
+	div>img{
+		padding: 20px 10px 20px 10px ;
+	}
+	
+	.card>div{
+		padding-left: 15px;
+	}
+	
+	
+	#innerBox {
+		border: 1px solid red;
+		width: 760px;
+		height:250px;
+		transition: all 2s;
+	}
+	#main:hover>#innerBox {
+		transform: translate(-608px, 0px);
+	}
+	
+
+</style>
+</head>
+<body>
+
+<!-- <h1>Card</h1> -->
+
+<div id ="main">
+	<div id="innerBox">
+		<div id = "card1" class="card">
+			<img src="../images/rect_icon01.png" />
+			<div>Lorem ipsum dolor sit amet.</div>
+		</div>
+		
+		<div id = "card2" class="card">
+			<img src="../images/rect_icon02.png" />
+			<div>Lorem ipsum dolor sit amet.</div>
+		</div>
+		
+		<div id = "card3" class="card">
+			<img src="../images/rect_icon03.png" />
+			<div>Lorem ipsum dolor sit amet.</div>
+		</div>
+		<div id = "card4" class="card">
+			<img src="../images/rect_icon04.png" />
+			<div>Lorem ipsum dolor sit amet.</div>
+		</div>
+		<div id = "card5" class="card">
+			<img src="../images/rect_icon05.png" />
+			<div>Lorem ipsum dolor sit amet.</div>
+		</div>
+	</div>
+		<div style="clear: both;"></div>
+</div>
+
+</body>
+</html>

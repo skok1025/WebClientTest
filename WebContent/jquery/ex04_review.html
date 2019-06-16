@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// jQuery -> jQuery() 함수 : 태그 검색
+		// - Collection jQuery("CSS 선택자")
+		// - CSS 선택자에 의해서 선택된 태그가 1개 or 여러개 > Collection 반환
+		// - Collection.기능() : 내부적으로 loop 처리
+		
+		//var btn1 = document.getElementById("box1");
+		//jQuery("#box1").mouseover();
+		//jQuery("#box1").mouseout();
+		jQuery("#btn1").click(function(){
+			//alert(jQuery(".box").length);
+			//jQuery(".box").css("color","red");
+			
+			//jQuery("#box1").style.color = "blue";
+			//document.getElementById("box1").css("color","red");
+		
+			
+		
+		});
+		
+	});
+</script>
+</head>
+<body>
+
+	<input type="button" value="테스트" id="btn1">
+	<hr/>
+	
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+
+
+</body>
+</html>

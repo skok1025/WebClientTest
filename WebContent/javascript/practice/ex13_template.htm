@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div, span, input, th, td, fieldset {
+		font-size: 14px;
+	}
+
+	#add {
+		border: 1px solid gray;
+		padding: 10px;
+		width: 300px;
+	}
+	
+	#add > div {
+		margin-bottom: 5px;
+	}
+	
+	#add > div > label:first-child {
+		display: inline-block;
+		width: 50px;
+		text-align: right;
+		margin-right: 10px;
+	}
+	
+	#btnadd {
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+
+	#tbl1 {
+		border: 1px solid gray;
+		border-collapse: collapse;
+		width: 500px;
+		margin-top: 20px;
+	}
+	#tbl1 th {
+		background: #ddd;
+	}
+	#tbl1 th, #tbl1 td {
+		border: 1px solid gray;
+		padding: 4px;
+		text-align: center;
+	}
+	#tbl1 th:nth-child(1) { width: 50px; }
+	#tbl1 th:nth-child(2) { width: 70px; }
+	#tbl1 th:nth-child(3) { width: 50px; }
+	#tbl1 th:nth-child(4) { width: 120px; }
+	#tbl1 th:nth-child(5) { width: 210px; }
+	
+	
+	
+</style>
+<script>
+
+var txtname,selage,rbgender,txtaddress,btnadd;
+var tbl1,tbody1;
+var num = 0;
+var rbgender1,rbgender2;
+	window.onload = function(){
+		txtname = document.getElementById("txtname");
+		selage = document.getElementById("selage");
+		rbgender = document.getElementById("rbgender");
+		txtaddress = document.getElementById("txtaddress");
+		btnadd = document.getElementById("btnadd");
+		tbl1 = document.getElementById("tbl1");
+		tbody1 = document.getElementById("tbody1");
+		
+		rbgender1 = document.getElementById("rbgender1");
+		rbgender2 = document.getElementById("rbgender2");
+		
+		for (var i=20; i<=60; i++) {
+			selage.innerHTML += "<option value='" + i + "'>" + i + "</option>";
+		}	
+		
+		btnadd.onclick = function(){
+			
+			if(num == 0){
+				tbody1.innerHTML = "";
+			}
+			
+			num++;
+			var tr = document.createElement("tr");
+			
+			var td1 = document.createElement("td");
+			td1.innerText = num;
+			//var txt1 = document.createTextNode(num);
+			//td1.appendChild(txt1);
+			tr.appendChild(td1);
+			
+			var td2 = document.createElement("td");
+			var txt2 = document.createTextNode(txtname.value);
+			td2.appendChild(txt2);
+			tr.appendChild(td2);
+			
+			var td3 = document.createElement("td");
+			var txt3 = document.createTextNode(selage.value);
+			td3.appendChild(txt3);
+			tr.appendChild(td3);
+			
+			var td4 = document.createElement("td");
+			var img4 = document.createElement("img");
+			if(rbgender1.checked){
+				img4.src = "/WebClientTest/images/gender_m.png";
+				//img4.setAttribute("src","/WebClientTest/images/gender_m.png");
+			}
+			else{
+				img4.src = "/WebClientTest/images/gender_f.png";
+				//img4.setAttribute("src","/WebClientTest/images/gender_f.png");
+			}
+			td4.appendChild(img4);
+			tr.appendChild(td4);
+			
+			var td5 = document.createElement("td");
+			var txt5 = document.createTextNode(txtaddress.value);
+			td5.appendChild(txt5);
+			tr.appendChild(td5);
+			
+			tbody1.appendChild(tr);
+			
+		};
+		
+	};
+
+
+	
+</script>
+</head>
+<body>
+
+	<div class="main m600">
+	
+	<h1>데이터 추가하기</h1>
+	
+	<fieldset id="add">
+		<legend>입력 항목</legend>
+		<div><label for="txtname">이름 : </label><input type="text" id="txtname" autofocus></div>
+		<div><label for="selage">나이 : </label><select id="selage"></select></div>
+		<div><label for="rbgender">성별 : </label><label><input type="radio" name="rbgender" id="rbgender1" value="m" checked> 남자</label><label><input type="radio" name="rbgender" id="rbgender2" value="f"> 여자</label></div>
+		<div><label for="txtaddress">주소 : </label><input type="text" id="txtaddress"></div>
+		<div><input type="button" id="btnadd" value="추가하기"></div>
+	</fieldset>
+	
+	
+	<table id="tbl1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>성별</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="tbody1">
+			<tr>
+				<td colspan="5">등록된 항목이 없습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

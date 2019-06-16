@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<style>
+
+	#main{
+		border: 1px solid;
+		width: 600px;
+		height: 700px;
+		font-size: 25px;
+	}
+	
+	#main > div{
+		float: left;
+	}
+	
+	img{
+		width: 190px;
+	}
+	
+	.dog {
+		border-radius: 90px;
+		opacity: 0.5;
+		transition: all 1s;
+	}
+	
+	.cat {
+		border-radius: 90px;
+		opacity: 0.5;
+		transition: all 1s;
+	}
+	
+	#dogrb:checked ~ .dog {
+		border-radius:0px;
+		opacity: 1;
+	}
+	
+	#catrb:checked ~ .cat {
+		border-radius:0px;
+		opacity: 1;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="main">
+		<input type="radio" name="rb1" id="dogrb"/> <label for="dogrb">강아지</label>
+		<input type="radio" name="rb1" id="catrb"/> <label for="catrb">고양이</label>
+		<hr>
+		
+		<img class="cat" src="../images/cat01.jpg"/>
+		<img class="dog" src="../images/dog01.jpg"/>
+		<img class="dog" src="../images/dog02.jpg"/>		
+		<img class="cat" src="../images/cat02.jpg"/>
+		<img class="cat" src="../images/cat03.jpg"/>
+		<img class="dog" src="../images/dog04.jpg"/>	
+		<img class="cat" src="../images/cat04.jpg"/>
+		<img class="cat" src="../images/cat05.jpg"/>
+		<img class="dog" src="../images/dog05.jpg"/>	
+		<img class="dog" src="../images/dog03.jpg"/>	
+		
+	</div>
+
+</body>
+</html>

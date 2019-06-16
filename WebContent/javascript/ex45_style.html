@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	#box{
+		border:1px solid gray;
+		width: 0px;
+		height: 0px;
+	}
+
+</style>
+<script>
+	var box;
+	var isDown = false;
+	window.onload = function(){
+		
+	};
+	
+	window.onmousedown = function(){
+		isDown = true;
+	};
+	window.onmouseup = function(){
+		isDown = false;
+	};
+	window.onmousemove = function(){
+		if(isDown){
+			var box = document.getElementById("box");
+			
+			document.getElementById("box").style.width = event.clientX-9+"px";
+			document.getElementById("box").style.height = event.clientY-9+"px";
+			// 상자의 면적
+			
+			var area = parseInt(box.style.width) * parseInt(box.style.height);
+			console.log(area);
+			
+			if(area < 50000){
+				box.style.backgroundColor = "white";
+			} else if(area <300000){
+				box.style.backgroundColor = "cornflowerblue";
+			} else{
+				box.style.backgroundColor = "tomato";
+			}
+			
+		}
+	};
+</script>
+</head>
+<body>
+
+	<div id="box">
+	
+	</div>
+
+
+
+</body>
+</html>

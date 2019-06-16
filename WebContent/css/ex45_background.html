@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.box{
+		width: 700px;
+		height: 200px;
+		margin: 20px;
+	}
+	
+	#box1{
+		/* soild color : 단색  */
+		/* background-color: tomato; */
+		background: linear-gradient(white, #aaa);
+
+	}
+	
+	#box2{
+		/* background: linear-gradient(red,yellow); */
+		/* background: linear-gradient(to left, red, yellow);
+		background: linear-gradient(to right, red, yellow); */
+		/* background: linear-gradient(to bottom right, red, yellow); */
+		background: linear-gradient(27deg,red,yellow) /* 각도를 줌 */
+	}
+	
+	#box3{
+		background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+	}
+	
+	#box4{
+		background: linear-gradient(to right, white, #ccc,#ccc,#ccc,#ccc,#ccc, white);
+	}
+	
+	#box5{
+		background: radial-gradient(yellow,red);
+		background: radial-gradient(red,yellow,green,blue);
+	}
+
+	#box6{
+		background: radial-gradient(circle,red,yellow,green,blue);
+	}
+
+</style>
+</head>
+<body>
+
+	<button>버튼<br>버튼<br>버튼</button>
+
+	<div id="box1" class="box"></div>
+	<div id="box2" class="box"></div>
+	<div id="box3" class="box"></div>
+	<div id="box4" class="box"></div>
+	<div id="box5" class="box"></div>
+	<div id="box6" class="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	textarea{
+		width: 500px;
+		height: 400px;
+		margin: 30px;
+	}
+</style>
+<script>
+
+	function init(){
+		var txt1 = window.document.form1.txt1;
+		
+		//txt1.onmouseover = test;
+		//txt1.onmouseover = function (){ // 익명함수
+		//	alert("테스트2");
+		//}
+		
+		// 마우스 사용할 때 발생하는 이벤트
+		// - onmouseXXX
+		// 1. onmouseover : 해당 객체의 영역 위에 커서가 진입하는 순간 발생
+		// 2. onmouseout : 해당 객체의 영역 위에 커서가 빠져 나가는 순간 발생
+		// 3. onmousedown : 해당 객체의 영역에서 마우스 버튼이 눌려지는 순간 발생
+		// 4. onmouseup : 해당 객체의 영역에서 마우스 버튼이 뗄 순간 발생
+		// 5. onmousemove :  해당 객체의 영역에서 마우스커서가 움직이는 순간 발생
+		txt1.onmouseover = function(){
+			//txt1.value = "mouseover\n";
+			//window.document.body.bgColor = "cornflowerblue";
+		};
+		
+		txt1.onmouseout = function(){
+			//txt1.value = "mouseout\n";
+			//window.document.body.bgColor = "white";
+		};
+		
+		txt1.onmousedown = function(){
+			//txt1.value = "mousedown\n";
+			
+			// 어느 버튼을 사용했는지?
+			// event 객체
+			// - 이벤트에 의해서 호출되는 함수에서 사용하는 예약어
+			// - 발생한 사건의 여러가지 정보를 제공 객체
+			//alert(event.buttons);
+			
+			// 마우스 왼쪽 버튼에 반응
+			//if(event.buttons == 1){
+			//	txt1.value = "마우스 다운";
+			//}
+			//if(event.buttons == 2){
+			//	txt1.value = "마우스 오른쪽 버튼 금지";
+			//}
+			
+			// 마우스 포인터좌표
+			// 1. x, y
+			// - 문서의 좌측 상단을 기준점
+			// - 비표준
+			
+			// 2. clientX, clientY o 
+			// - 문서의 좌측 상단을 기준점
+			// - 표준
+			// - 많이 사용 (absolute)
+			
+			// 3. screenX, screenY
+			// - 모니터 화면의 좌측 상단을 기준점
+			// - 잘 안씀
+			
+			// 4. offsetX, offsetY o
+			// - 이벤트가 발생한 객체의 좌측 상단을 기준점
+			// - 많이 사용 (relative)
+			
+			//txt1.value = event.x + ", "+ event.y;
+			//txt1.value = event.clientX + ", "+ event.clientY;
+			//txt1.value = event.screenX + ", "+ event.screenY;
+			//txt1.value = event.offsetX + ", "+ event.offsetY;
+			
+		};
+		
+		txt1.onmouseup = function(){
+			//txt1.value = "mouseup\n";
+		};
+		
+		txt1.onmousemove = function(){
+			//txt1.value += "mousemove\n";
+			txt1.value = event.clientX+":"+event.clientY+"\r\n" + txt1.value;
+			//txt1.cols = event.clientX;
+			
+			//window.document.form1.txt2.size = event.clientX/2;
+			
+			if(event.clientX % 3 == 0){
+				window.document.body.bgColor = "yellow";
+			} else if(event.clientX % 3 == 1){
+				window.document.body.bgColor = "red";
+			} else if(event.clientX % 3 == 2){
+				window.document.body.bgColor = "blue";
+			}
+		};
+		
+		
+		
+		//test();
+		
+		/* var btn1 = window.document.form1.btn1;
+		btn1.onclick = function(){
+			txt1.value = "클릭했습니다";
+		} */
+		
+	} // init
+	
+	function test(){
+		alert("테스트");
+	}
+
+</script>
+</head>
+<body onload="init();">
+	
+	<form name="form1">
+		<textarea name="txt1" id="txt1" ></textarea>
+		<input type="button" name="btn1" value="버튼1" />
+		<br>
+		<input type="text" name="txt2" />
+	</form>
+	
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.box{ width: 150px; height: 150px; margin: 20px 0px;}
+	
+	/*  
+	transition 제어 -> (정밀한 제어) -> animation 제어
+	*/
+	
+	@keyframes key1{
+		from{
+			background-color : tomato;
+		}
+		to{
+			background-color : cornflowerblue;
+		}
+	}
+	
+	#box1{
+		background-color: tomato;
+		animation-name : key1; /* 속성값의 변화를 정의(제어)  */
+		animation-duration: 3s;
+	}
+	
+	#box2{
+		background-color: tomato;
+		animation-name : key1;
+		animation-duration : 10s;
+	}
+	
+	#box3{
+		background-color : tomato;
+		animation-duration:3s;
+	}
+	
+	#box3:hover {
+		animation-name : key1;
+	}
+	
+	
+	
+	
+	@keyframes key2{
+		/*  
+		타겟 속성과 
+		그 속성의 시작~ 끝 값(변화)
+		
+		from{
+			타겟속성 : 시작값;
+		}
+		to{
+			타겟속성 : 끝값;
+		}
+		
+		from(begin) ~ to(end)
+		0%(begin) ~ 100%(end) // 원하는 단계를 마음대로 사용 가능
+		*/
+		
+		0%{ background-color:red;}
+		20%{ background-color:orange;}
+		40%{ background-color:yellow;}
+		60%{ background-color:green;}
+		80%{ background-color:indigo;}
+		100{ background-color:blue;}
+	}
+	
+	#box4{
+		background-color: red;
+		animation-name:key2;
+		animation-duration:10s;
+	}
+	
+	@keyframes key3{
+	/* 
+		0%{left: 0px; top:0px;}
+		25%{left:300px; top:0px;}
+		50%{left:300px; top:300px;}
+		75%{left:0px; top: 300px;}
+		100%{left:0px; top: 0px;}
+		 */
+		0%{left: 0px; top:0px;}
+		10%{left: 0px; top:0px;}
+		20%{left: 320px; top:0px;}
+		30%{left: 560px; top:240px;}
+		40%{left: 0px; top:530px;}
+		50%{left: 341px; top:1120px;}
+		60%{left: 0px; top:50px;}
+		70%{left: 23px; top:6px;}
+		80%{left: 0px; top:0px;}
+		90%{left: 546px; top:234px;}
+		100%{left: 0px; top:0px;}
+	}
+	
+	#box5{
+		/* position:relative;
+		animation-name: key3;
+		animation-duration:5s; 
+		animation-iteration-count:infinite; */
+	}
+	
+	@keyframes key4{
+		0%{ transform: rotate(0deg);}
+		25%{ transform: rotate(360deg);}
+		50%{ transform: rotate(3600deg);}
+		75%{ transform: rotate(6840deg);}
+		100%{ transform: rotate(7200deg);}
+	}
+	
+	#box6{
+		animation-name:key4;
+		animation-duration:10s;
+	}
+	
+	@keyframes key5{
+		0%{left: 0px; top:0px;}
+		25%{left:300px; top:0px;}
+		50%{left:300px; top:300px;}
+		75%{left:0px; top: 300px;}
+		100%{left:0px; top: 0px;}
+	}
+	
+	#box7{
+		position: relative;
+		animation-name:key5;
+		animation-duration:1s;
+		animation-iteration-count:infinite; /* 반복횟수 */
+		animation-direction: alternate; /* 순서 reverse, alternate */
+		animation-timing-function:linear;
+	}
+	
+	.btn{
+		padding: 50px 20px;
+	}
+	
+	.btn:hover{
+		animation-name:keyButton;
+		animation-duration:0.05s;
+		animation-iteration-count:5;
+	}
+	
+	@keyframes keyButton{
+		0%{ transform: translate(0px,0px); }
+		25%{ transform: translate(-5px,0px);}
+		50%{ transform: translate(0px,0px);}
+		75%{ transform: translate(3px,0px);}
+		100%{ transform: translate(0px,0px); }
+	}
+	
+	
+</style>
+</head>
+<body>
+
+	<div id="box1" class="box red"></div>
+	<div id="box2" class="box orange"></div>
+	<div id="box3" class="box blue"></div>
+	<div id="box4" class="box green"></div>
+	<div id="box5" class="box blue"></div>
+	<div id="box6" class="box red"></div>
+	<div id="box7" class="box orange"></div>
+	<div id="box8" class="box blue"></div>
+	<div id="box9" class="box green"></div>
+	<div id="box10" class="box red"></div>
+	
+	<hr>
+	
+	<input type="button" value="Write" class="btn"/>
+	<input type="button" value="Edit" class="btn"/>
+	<input type="button" value="Delete" class="btn"/>
+
+</body>
+</html>

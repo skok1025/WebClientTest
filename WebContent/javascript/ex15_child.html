@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+	
+	var btn1;
+	var txt1, btn2;
+	
+	window.onload = function() {
+		
+		btn1 = window.document.form1.btn1;
+		
+		txt1 = window.document.form1.txt1;
+		btn2 = window.document.form1.btn2;
+		
+		btn1.onclick = function() {
+			window.close();
+		};
+		
+		btn2.onclick = function(){
+			// 부모창의 텍스트박스에 데이터 복사 > 부모창의 window 객체 얻기
+			//opener.close();
+			
+			opener.document.form1.txt1.value = window.document.form1.txt1.value;
+			window.close();
+			
+		};
+		
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!-- ex15_child.htm -->
+	
+	<form name="form1">
+		<input type="button" name="btn1" value="창닫기">
+		
+		<hr>
+		<input type="text" name="txt1">
+		<input type="button" name="btn2" value="부모창 접근하기">
+		
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

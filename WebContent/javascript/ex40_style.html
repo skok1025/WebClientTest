@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	#number2{
+		width: 1000px;
+		height: 500px;
+	}
+
+</style>
+<script>
+
+	var btn1,box1;
+	
+	window.onload = function(){
+		
+		btn1 = document.getElementById("btn1");	
+		box1 = document.getElementById("box1");
+		
+		btn1.onclick = function(){
+			
+			// JavaScript -> (제어) -> CSS
+			//  - 태그.style.CSS속성명
+			//  - 태그.style.CSS속성명 = "CSS 속성값";
+			//  - CSS 속성명은 자바스크립트의 식별자로 사용 > 표기법에 어긋나는 표현이 오면 캐멀표기법으로 변환해서 사용
+			// 	- 모든 속성값은 문자열로 넣는다.
+			//  - 자바스크립트로 접근가능한 CSS 의 속성은 인라인 스타일 시트만 가능하다.
+			
+			//console.log(box1.style);
+			
+			//console.log(box1.style.color);
+			//console.log(box1.style["color"]);
+			
+			//box1.style.color = "blue";
+			//box1.style.fontSize = "3em"; 
+			//box1.style.backgroundColor = "cornflowerblue";
+			//box1.style.border = "10px dashed yellow";
+			
+			//alert(box1.style.width);
+			//alert(box1.style.color);
+			
+			//box1.style.width = "200px";
+			//alert(box1.style.width);
+			
+			// 크기 누적
+			//box1.style.width = parseInt(box1.style.width) + 20 +"px";
+
+			
+			if(box1.style.visibility != "hidden"){
+				box1.style.visibility = "hidden";
+				btn1.value = "상자 보이기";
+			} else{
+				box1.style.visibility = "visible";
+				btn1.value = "상자 감추기"
+			}
+			
+			
+		};
+		document.getElementById("p1").style.fontSize = "14px";
+	};
+	
+	
+	// 전역 키이벤트
+	window.onkeydown = function(){
+		//alert(event.keyCode); // 48 ~ 57
+		
+		// 48 -> 0.png
+		// 57 -> 9.png
+		if(event.keyCode >= 48 && event.keyCode <= 57){
+			var list = document.getElementById("number").children;
+			
+			if(list[event.keyCode - 48].style.visibility != "hidden"){
+				list[event.keyCode - 48].style.visibility = "hidden";
+			} else {
+				list[event.keyCode - 48].style.visibility = "visible";
+			}
+			
+			var number2 = document.getElementById("number2");
+			
+			var n = event.keyCode - 48;
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","/WebClientTest/images/"+n+".png");
+			number2.appendChild(img);
+			
+			// number2 를 꽉 채웠는지 > 27개
+			if(number2.children.length > 27){
+				for(var i=0; i<number2.children.length;i++){
+					number2.children[i].style.width = "48px";
+				}
+			} 
+			
+			if(number2.children.length > 120){
+				for(var i=0; i<number2.children.length;i++){
+					number2.children[i].style.width = "24px";
+				}
+			}
+			
+		} else if(event.keyCode == 13){
+			var br = document.createElement("br");
+			var number2 = document.getElementById("number2");
+			number2.appendChild(br);
+		} else if(event.keyCode == 8){
+			var number2 = document.getElementById("number2");
+			number2.removeChild(number2.lastChild);
+			
+		}
+		
+	}
+	
+	function resize(n){
+		document.getElementById("p1").style.fontSize
+			= parseInt(document.getElementById("p1").style.fontSize) 
+						+ n+"px";
+	}
+	
+	function change(family){
+		document.getElementById("p1").style.fontFamily = family;
+	}
+	
+	
+</script>
+</head>
+<body>
+
+	<!-- ex40_style.html  -->
+
+
+	<input type="button" value="상자 감추기" id="btn1"/>
+	<hr/>
+	<div id="box1" class="box red medium" style="color: white; width: 200px;">상자</div>
+	
+	<hr />
+	<div id="number">
+		<img src="/WebClientTest/images/0.png"/>
+		<img src="/WebClientTest/images/1.png"/>
+		<img src="/WebClientTest/images/2.png"/>
+		<img src="/WebClientTest/images/3.png"/>
+		<img src="/WebClientTest/images/4.png"/>
+		<img src="/WebClientTest/images/5.png"/>
+		<img src="/WebClientTest/images/6.png"/>
+		<img src="/WebClientTest/images/7.png"/>
+		<img src="/WebClientTest/images/8.png"/>
+		<img src="/WebClientTest/images/9.png"/>
+		
+	
+	</div>
+	
+	<div id="number2" class="box"></div>
+	
+	<hr />
+	<h1>미세먼지 
+		<small onclick="resize(2);">▲</small> 
+		<small onclick="resize(-2);">▼</small> 
+		<small onclick="change('나눔고딕');">나눔고딕</small> 
+		<small onclick="change('궁서');">궁서</small> 
+		<small onclick="change('빙그레체');">빙그레체</small>
+	</h1>
+	
+	<p id="p1">(서울=연합뉴스) 고상민 김보경 차지연 기자 = 여야는 6일 정부의 내년도 예산안 심사를 위해 열린 국회 예산결산특별위원회 종합정책질의에서 23조5천억원 규모로 편성된 일자리예산의 적정성을 놓고 충돌했다.
+
+여당인 더불어민주당은 정부의 내년도 일자리예산은 경제협력기구(OECD) 대비 낮은 수준이라며 원안 고수를 주장했다.
+
+그러나 제1야당인 자유한국당은 문재인정부가 출범 후 총 54조원의 일자리예산을 쏟아붓고도 고용 부진을 막지 못했다며 대폭 삭감해야 한다고 맞섰다.
+
+민주당 조승래 의원은 "OECD 국가들은 적극적으로 일자리예산을 투입하는 것으로 확인됐다"며 "OECD의 GDP(국내총생산) 대비 일자리예산 비중 평균이 1.3%인데 우리나라는 1% 수준"이라고 강조했다.
+
+조 의원은 "야당에서는 일자리예산의 집행률을 지난 6월 기준으로 부진하다고 비판하는데 이것도 잘못됐다"며 "9월 말 기준 집행률은 81.5%이고 10월 말 기준으로 하면 더 올랐을 것"이라고 말했다.
+
+이에 김동연 부총리 겸 기획재정부 장관은 "일자리 관련 추가경정예산 집행률도 9월 말 82% 정도"라며 "연말 기준으로 거의 불용액이 없을 만큼 집행할 수 있도록 독려 중"이라고 했다.
+
+같은 당 서삼석 의원은 "국민은 물론 기업인들마저도 '평화는 경제다'라는 화두에 화답하고 있다. 그런데도 남북협력기금(1조977억원)은 터무니없이 적게 편성됐다"며 기금예산의 확대 편성을 주장하기도 했다.</p>
+	
+	
+</body>
+</html>

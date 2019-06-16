@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	window.onload = function(){
+		
+		// screen 객체
+		//	- window 의 자식객체
+		//	- 화면과 관련 행동
+		
+		// 해상도 정보 제공
+		console.log(window.screen.availWidth);
+		console.log(window.screen.availHeight);
+		
+	};
+	
+	function test(){
+		//window.open("ex15_child.html","child","width=300, height= 200, left= 1610,top=0")	
+		window.open("ex15_child.html","child","width=300, height= 200, left= "+(window.screen.availWidth - 310)+",top=0")	
+	}
+	
+</script>
+</head>
+<body>
+
+	<input type="button" value="자식창 띄우기" 
+			onclick="test();">
+
+
+</body>
+</html>

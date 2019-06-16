@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+/*
+  배경
+  1. 배경색
+  	- background-color
+  	
+  2. 배경 이미지
+  	- background-image
+  	
+  	
+  CSS 의 색상 표현법
+  1. Color Name : red,blue,...
+  2. RGB Color(HEX) : #FF0000
+  3. RGB Color(DEC) : rgb(255,0,0)
+  4. RGBA Color(DEC) : rgba(255,0,0,1)
+  		- alpha 채널 지원 : 투명도 (0~1)
+   
+  */
+  
+  #div1{
+  	margin-bottom: 0px; background-color: yellow;
+  }
+  
+  #div2{
+  	/* background-color: rgba(255,0,0,0.5); */
+  	background-color: yellow;
+  	background-color: #FF0000; /* 가장 많이 사용  */
+  	background-color: #F00;
+  	background-color: rgb(0,250,0);
+  	background-color: rgba(0,255,0,0.5);
+  }
+
+	
+  #div3{
+  	/* background-image: url(../images/dog01.jpg); */
+  }
+  
+  body {
+  	/* 배경 이미지 : 타일 형태로 출력  */
+	background-image: url(../images/dog01.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 200px;
+	background-attachment: fixed;
+	border: 10px solid red;
+  }
+
+</style>
+</head>
+
+<body>
+
+	<!--  
+	
+	서식 작업
+	1. HTML
+		- 기능이 적음
+		- 특정 태그만이 특정 서식을 지정할 수 있다.
+		- ex> bgcolor 속성 : <body>, <table>, <tr>, <th>, <td>
+		- html 서식 기능은 사용 안함		
+		
+	2. CSS
+		- 기능이 많음
+		- 모든 서식(속성) 을 모든 태그에 지정할 수 있다.
+	
+	-->
+<!-- 	<div bgcolor = "red"></div>
+	<div style="background-color: 'yellow'';">상자</div>
+	<input type="text" style="background-color: yellow;"/>
+ -->
+ 
+ 	<!-- (div#div$>lorem)*3 -->
+ 	<div id="div1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum numquam cupiditate perferendis excepturi quae sunt atque aliquid! Dolorum vel expedita officiis delectus nobis possimus quos error accusantium amet reiciendis omnis!</div>
+ 	<div id="div2">Ipsa eligendi expedita debitis repellat sit voluptatibus quae inventore placeat cumque dolorem eum dolore perspiciatis. Eaque quidem provident qui facilis debitis accusamus magnam quibusdam neque nam maxime expedita vero inventore!</div>
+ 	<div id="div3">Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 	<div>Vel porro minima reprehenderit autem alias cum impedit quisquam nemo a esse perferendis consectetur temporibus eaque explicabo enim fugiat officiis repellendus quia id consequatur! Necessitatibus perspiciatis fuga exercitationem tempore iure.</div>
+ 
+ 
+</body>
+</html>

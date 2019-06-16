@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	td{
+		height:126px;
+		width: 126px;
+		text-align: center;
+		font-size: 50px;
+	}
+
+
+</style>
+<script>
+
+	var list;
+	window.onload = function(){
+		
+		list = document.getElementsByTagName("td");
+		
+		for(var i=0;i<list.length;i++){
+			list[i].onmousedown = function(){
+				var num = parseInt(event.srcElement.innerText);
+				if(event.buttons == 1){
+					event.srcElement.innerText = num+1;
+				}
+			};
+		}
+		
+	};
+</script>
+</head>
+<body oncontextmenu="return false;">
+
+	<table class="table">
+	
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+	
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+	<!--
+	
+	테이블(******)
+	- 표 만들기
+	- 레이아웃 만들기 
+	
+	2행 2열 테이블
+	
+	1. <table>
+	- 큰상자
+	- 전체 컨테이너
+	
+	2. <tr>, table row
+		- 중간 상자
+		- 행 역할
+	
+	3. <td>, table data
+		- 작은 상자
+		- 셀 역할
+		- 데이터를 담는 역할
+	  -->
+	  
+	  <h1>2행 2열 테이블</h1>
+	  
+	  <table border="1" width = "200" height = "200" bgcolor ="yellow">
+	  		<tr bgcolor="blue">
+	  			<td bgcolor="red">1</td>
+	  			<td>2</td>
+	  		</tr>
+	  		<tr>
+	  			<td background="images/catty01.png">3</td>
+	  			<td>4</td>
+	  		</tr>
+	  
+	  </table>
+
+	 <h1>2행 2열 테이블</h1>
+	 
+	 
+	 <!-- <tr> 에는 width, height 는 잘 사용 안함  -->
+	 <table border="0" width = "200" height = "200" cellspacing ="0">
+	 		<tr>
+	  			<td width="100" bgcolor="red">1</td>
+	  			<td width="100" bgcolor="blue">2</td>
+	  		</tr>
+	  		<tr>
+	  			<td>3</td>
+	  			<td>4</td>
+	  		</tr>
+	  
+	 
+	 </table>
+
+	<h1>2행 2열 테이블</h1>
+	 <table border="1" width = "200" height = "200" >
+		<tr>
+			<!--
+			한글 : 한글자 (의미)
+			영어/숫자 : 단어 중심
+			-->
+		
+			<td width="100" style="word-break:break-all;">11111111111111111111111111111111111111</td>
+			<td width="100">2</td>
+		</tr>
+		
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>	  
+	 
+	 </table>
+	
+	
+	<hr>
+	
+	<h1>주소록</h1>
+	
+	<table border = "1" width = "500">
+		<tr bgcolor="#ccc">
+			<td align="center" width="50"><b>번호</b></td>
+			<td align="center" width="80"><b>이름</b></td>
+			<td align="center" width="50"><b>나이</b></td>
+			<td align="center" width="50"><b>성별</b></td>
+			<td align="center" width="270"><b>주소</b></td>
+		</tr>
+		<!-- 테이블 데이터 
+				1. 고정폭 : 좌측, 가운데
+				2. 가변폭 : 좌측(우측)
+		 -->
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>		
+		</tr>
+		<tr bgcolor="#eee">
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td >서울시 강남구 대치동 현대아파트 100동 101호</td>		
+		</tr>
+				<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>		
+		</tr>
+		<tr bgcolor="#eee">
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td >서울시 강남구 대치동 현대아파트 100동 101호</td>		
+		</tr>
+				<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>		
+		</tr>
+		<tr bgcolor="#eee">
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td >서울시 강남구 대치동 현대아파트 100동 101호</td>		
+		</tr>
+				<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>		
+		</tr>
+		<tr bgcolor="#eee">
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td >서울시 강남구 대치동 현대아파트 100동 101호</td>		
+		</tr>
+				<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>		
+		</tr>
+		<tr bgcolor="#eee">
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td >서울시 강남구 대치동 현대아파트 100동 101호</td>		
+		</tr>
+	</table>
+	
+	<h1>테이블 원형</h1>
+	
+	<table border="1" width = "500">
+		<caption>표 1.1</caption>
+		<thead>
+		<tr>
+			<th>이름</th>
+			<th>키</th>
+			<th>몸무게</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>홍길동</td>
+			<td>170</td>
+			<td>60</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>170</td>
+			<td>60</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>170</td>
+			<td>60</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>170</td>
+			<td>60</td>
+		</tr>
+		</tbody>
+		
+		<tfoot>
+			<tr>
+				<td>** 2018년 기준</td>
+				<td>평균키</td>
+				<td>평균몸무게</td>
+			</tr>
+		</tfoot>		
+	</table>
+	
+	<h1>프로젝트 기술서</h1>
+	
+	<table border="1" width = "400">
+		<tr>
+			<th width="100">문서 번호</th>
+			<td width="400">No. 1001</td>
+		</tr>
+		<tr>
+			<th>작성자</th>
+			<td>홍길동</td>
+		</tr>
+		<tr>
+			<th>주제</th>
+			<td>교육 센터 관리 프로그램</td>
+		</tr>
+		<tr>
+			<th>기간</th>
+			<td>2018-10-01~2018-10-23</td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td>교육 센터에서 학생 수강 신청부터 수료까지 관리하는 솔루션 입니다.</td>
+		</tr>
+		<tr>
+			<th>시연</th>
+			<td><a href="#">시연 화면 보러가기</a></td>
+		</tr>
+	</table>
+	
+	
+	<hr>
+	
+	<h1>테이블 셀 병합</h1>
+	<!-- 모든 <tr> 내의 <td> 갯수는 동일해야 한다.  -->
+	
+	
+	<table border ="1" width = "200" height = "200">
+	
+		<tr>
+			<td width="100" height="100" colspan="2">1</td>
+		</tr>
+		
+		<tr>
+			<td width="100" height="100">3</td>
+			<td width="100" height="100">4</td>		
+		</tr>
+		
+	</table>
+	
+	<hr>
+	<table border ="1" width = "200" height = "200">
+	
+		<tr>
+			<td width="100" height="100" rowspan="2">1</td>
+			<td width="100" height="100">2</td>			
+		</tr>
+		
+		<tr>
+			<td width="100" height="100">4</td>
+		</tr>
+		
+	</table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>

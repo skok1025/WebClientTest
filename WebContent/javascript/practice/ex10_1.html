@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	#bigBox{
+		width: 100%;
+		border: 1px solid gray;
+	}
+	
+	textarea{
+		margin:0px auto;
+		width: 95%;
+		height: 300px;
+		
+	}
+
+
+</style>
+<script src="/WebClientTest/javascript/js/basic.js"></script>
+<script>
+
+
+var txt1,txt2;
+var start_bt,end_bt;
+var length = 0;
+var timer = 0;
+window.onload = function(){
+	txt1 = document.getElementById("txt1");	
+	txt2 = document.getElementById("txt2");	
+	start_bt = document.getElementById("start_bt");
+	end_bt = document.getElementById("end_bt");
+	
+	start_bt.onclick = function(){
+		
+		if(timer ==0){
+			timer = setInterval(function(){
+				txt1.value = txt2.value.substring(0,length);
+				length++;
+				if(txt2.value.length == length) clearInterval(timer);
+			},30);
+		}
+		
+	};
+	
+	end_bt.onclick = function(){
+		
+		clearInterval(timer);
+		timer =0;
+		
+	};
+	
+	
+};
+
+</script>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+</head>
+<body>
+
+	<div id="bigBox">
+		
+		<textarea id="txt1">
+		
+		</textarea>
+		<hr />
+		<textarea id="txt2">
+네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+		</textarea>
+		
+		<input type="button" value="시작" id="start_bt" />
+		<input type="button" value="정지" id="end_bt" /> 
+	</div>
+
+
+
+
+</body>
+</html>

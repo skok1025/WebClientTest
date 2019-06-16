@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+	<!-- 
+	
+	Emmet, Zen-Coding
+	- http://emmet.io
+	- html ,css 코드를 쉽게 작성해주는 플러그인
+	- css 선택자를 사용
+	
+	 -->
+
+	<h1>태그 선택자</h1>
+	
+	div{} -> <div></div>
+	
+	<div></div>
+	<a href="http://naver.com">네이버</a>
+	<img src="../images/dog01.jpg" alt="강아지" />
+	<input type="checkbox" />
+	
+	<h1>아이디 선택자</h1>
+	
+	<h1 id ="subject"></h1>
+	<h1 id="subject"></h1>
+	<div id="box1"></div>
+	
+	a#link1
+	<a href="url" id="link1">링크</a>
+	
+	#box2 : 기본 태그 <div></div>
+	<div id="box2"></div>
+	
+	<h1>클래스 선택자</h1>
+	<div class="item"></div>
+	div.item
+	<div class="item"></div>
+	
+	li.item
+	<li class="item"></li>
+	
+	다중 클래스
+	div.box.item.red
+	<div class="box item red"></div>
+	
+	div#box1.box
+	<div id="box1" class="box"></div>
+	
+	<h1>속성 선택자</h1>
+	
+	div[title]
+	<div title=""></div>	
+	
+	a[target]
+	<a href="" target=""></a>
+	
+	a[target=_blank]
+	<a href="" target="_blank"></a>
+	
+	
+	a[target=_blank title=링크입니다]
+	
+	<a href="" target="_blank" title="링크입니다"></a>
+	
+	<img src="" alt="" />
+	
+	img[width height title]
+	<img src="url" alt="대체" width="100" height="200" title="풍선" />
+	
+	
+	<h1>PCDATA</h1>
+	<div></div>
+	
+	<div>상자</div>
+	
+	<a href="http://naver.com">네이버</a>
+	
+	<div id="box1" class="box red" title="상자">sosadasdas</div>
+	
+	------------------------------------------------------------
+	
+	<h1>반복 생성</h1>
+	<div>하나</div>
+	<div>둘</div>
+	<div>셋</div>
+	<div>넷</div>
+	<div>다섯</div>
+	
+	div.item
+	<div class="item">하나</div>
+	<div class="item">둘</div>
+	<div class="item">셋</div>
+	<div class="item">넷</div>
+	<div class="item">다섯</div>
+	
+	
+	div.item[title]{상자}
+	<div class="item" title="">상자</div>
+	<div class="item" title="">상자</div>
+	<div class="item" title="">상자</div>
+	<div class="item" title="">상자</div>
+	<div class="item" title="">상자</div>
+	
+	div#box1
+	div#box$*5
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+	<div id="box5"></div>
+	
+	div#box$.box{상자$}*5
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4" class="box">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	
+	div{$.항목}*10
+	div{$$.항목}*20	
+	div{$$$.항목}*20
+	<div>001.항목</div>
+	<div>002.항목</div>
+	<div>003.항목</div>
+	<div>004.항목</div>
+	<div>005.항목</div>
+	<div>006.항목</div>
+	<div>007.항목</div>
+	<div>008.항목</div>
+	<div>009.항목</div>
+	<div>010.항목</div>
+	<div>011.항목</div>
+	<div>012.항목</div>
+	<div>013.항목</div>
+	<div>014.항목</div>
+	<div>015.항목</div>
+	<div>016.항목</div>
+	<div>017.항목</div>
+	<div>018.항목</div>
+	<div>019.항목</div>
+	<div>020.항목</div>
+	
+	<div>01.항목</div>
+	<div>02.항목</div>
+	<div>03.항목</div>
+	<div>04.항목</div>
+	<div>05.항목</div>
+	<div>06.항목</div>
+	<div>07.항목</div>
+	<div>08.항목</div>
+	<div>09.항목</div>
+	<div>10.항목</div>
+	<div>11.항목</div>
+	<div>12.항목</div>
+	<div>13.항목</div>
+	<div>14.항목</div>
+	<div>15.항목</div>
+	<div>16.항목</div>
+	<div>17.항목</div>
+	<div>18.항목</div>
+	<div>19.항목</div>
+	<div>20.항목</div>
+	
+	<h1>형제 선택자</h1>
+	div+p
+	<div></div>
+	<p></p>
+	
+	div~p<!-- 사용불가  -->
+	
+	div+a+p+img
+	<div>항목1</div>
+	<a href="http://naver.com"></a>
+	<p></p>
+	<img src="" alt="" />
+	
+	h1+p+p
+	<h1></h1>
+	<p></p>
+	<p></p>
+	
+	<h1></h1>
+	<p></p>
+	<p></p>
+	
+	<h1></h1>
+	<p></p>
+	<p></p>
+	
+	h1+p+p*3
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	
+	
+	(h1+p+p)*3
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	<p></p>
+	<h1></h1>
+	<p></p>
+	<p></p>
+	
+	(h1#title$.titles[title=제목]{제목입니다.}+p.content{설명입니다.}*3)*2
+	<h1 id="title1" class="titles" title="제목">제목입니다.</h1>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<h1 id="title2" class="titles" title="제목">제목입니다.</h1>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	<p class="content">설명입니다.</p>
+	
+	<h1>자식 선택자</h1>
+	div a // 사용불가
+	div>a
+	<div><a href=""></a></div>
+	
+	ul>li
+	ul>li*5
+	
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<ul id="list1">
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+		<li class="item"></li>
+	</ul>
+	
+	div>a>b
+	<div><a href=""><b></b></a></div>
+	
+	ul#list1>li.item>a{링크}
+	ul#list1>(li.item>a{링크})*5
+	<ul id="list1">
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+		<li class="item"><a href="">링크</a></li>
+	</ul>
+	
+	h1{오늘의 할일}+ul#list1>li{항목$}*5
+	
+	<h1>오늘의 할일</h1>
+	<ul id="list1">
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+		<li>항목4</li>
+		<li>항목5</li>
+	</ul>
+	
+	table+
+	ol+
+	ul+
+	dl+
+	select+
+	
+	<h1>10*5 테이블</h1>
+	
+	table>tr*10>td*5
+	table#tbl1>tr*10>td.cell*5
+	table#tbl1>tr*10>td.cell$*5
+	table#tbl1>tr>th#col$*5
+	table#tbl1>(tr>th#col$*5)+(tr>td.cell$*5)*10
+	
+	table#tbl1
+	<table id="tbl1">
+		<tr>
+			<th id="col1"></th>
+			<th id="col2"></th>
+			<th id="col3"></th>
+			<th id="col4"></th>
+			<th id="col5"></th>
+		</tr>
+	</table>
+	
+	
+	<table id="tbl1">
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+			<td class="cell5"></td>
+		</tr>
+	</table>
+	<table id="tbl1">
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+		</tr>
+	</table>
+	
+	<h1>Lorem Ipsum</h1>
+	
+	<h1>오늘의 할일</h1>
+	<ul>
+		<li>목록입니다.</li>
+		<li>목록입니다.</li>
+		<li>목록입니다.</li>
+		<li>목록입니다.</li>
+		<li>목록입니다.</li>
+	</ul>
+	
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sequi nesciunt delectus rem eos neque nostrum laborum. Deserunt quidem sapiente facilis. Atque aspernatur dolor eius fuga ut distinctio repellat? Rem.</div>
+	
+	div>lorem
+	div>lorem5
+	<div>Lorem ipsum dolor sit amet.</div>
+	
+	(h1>lorem2)+ul>(li>lorem)*5
+	<h1>Lorem ipsum.</h1>
+	<ul>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque officiis reprehenderit error similique fugit quas distinctio rem eos unde accusamus quaerat earum ipsa veniam eius inventore assumenda officia iste dolores!</li>
+		<li>Velit ipsam odit error cumque aliquam similique perspiciatis magnam iure deserunt. Aspernatur cum eveniet eaque amet eum dignissimos magnam nam odio saepe aliquid excepturi incidunt libero sit! Velit maxime vel?</li>
+		<li>Cumque corrupti placeat deserunt aliquid recusandae cupiditate asperiores exercitationem voluptatibus fugiat quos rerum mollitia ducimus ad doloribus sit adipisci labore. Odio hic libero alias ipsum eos similique dicta doloremque eius.</li>
+		<li>Placeat sit porro quae quibusdam nam. Placeat laborum fugiat voluptas. Consectetur cumque enim deserunt dolorum accusantium ea corporis earum voluptates soluta quo esse nobis rerum id omnis inventore eaque voluptatem?</li>
+		<li>Tenetur aliquam fugiat error iusto dolores voluptates assumenda voluptate rem quo quas repudiandae exercitationem hic deserunt ea magnam sit dolore tempora perspiciatis architecto esse ex ducimus deleniti. Dicta animi sequi!</li>
+	</ul>
+	
+	
+	html:5
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>

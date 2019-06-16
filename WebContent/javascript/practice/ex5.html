@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var jumin1,jumin2,yearTxt,monthTxt,dateTxt,sex;
+	window.onload = function(){
+		jumin1 = document.all.jumin1;
+		jumin2 = document.all.jumin2;
+		yearTxt = document.all.yearTxt;
+		monthTxt = document.all.monthTxt;
+		dateTxt = document.all.dateTxt;
+		sex = document.all.sex;
+		
+		jumin1.onkeyup = function(){
+			
+			if(jumin1.value.length == 6){
+				jumin2.focus();
+				yearTxt.value = "19"+jumin1.value.substring(0,2);
+				monthTxt.value = jumin1.value.substring(2,4);
+				dateTxt.value = jumin1.value.substring(4,6);
+			}
+		};
+		
+		jumin2.onkeyup = function(){
+			
+			if(jumin2.value.length == 1){
+				if(jumin2.value.substring(0,1)%2==1){
+					sex[0].checked = true;
+				} else if(jumin2.value.substring(0,1)%2==0){
+					sex[1].checked = true;
+				}
+			}
+			
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+
+	<table class="table">
+	
+		<tr>
+			<th>주민번호</th>
+			<td>
+				<input type="text" name="jumin1" size="6" maxlength="6"/>
+				-
+				<input type="text" name="jumin2" size="7" maxlength="7" />
+			</td>
+		</tr>
+		<tr>
+			<th>생년월일</th>
+			<td>
+				<input type="text" name="yearTxt"/>년
+				<input type="text" name="monthTxt"/>월
+				<input type="text" name="dateTxt"/>일
+			</td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td>
+				<input type="radio" name="sex" id="man" /> <label for="man">남자</label>
+				<input type="radio" name="sex" id="woman" /> <label for="woman">여자</label>
+			</td>
+		</tr>
+	
+	
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.box{
+		
+		transition: all 1s;
+	}
+	
+	#box1:hover .box{
+		border-radius: 10%;
+	}
+	#box2:hover .box{
+		border-radius: 20%;
+	}
+	#box3:hover .box{
+		border-radius: 30%;
+	}
+	#box4:hover .box{
+		border-radius: 40%;
+	}
+	#box5:hover .box{
+		border-radius: 50%;
+	}
+	
+
+	#box1{
+		width: 440px;
+		height: 440px;
+		padding: 18px;
+	}
+	#box2{
+		width: 400px;
+		height: 400px;
+		padding: 18px;
+	}
+	#box3{
+		width: 360px;
+		height: 360px;
+		padding: 18px;
+	}
+	#box4{
+		width: 320px;
+		height: 320px;
+		padding: 18px;
+	}
+	#box5{
+		width: 280px;
+		height: 280px;
+		padding: 18px;
+	}
+	#box6{
+		width: 240px;
+		height: 240px;
+		padding: 18px;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="box1" style="background-color: red" class="box">
+		<div id="box2" style="background-color: orange;" class="box">
+			<div id="box3" style="background-color: green;" class="box">
+				<div id="box4" style="background-color: yellow;" class="box">
+					<div id="box5" style="background-color: blue;" class="box">
+			
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

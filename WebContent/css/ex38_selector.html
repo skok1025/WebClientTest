@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	input:nth-child(3n) { width: 350px; }
+	input:nth-child(3n+1) { width: 100px; }
+	
+	input {
+		border: 1px solid #A9A9A9;
+		padding: 3px;
+		background-color: white;
+		margin-bottom: 10px;
+		outline: 0px;
+	}
+	/*
+	
+	입력폼 선택자
+	- <form> 관련 태그에만 적용
+	1. :focus
+	2. :enabled
+	3. :checked
+	4. :required
+	5. :disabled
+	6. :optional
+	
+	*/
+	
+	/* 인디케이터 */
+	input:focus {
+		/* background-color: yellow; */
+		/* border-color: tomato; */
+		
+	}
+	
+	.icon{
+		display: none;
+	}
+	
+	/* input:focus + .icon {
+		display: inline;
+	} */
+	
+	input:enabled {
+		/* background-color: yellow; */
+	}
+	
+	input:disabled {
+		/* background-color: black; */
+		/* 불투명도(0~1) */
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	
+	/* opacity background */
+
+	input:required{
+		border-color: tomato;
+		background-color: #ffe5d4
+	}
+	
+	input:optional {
+		border-color: blue;
+	}
+	
+	/*  
+	checkbox, radio, select : 적용 안되는 속성이 있음
+	*/
+	input[type='checkbox']{ 
+		margin: 0;
+		padding: 0;
+		width: 50px;
+		border: 1px solid red;
+		opacity: .3;
+	}
+	
+	input[type='checkbox']:checked {
+		opacity: 1;
+	}
+
+</style>
+</head>
+<body>
+
+	<h1>(다량의)데이터 입력</h1>
+	
+	<input type="text" required /> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" /> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" readonly="readonly"/> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" /> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" required/> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" /> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" disabled="disabled"/> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" /> <img class ="icon" src="../images/bullet02.png">
+	<br /> 
+	<input type="text" readonly="readonly"/> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	<input type="text" disabled="disabled"/> <img class ="icon" src="../images/bullet02.png">
+	<br />
+	
+	<hr>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+
+</body>
+</html>

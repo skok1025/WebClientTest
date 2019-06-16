@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+
+</style>
+<script>
+
+
+	window.onload = function(){
+		
+	};
+	
+	window.onmousedown = function(){
+		var x = event.clientX;
+		var y = event.clientY;
+		
+		if(event.buttons == 1){ 
+			var n = parseInt(Math.random()*6)+1; 
+			var img = document.createElement("img");
+			img.src = "/WebClientTest/images/catty0"+n+".png";
+			img.style.position = "absolute";
+			img.style.left = x+"px";
+			img.style.top = y+"px";
+			document.body.appendChild(img);
+		} else if(event.buttons == 2){
+			document.body.removeChild(event.srcElement);
+		}
+	};
+	
+	window.oncontextmenu = function(){
+		event.preventDefault();
+		return false;
+	};
+	
+</script>
+</head>
+<body oncontextmenu="return false;">
+
+	
+
+</body>
+</html>

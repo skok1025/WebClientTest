@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+	
+	var btn1;
+	var btn2;
+	var child;
+	var txt1, btn3, btn4;
+	
+	window.onload = function() {
+		
+		btn1 = window.document.forms["form1"].btn1;
+		btn2 = window.document.forms["form1"].btn2;
+		
+		txt1 = window.document.forms["form1"].txt1;
+		btn3 = window.document.forms["form1"].btn3;
+		btn4 = window.document.forms["form1"].btn4;
+		
+		//window 객체
+		// - 브라우저(창)을 참조하는 객체
+		// - BOM의 최상위 객체
+		// - 예약어 제공 객체
+		// - 창을 조작
+		
+		btn1.onclick = function() {
+			//window.close(); //현재 window 닫기
+			
+			//창을 새로 띄우기(자식창)
+			// - window.open(URL, 이름, 옵션);
+			// - 현재 대부분의 옵션은 지원 안함
+			//window.open("ex14_collection.htm", "child", "width=200, height=200, top=200, left=500");
+			//window.open("ex14_collection.htm", "child", "fullscreen");
+			
+			// 중복창 제어 용도(자식창의 이름)
+			child = window.open("ex15_child.html", "child", "width=400, height=300");
+			
+		};//click
+		
+		
+		//window.open("ex14_collection.htm", "child", "width=200, height=200, top=200, left=500");
+		
+		
+		btn2.onclick = function() {
+			//자신(창) 닫기
+			//window.close();
+			
+			//자식창을 제어하려면 자식창의 window 객체를 얻어온다.?
+			child.close();
+			//child.document.form1.btn1.value = "하하하";
+		};
+		
+		
+		
+		btn3.onclick = function() {
+			
+			//자식창의 텍스트박스에 데이터 복사 > 자식창의 window 객체 얻기(child)
+			//window.document.form1.txt1
+			child.document.form1.txt1.value = window.document.form1.txt1.value;
+			
+		};
+		
+		btn4.onclick = function(){
+			
+			// window 메소드
+			
+			// 창 이동하기 (절대값)
+			//child.moveTo(100,500);
+			
+			// 창 이동하기 (상대값)
+			//child.moveBy(30,30);
+			
+			// 창 크기변경(절대값)
+			//child.resizeTo(500,500);
+			
+			// 창 크기변경(상대값)
+			//child.resizeBy(-10,-10);
+			
+			
+		};
+		
+		
+	};//onload
+	
+</script>
+</head>
+<body>
+	<!-- ex15_window.htm -->
+	
+	<form name="form1">
+		<!-- <input type="button" name="btn1" value=""> -->
+		<input type="button" name="btn1" value="자식창 띄우기">
+		<input type="button" name="btn2" value="자식창 닫기">
+		<hr>
+		<input type="text" name="txt1">
+		<input type="button" name="btn3" value="자식창 접근하기">
+	
+		<hr />
+		<input type="button" name="btn4" value="자식창 제어하기" />
+	
+	</form>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

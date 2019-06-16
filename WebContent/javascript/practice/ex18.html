@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	hr{
+		border: 1px solid red;
+		position: relative;
+		left: 0px;
+		top: 0px;
+		margin: 0px;
+		padding: 0px;
+		
+	}
+	#vbar {
+		transform-origin: 0px 0px;
+		transform: rotate(90deg);
+	}
+	
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+
+	var vbar,hbar;
+	
+	window.onload = function(){
+		vbar = document.getElementById("vbar");
+		hbar = document.getElementById("hbar");
+		hbar.style.width = screen.availWidth;
+		vbar.style.width = screen.availHeight;
+	};
+	
+	window.onmousemove = function(){
+		//console.log(event.clientX);
+		var x = event.clientX;
+		var y = event.clientY;
+		
+		vbar.style.left = x+"px"; 
+		hbar.style.top = y+"px"; 
+	};
+	
+</script>
+</head>
+<body>
+
+	<hr id="vbar">
+	<hr id="hbar">
+
+</body>
+</html>

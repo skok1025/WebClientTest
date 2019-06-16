@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+/*  
+  
+자바스크립트 함수(메소드), Function (Method) 
+
+자바 메소드 선언 
+public [static] int m1(int num){
+	return 10;
+}
+
+자바스크립트 함수 선언
+
+function m1(num){
+	return 10;
+}
+
+*/
+
+function f1(){
+	console.log("F1");
+}
+
+f1();
+
+function f2(name){
+	console.log("안녕~" +name);
+}
+
+f2("홍길동"); // 권장 ****
+f2(); // 실인자 누락
+f2("아무개","하하하"); // 실인자 더 넘김
+
+function f3(){
+	//arguments : 실인자값 배열
+	console.log(arguments.length);
+	
+	for(var i =0;i<arguments.length; i++){
+		console.log(arguments[i]);
+	}
+	
+}
+
+f3("홍길동");
+f3("하나","둘","셋");
+
+// 호이스팅
+// - 브라우저는 자바스크립트 코드를 실행하기 직전에 모든 스크립트 코드를 확인 후 변수 선언부와 함수 선언부를 해당 영역의 최상단으로 이동시킨다.
+
+// 함수 호이스팅
+f4();
+
+function f4(){
+	console.log("F4");
+}
+
+// 변수 호이스팅
+console.log(address);
+var address = "서울시 강남구";
+
+
+function f5(){
+	console.log(color);
+	
+	var color = "노랑";
+}
+
+f5();
+
+// undefined : 변수 생성 후 초기화를 하지 않은 상태
+// null : 의도적으로 값을 가지지 않는 상태
+
+var n1;
+console.log(n1);
+
+var n2 = null; // 명시적으로 null
+console.log(n2);
+
+console.log(null == undefined); // 자동형변환 후 비교, 값만 비교하고 타입은 비교안함.
+console.log(null === undefined); // 형변환 없이 비교, 값과 타입 모두 비교함.
+
+console.log(10 == "10"); // true
+console.log(10 === "10"); // false
+
+console.log(10 != "10"); // false
+console.log(10 !== "10"); // true
+
+// console.log(c);
+
+
+/*  
+
+자바 : 멤버 변수 vs 지역 변수
+자바스크립트 : 전역 변수 vs 지역 변수 
+ 
+ 
+ 1. 전역변수
+ 	- script 태그 내에서 직접 만든 변수
+ 	- 현재 페이지안에서만...
+ 	
+ 2. 지역변수
+ 	- 블럭(메소드, 제어문)내에서 선언 : 자바 
+ 	- 블럭(함수) 내에서 선언 : 자바스크립트
+*/
+var name = "홍길덩"; // 전역변수
+
+function f6(){
+	
+	var n1 = 10;
+	console.log("n1",n1);
+	
+}
+
+f6();
+console.log("n1",n1);
+
+if(true){
+	var n2 = 20; // 전역변수
+	console.log("n2",n2);
+}
+
+console.log("n2",n2);
+
+function f7(){
+	
+	//var n3 = 30; // 지역변수
+	n3 = 30; // var 키워드 사용하지 않은 변수는 자동으로 전역 변수가 된다.
+}
+
+f7();
+console.log("n3",n3);
+
+function f8(n4){
+		
+}
+
+//f8(40);
+//console.log("n4",n4);
+
+for (var i=0; i<10; i++){
+	
+}
+
+console.log("i",i);
+
+function f9(){
+	for (i=0; i<10; i++){ // 전역변수... var 가 없기 때문에
+		
+	}
+}
+f9();
+console.log("i",i);
+
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>

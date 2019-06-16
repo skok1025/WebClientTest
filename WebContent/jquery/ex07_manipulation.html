@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.one{ font-size: 4em; }
+	.two{ border-width: 20px;}
+	.three{ transform:rotate(45deg);}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		/*  
+		
+		1. A 타입
+			- 특정 업무 전용 함수
+			- obj.test();		// getter, 읽기
+			- obj.test(value);  // setter, 쓰기
+			
+		2. B 타입
+			- 범용 업무 전용 함수
+			- obj.test(name);		// getter, 읽기
+			- obj.test(name,value); // setter, 쓰기
+		
+		*/
+		
+		$("#btn1").click(function(){
+			// Content 제어
+			//  - <div id="box1">상자</div>
+			//  - DOM : innerText, innetHTML
+			
+			// innerText
+			//console.log($("#box1").text());
+			//$("#box1").text("홍길동");
+			
+			// innerHTML
+			//console.log($("#box1").html());
+			//$("#box1").html("<input>");
+			
+			// 폼 컨트롤의 값 제어	
+			//console.log($("#txt1").val());
+			//$("#txt1").val("아무개");
+			
+			// 폼태그
+			//		- val() : 입출력
+			
+			// 폼태그 이외
+			//		- text(),html() : 입출력
+			
+			
+			// 속성(Attribute) 제어
+			//		-B 타입
+			
+			console.log($("#link1").attr("href"));
+			
+			// jQuery 요령
+			/* $("#link1").attr("href","http://google.com");
+			$("#link1").attr("title","구글");
+			$("#link1").attr("target","_blank");
+			 */
+			 // 체이닝 가능
+			 // 1. 선택자가 동일하면 메소드 체이닝을 시도해본다.
+			//$("#link1").attr("href","http://google.com")
+			//			.attr("title","구글로 이동합니다.")
+			//			.attr("target","_blank");
+			
+			//$("#link1").text("구글");
+			
+			// 2. 동일한 형태의 키 & 값이 반복되면 {}(객체) 만들기를 시도해본다.
+			/* 
+			
+			$("#link1").attr({
+				href: "http://google.com",
+				title : "구글",
+				target: "_blank"
+			});
+			*/
+			
+			$("#link1").attr({
+				href:"http://google.com",
+				title:"구글"
+			}).text("구글");
+		}); // btn1
+		
+		$("#btn2").click(function(){
+			//box1.innerHTML = "<img src='..'>"; // 치환
+			//box1.innerHTML += "<img src='..'>"; // 누적
+			
+			//$("#box1").html("<img src = '../images/catty01.png'>");
+			//$("#box1").html($("#box1").html()+"<img src = '../images/catty01.png'>");
+			
+			// 누적(추가하기)
+			//	- append() : 기존내용의 뒤에 누적 (추가)
+			//  - prepend() : 기존내용의 앞에 누적 (추가)
+			//$("#box1").append("<img src = '../images/catty01.png'>");
+			$("#box1").prepend("<img src = '../images/catty01.png'>");
+			
+			
+		}); // btn3
+		
+		$("#btn3").click(function(){
+			
+			// 함수 일부
+			// - fn()
+			// - fn([selector])
+						
+			// 요소 삭제
+			// 1. 부모가 자식을 삭제
+			// 	- DOM : 부모.removeChild(자식)
+			//	- jQuery : 부모.empty();
+			
+			// 2. 자식 스스로 삭제(자식 태그 포함해서 모두 삭제)
+			//	- jQuery : 객체.remove();
+			
+			//$("#box1").remove();
+			//$("#box1").empty();
+
+			//$("input").remove(".btn");
+			
+			
+			// CSS 제어
+			// 1. css()
+			//  - element.style.속성명 = "값";
+			//$("#box1").css("background-color","cornflowerblue");
+			//alert($("#box1").css("color")); // 모든 방식의 CSS값을 바로 읽기 가능
+		
+			//$("#box1")
+			//.css("color","white")
+			//.css("background-color","black")
+			//.css("width","300px");
+			/* 
+			$("#box1").css({
+				color:"white",
+				//backgroundColor:"black",
+				"background-color": "red",
+				width: "300px"
+			});
+			 */
+			
+			// box3.classList.add("one");
+			// box3.classList.add("two");
+			// box3.classList.remove("two");
+			 
+			$("#box1").addClass("one");
+			$("#box1").addClass("two");
+			$("#box1").removeClass("red");
+			
+			$("#box1").toggleClass("three");
+			
+			 
+			
+		});
+			
+			
+	});
+</script>
+</head>
+<body>
+
+	<h1>jQuery 사용한 HTML 조작(추가/삭제/수정)</h1>
+	
+	
+	<input type="button" value="버튼1" id="btn1" class="btn"/>
+	<input type="button" value="버튼2" id="btn2" class="btn"/>
+	<input type="button" value="버튼3" id="btn3"/>
+	<hr />
+	<div id="box1" class="box medium red">상자</div>
+	<hr />
+	<input type="text" id="txt1" />
+	<hr />
+	<a href="http://naver.com" id="link1">네이버</a>
+	
+
+
+</body>
+</html>

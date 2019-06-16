@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+	#box1{
+		border: 1px solid black;
+		width: 400px;
+		height: 400px;
+	}
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#box1").resizable({
+			maxWidth:700,
+			maxHeight:500,
+			minWidth: 100,
+			minHeight: 100,
+			grid:[50,50],
+			resize: function(){
+				// width(),height() : 읽기
+				// width(100) : 쓰기
+				//console.log($(this).width());
+				if($(this).width()<150){
+					$(this).css("background-color","orange")
+				} else if($(this).width()<550){
+					$(this).css("background-color","white")
+				} else{
+					$(this).css("background-color","cornflowerblue")
+				}
+			}
+		});
+		$("#cat1").resizable({
+			aspectRatio: $("#cat1").width()/$("#cat1").height(),
+			grid:[100,100]
+		});
+		
+		//$("#cat2").draggable();
+		//$("#cat2").resizable();
+		
+	});
+</script>
+</head>
+<body>
+
+	<div id="box1"></div>
+	<img src="/WebClientTest/images/cat01.jpg" id="cat1" alt="" />
+	<img src="/WebClientTest/images/cat02.jpg" id="cat2" alt="" />
+	
+</body>
+</html>

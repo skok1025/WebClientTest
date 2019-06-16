@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	/*  
+	
+	자바 스크립트 수행
+	1. 태그 검색 -> 2. 이벤트 추가 -> 3. 태그검색 -> 4. 태그 조작
+	- 검색 & 조작에 사용된 도구 : BOM
+	- 검색 & 조작에 사용된 도구 : DOM
+	
+	1. BOM
+	- 여태까지 사용한 방법
+	- 미리 정해져 있는 트리 구조를 사용 (일부 태그만 제어 가능)
+	- 태그마다 정해진 속성이 있다.
+	
+	2. DOM
+	- Document Object Model
+	- 트리구조를 사용 -> 해당 페이지의 소스에 의해서 결정된다.
+	- 모든 태그에 접근 가능(***)
+	- 모든 태그마다 동일한 속성을 제공한다.
+	
+	*/
+
+
+	window.onload = function(){
+		
+		// 1. 태그 검색
+		//  - BOM을 사용하던 DOM을 사용하던 찾고나면 동일한 객체
+		// a. BOM
+		var btn1 = document.form1.btn1; // name 속성
+		
+		// b. DOM
+		var btn2 = document.getElementById("btn2"); // id 속성
+		
+		//alert(btn1 === btn2);
+		
+		// 2. 이벤트 추가
+		//  a. BOM
+		btn1.onclick = function(){
+			alert("btn1");
+		};
+		
+		//  b. DOM
+		btn2.addEventListener("click",function(){	
+			alert("btn2");
+		});
+	
+		/*  
+		DOM 의 태그 검색 방식
+		1. 특정 객체를 식별자로 검색하기
+			- 식별자 검색
+			a. name
+			b. id (*****)
+			c. class
+			d. tag name
+		
+		2. 특정 객체를 관계를 통해서 검색하기
+			- 기준 객체의 부모,형제,자식
+		*/
+		
+		
+		// a. name  검색 - 배열반환
+		var btna = document.getElementsByName("btna");
+		//alert(btna.length);
+		btna[0].onclick = function(){ alert("A");};
+	
+		// b. id 검색 - 단일 객체 반환
+		var btnb = document.getElementById("btnb");
+		btnb.onclick = function(){
+			alert("B");
+		};
+		
+		// c. class 검색 - 배열반환
+		var btn = document.getElementsByClassName("btn");
+		//alert(btn.length);
+	
+		for(var i=0; i<btn.length;i++){
+			btn[i].onclick=  function(){
+				alert("class");
+			};
+		}
+		
+		// d. tag name 검색 - 배열 반환
+		var input = document.getElementsByTagName("input");
+		//alert(input.length);
+	
+		for(var i=0;i<input.length;i++){
+			input[i].value = "Button";
+		}
+		
+	};
+	
+</script>
+</head>
+<body>
+	<form name="form1">
+	
+		<input type="button" name="btn1" id="btn1" value="버튼1" />
+		<input type="button" name="btn2" id="btn2" value="버튼2" />
+		<hr />
+		<input type="button" name="btna" id="btna" value="버튼A" class="btn" />
+		<input type="button" name="btnb" id="btnb" value="버튼B" />
+		<input type="button" name="btnc" id="btnc" value="버튼C" class="btn"/>
+		
+	</form>
+		<hr />
+	
+		<input type="button" name="btnd" id="btnd" value="버튼D" class="btn"/>
+		
+</body>
+</html>

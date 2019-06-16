@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	body{
+		transition: all 0.5s;
+	}
+
+	nav {
+		border: 1px solid black;
+		width: 630px;
+		margin: 0px auto;
+		transform : translate(0px,-100px);
+	}
+	nav img{
+		float: left;
+		transition: all 0.5s;
+		cursor: pointer;
+	}
+	/* 
+	nav img:hover {
+		transform : translate(0px,90px);
+	}
+ 	*/
+</style>
+<script>
+
+	
+	var item;
+	var now = -1;
+	window.onload = function(){
+		// #A67F62  // #BE4F3B  // #E7C758
+		// #666666  // #63AFD1
+		item = document.getElementsByTagName("img");
+		
+		for(var i=0;i<item.length;i++){
+			
+			item[i].onclick = function(){
+				
+				// translate(0px, 90px)
+				//console.log(event.srcElement.style.transform);
+				
+				if(event.srcElement.style.transform != "translate(0px, 90px)"){
+					// 모든 메뉴를 원위치
+					for(var i=0;i<item.length;i++){
+						item[i].style.transform = "translate(0px,0px)";
+					}
+					
+					// 선택 메뉴만 아래로
+					event.srcElement.style.transform = "translate(0px,90px)";		
+					
+					document.body.style.backgroundColor = event.srcElement.dataset["color"];
+				} else{
+					event.srcElement.style.transform = "translate(0px,0px)";
+					document.body.style.backgroundColor = "white";
+				}
+				
+				
+			
+			};
+		}
+		
+		
+	};
+</script>
+</head>
+<body>
+
+	<nav>
+		<img src="/WebClientTest/images/rect_icon01.png" data-color="#A67F62"/>
+		<img src="/WebClientTest/images/rect_icon02.png" data-color="#BE4F3B"/>
+		<img src="/WebClientTest/images/rect_icon03.png" data-color="#E7C758"/>
+		<img src="/WebClientTest/images/rect_icon04.png" data-color="#666666"/>
+		<img src="/WebClientTest/images/rect_icon05.png" data-color="#63AFD1"/>
+	</nav>
+
+
+
+</body>
+</html>

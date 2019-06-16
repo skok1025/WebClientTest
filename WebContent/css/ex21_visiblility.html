@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#cat2{
+		/* 
+		visibility, 가시성 
+		- 요소를 화면에 보일지? 말지?
+		- 요소의 실제 영역은 보존된다.
+		*/
+		visibility: hidden;
+	}
+	
+	#cat1:hover + #cat2 {
+		visibility: visible;
+	}
+
+</style>
+</head>
+<body>
+
+	<img src="../images/cat01.jpg" id="cat1">
+	<img src="../images/cat02.jpg" id="cat2">
+	<img src="../images/cat03.jpg" id="cat3">
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+/*
+목적 : 디자인 표준 지침 (문서)
+- 팀작업 > 페이지 1 / N > 구현의 랜더링(출력) 결과 차이 발생
+
+*/
+
+/* 각종 버튼류 */
+
+.btn{
+	border: 1px solid #A9A9A9;
+	
+}
+
+.bgRed{
+	background-color: tomato;
+}
+
+.bgBlue{
+	background-color: cornflowerblue;
+}
+
+.fgWhite{
+	color: #fff;
+}
+
+.fgBlack{
+	color: #444;
+}
+
+.big{
+	font-size: 3em;
+}
+
+.small{
+	font-size: .7em;
+}
+
+.bold{
+	font-weight: bold;
+}	

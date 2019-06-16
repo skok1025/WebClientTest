@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	/* #parent div:nth-child(3) {color: blue;} */
+	
+	/* #parent div:first-child {color: red;} */
+	
+	#parent *:first-child {color: red;}
+	
+	body{
+		background-image: url("../images/wall10.jpg");
+	}
+	
+	#txt1{
+		background-color: rgba(255,255,255,0.5);
+	}
+	#txt2{
+		opacity: 0.5;
+		
+	}
+</style>
+</head>
+<body>
+
+	<div id="parent">
+		<!-- <a href="#">링크</a> -->
+		<div>자식</div>
+		<div>자식</div>
+		<div>자식</div>
+		<div>자식</div>
+		<div>자식</div>
+	</div>
+	
+	<hr>
+	
+	<input type="text" id="txt1" value="background-color 투명색 구현"/>
+	<input type="text" id="txt2" value="opacity 투명색 구현"/>
+	
+	<hr>
+	<img src="../images/catty01.png" style="opacity: 0.5;">
+
+</body>
+</html>

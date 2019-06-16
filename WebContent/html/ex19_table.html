@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<!--
+	
+	HTML
+	1. 태그 > 뼈대(=레이아웃)
+	2. PCDATA > 출력 데이터
+	3. 속성 > 태그 출력 형태 보조 > 서식 역할(X)
+	
+	CSS
+	1. HTML의 서식역할
+	
+	
+	  -->
+	<h1 align="center">게시판</h1>
+	
+	<table border="1" width="600" align = "center"
+		cellspacing="0" cellpadding="4">
+		<thead>
+			<tr bgcolor="#ccc">
+				<th width="50">번호</th>
+				<th width="320">제목</th>
+				<th width="80">이름</th>
+				<th width="100">날짜</th>
+				<th width="50">읽음</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr>
+				<!-- 고정폭(좌측,가운데), 가변폭(좌측)  -->
+				<td align = "center">1</td>
+				<td>게시판 테스트입니다.</td>
+				<td align = "center">홍길동</td>
+				<td align = "center">2018-10-12</td>
+				<td align = "center">10</td>
+			</tr>
+			<tr>
+				<!-- 고정폭(좌측,가운데), 가변폭(좌측)  -->
+				<td align = "center">1</td>
+				<td>게시판 테스트입니다.</td>
+				<td align = "center">홍길동</td>
+				<td align = "center">2018-10-12</td>
+				<td align = "center">10</td>
+			</tr>
+			<tr>
+				<!-- 고정폭(좌측,가운데), 가변폭(좌측)  -->
+				<td align = "center">1</td>
+				<td>게시판 테스트입니다.</td>
+				<td align = "center">홍길동</td>
+				<td align = "center">2018-10-12</td>
+				<td align = "center">10</td>
+			</tr>
+			<tr>
+				<!-- 고정폭(좌측,가운데), 가변폭(좌측)  -->
+				<td align = "center">1</td>
+				<td>게시판 테스트입니다.</td>
+				<td align = "center">홍길동</td>
+				<td align = "center">2018-10-12</td>
+				<td align = "center">10</td>
+			</tr>
+			<tr>
+				<!-- 고정폭(좌측,가운데), 가변폭(좌측)  -->
+				<td align = "center">1</td>
+				<td>게시판 테스트입니다.</td>
+				<td align = "center">홍길동</td>
+				<td align = "center">2018-10-12</td>
+				<td align = "center">10</td>
+			</tr>
+		
+			
+		</tbody>
+			<tfoot>
+				<tr>
+					<td colspan = 5 align = "center">[이전페이지] 1 2 3 4 5 6 7 8 9 10 [다음페이지]</td>
+				</tr>
+			</tfoot>
+		
+	</table>
+	
+	<h1 align = "center">이력서</h1>
+	
+	<table border="1" width = "600" align = "center"
+			cellspacing = "0" cellpadding = "4">
+		<tbody>
+			<tr>
+				<td rowspan="3" width="120" align="center" valign = "middle"><img src="images/gender_m.png"></td>
+				<th width="80" bgcolor="#ddd">이름</th>
+				<td width="160">홍길동</td>
+				<th width="80" bgcolor="#ddd">생년월일</th>
+				<td width="160">1995.10.12</td>
+			</tr>
+			<tr>
+				<th bgcolor="#ddd">주민번호</th>
+				<td>931025-1019232</td>
+				<th bgcolor="#ddd">연락처</th>
+				<td>010-6866-9202</td>
+			</tr>
+			<tr>
+				<th bgcolor="#ddd">한문</th>
+				<td>洪吉洞</td>
+				<th bgcolor="#ddd">본적</th>
+				<td>서울</td>
+			</tr>
+			<tr>
+				<th colspan="5" bgcolor="#ddd">학력</th>
+			</tr>
+			<tr>
+				<td align="center">2003.02.10</td>
+				<td colspan="4">OO 고등학교 졸업</td>
+			</tr>
+			<tr>
+				<td align="center">2007.02.10</td>
+				<td colspan="4">OO 대학교 졸업</td>
+			</tr>
+			<tr>
+				<td align="center">2012.02.10</td>
+				<td colspan="4">OO 대학원 졸업</td>
+			</tr>
+			<tr>
+				<th colspan="5" bgcolor="#ddd">프로젝트</th>
+				
+			</tr>
+			<tr>
+				<th rowspan="6">콘솔</th>
+				<th rowspan="3">파일입출력</th>
+				<th>주제</th>
+				<td colspan="2">소셜 일기장</td>
+			</tr>
+			<tr>
+				<th>기간</th>
+				<td colspan="2">10.05~10.13</td> 
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td colspan="2">SNS 기반의 일기장입니다.</td> 
+			</tr>
+			<tr>
+				<th rowspan="3">DB</th>
+				<th>주제</th>
+				<td colspan="2">교육센터 운영프로그램</td>
+			</tr>
+			<tr>
+				<th>기간</th>
+				<td colspan="2">10.05~10.13</td> 
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td colspan="2">SNS 기반의 일기장입니다.</td> 
+			</tr>
+			
+			<tr>
+				<th rowspan="6">웹</th>
+				<th rowspan="3">파일입출력</th>
+				<th>주제</th>
+				<td colspan="2">소셜 일기장</td>
+			</tr>
+			<tr>
+				<th>기간</th>
+				<td colspan="2">10.05~10.13</td> 
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td colspan="2">SNS 기반의 일기장입니다.</td> 
+			</tr>
+			<tr>
+				<th rowspan="3">DB</th>
+				<th>주제</th>
+				<td colspan="2">교육센터 운영프로그램</td>
+			</tr>
+			<tr>
+				<th>기간</th>
+				<td colspan="2">10.05~10.13</td> 
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td colspan="2">SNS 기반의 일기장입니다.</td> 
+			</tr>
+			
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+
+</body>
+</html>

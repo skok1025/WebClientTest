@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var btn1,box;
+
+	window.onload = function(){
+		
+		btn1 = document.getElementById("btn1");
+		box = document.getElementById("box");
+		
+		btn1.onclick = function(){
+			// 태그 조작
+			// 1. 생성
+			// 2. 삭제
+			// 3. 수정
+			
+			// 생성
+			// 1. innerHTML 속성
+			//	- 쉽다.
+			//  - 생성될 태그와 속성들을 문자열로 제작
+			//	- 어렵다. (모든걸 문자열로 제작해야 하기 때문에)
+			
+			
+			// 2. DOM 메소드
+			//	- 1번보다 비용이 더 많이 발생(코드량 많음)
+			//  - 후 조작이 용이
+			
+			// <a href="http://naver.com">네이버</a>
+			// a. <a></a>
+			var a = document.createElement("a");
+			console.log(a.nodeName); // A
+			console.log(a.nodeType); // 1
+			
+			// b. href = "http://naver.com"
+			var href = document.createAttribute("href");
+			href.value = "http://naver.com";
+			console.log(href.nodeName); // href
+			console.log(href.nodeType); // 2
+			console.log(href.nodeValue);
+			
+			// c. <a> + href
+			a.setAttributeNode(href);
+			
+			// d. <a href = "http://naver.com">네이버</a>
+			var txt = document.createTextNode("네이버");
+			
+			// e. <a> + txt
+			a.appendChild(txt); // ******* 부모에게 자식 노드를 추가하는 메소드
+			
+			// f. box + <a>
+			box.appendChild(a);
+			
+			// <br>
+			var br = document.createElement("br");
+			box.appendChild(br);
+			
+			//----------------------------------------------
+			var a2 = document.createElement("a");
+			a2.setAttribute("href","http://google.com");
+			a2.innerText = "구글";
+			box.appendChild(a2);
+			br = document.createElement("br"); // 하나의 객체라서 새로만든다
+			box.appendChild(br);
+			//----------------------------------------------
+			
+		};
+		
+	};
+</script>
+</head>
+<body>
+
+	<!-- ex37_DOM.html  -->
+
+	<input type="button" value="동적으로 태그 생성하기" id="btn1" />
+	<hr />
+	
+	<div id="box">
+	
+	</div>
+
+
+</body>
+</html>

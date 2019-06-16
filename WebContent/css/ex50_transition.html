@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.menu{
+		width: 680px;
+		margin: 50px auto;
+	}
+	
+	.menu > div{
+		float: left;
+		border:10px solid black;
+		margin-right:-10px; 
+		overflow: hidden; 	/* 부모객체안에서 동작 */
+	}
+	
+	.menu > div > img{
+		display: block;	
+		
+	}
+	
+	#menu1 > div > img {
+      transform: translate(-126px, 0px);
+      transition: transform 0.5s;
+   }
+	
+	
+	#menu1 > div:hover >img {
+		transform : translate(0px,0px);
+	}
+	
+	.menu:after{
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	#menu2 > div > img{
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+	
+	#menu2 > div:hover >img {
+		opacity: 1;
+	}
+	
+	#menu3 > div > img{
+		opacity:0;
+		transform : scale(0.2,0.2);
+		transition-property: transform opacity;
+		transition-duration: 1s;
+	}
+	
+	#menu3 > div:hover >img {
+		opacity:1;
+		transform : scale(1,1);
+	}
+	
+	#menu4 > div > img{
+		transition: all 1s;
+		/* transform:translate(50px,50px); 
+		transform: rotate(45deg); */
+		transform:translate(-126px,-126px) rotate(0deg);
+		
+	}
+	
+	#menu4 > div:hover >img {
+		transform:translate(126px,126px) rotate(36deg);
+	}
+	
+	#menu5 > div > img{
+		opacity:0;
+	
+		transition: all 0.5s;
+		transform:translate(0px,-126px) rotate(0deg) scale(0,0);
+		
+	}
+	
+	#menu5 > div:hover >img {
+		opacity:1;
+		transform:translate(0px,0px) rotate(360deg) scale(1,1);
+	}
+	
+	
+
+</style>
+</head>
+<body>
+	<div id="menu1" class="menu">
+		<div><img src="../images/rect_icon01.png"/></div>
+		<div><img src="../images/rect_icon02.png"/></div>
+		<div><img src="../images/rect_icon03.png"/></div>
+		<div><img src="../images/rect_icon04.png"/></div>
+		<div><img src="../images/rect_icon05.png"/></div>
+	</div>
+	
+	<div style="clear: both;"></div>
+
+	<div id="menu2" class="menu">
+		<div><img src="../images/rect_icon01.png"/></div>
+		<div><img src="../images/rect_icon02.png"/></div>
+		<div><img src="../images/rect_icon03.png"/></div>
+		<div><img src="../images/rect_icon04.png"/></div>
+		<div><img src="../images/rect_icon05.png"/></div>
+	</div>
+	
+	<div id="menu3" class="menu">
+		<div><img src="../images/rect_icon01.png"/></div>
+		<div><img src="../images/rect_icon02.png"/></div>
+		<div><img src="../images/rect_icon03.png"/></div>
+		<div><img src="../images/rect_icon04.png"/></div>
+		<div><img src="../images/rect_icon05.png"/></div>
+	</div>
+	
+	<div id="menu4" class="menu">
+		<div><img src="../images/rect_icon01.png"/></div>
+		<div><img src="../images/rect_icon02.png"/></div>
+		<div><img src="../images/rect_icon03.png"/></div>
+		<div><img src="../images/rect_icon04.png"/></div>
+		<div><img src="../images/rect_icon05.png"/></div>
+	</div>
+	
+	<div id="menu5" class="menu">
+		<div><img src="../images/rect_icon01.png"/></div>
+		<div><img src="../images/rect_icon02.png"/></div>
+		<div><img src="../images/rect_icon03.png"/></div>
+		<div><img src="../images/rect_icon04.png"/></div>
+		<div><img src="../images/rect_icon05.png"/></div>
+	</div>
+
+
+</body>
+</html>

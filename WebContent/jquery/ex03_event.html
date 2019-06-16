@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	
+	$(document).ready(function(){
+	
+		// 1. BOM
+		document.all.btn1.onclick = function(){
+			
+		};
+		
+		// 2. DOM + BOM
+		document.getElementById("btn2").onclick = function(){
+			
+		};
+		
+		// 3. DOM + DOM
+		document.getElementById("btn3").addEventListener("click",function(){
+			
+		});
+		
+		// 4. jQuery
+		//		a. 전용 이벤트 함수
+		//		b. 범용 이벤트 함수
+		jQuery("#btn4").click(function(){
+			alert("클릭");	
+		});
+		
+		jQuery("#btn4").mouseover(function(){
+			alert("over");
+		});
+		
+		// 객체.on(event,function);
+		// 객체.bind(event,function);
+		// 객체.live(event,function);
+		jQuery("#btn5").on("click",function(){
+			alert("클릭");	
+		});
+		
+		
+		// BOM, DOM
+		// - 어떤 방식으로 태그를 검색하던지 그 결과는 동일한 객체
+		var button1 = document.getElementById("btn1");
+		var button2 = jQuery("#btn1"); // jQuery() 함수 반환객체 -> jQuery 객체 
+		
+		//alert(button1 == button2); //false
+		//button1.css("color","orange");
+		//button1.style.color = "red";
+		//button2.css("background-color","yellow");
+		//button2.style.color = "blue"; //error 
+		
+		console.log(button1.constructor);
+		console.log(button2.constructor);
+		
+	});
+</script>
+</head>
+<body>
+
+	<input type="button" value="버튼1" id="btn1" name="btn1"/>
+	<input type="button" value="버튼2" id="btn2" />
+	<input type="button" value="버튼3" id="btn3" />
+	<input type="button" value="버튼4" id="btn4" />
+
+
+
+
+
+
+
+
+</body>
+</html>

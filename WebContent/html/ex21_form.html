@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+	<!--
+	
+	<form>, 폼 태그
+	- 입력 양식
+	- 클라이언트(사용자)로부터 여러가지 입력 양식을 통해서 데이터 입력 -> 서버로 전송
+	
+	1. <form> 태그
+		- 스스로 렌더링 결과를 만들지 않는다. (화면에 안보임) 
+		- 모든 입력 양식의 부모 역할(****)
+		
+		a. action 속성
+			- 폼 내부에 입력값들 전송하는 (받는사람) 서버측 URL
+			- 수신작업을 하는 프로그램 주소 (URL). Servlet, JSP, Spring,PHP,ASP
+
+		b. method 속성
+			- 서버로 데이터를 전송하는 방식
+			- post 방식 : <form method = "post"> 유일
+			- get 방식 : <form method = "get"> & 링크 & URL 직접 & 자바스크립트 등등...
+			1. get
+				- URL의 끝에 데이터를 첨부해서 전송하는 방식
+				- ex21_ok.jsp?name=hong&age=20
+				- ?name=hong&age=20 : Query String
+				- 수신측URL? 전송하는 데이터
+				- name= hong&age=20
+				- 키=값&키=값
+				- 항상 노출이 된다. (보안 중요한 데이터 사용 금지)
+				- URL 최대 256자(오버플로우 : 데이터 잘림)
+				- URL은 인코딩 방식 : base64(한글 포함 x)
+				- https://www.google.com/search?source=hp&ei=sxXAW8jFGJrt-QbWhpPIBg&q=%EC%9E%90%EB%B0%94&oq=%EC%9E%90%EB%B0%94&gs_l=psy-ab.3..0j0i131k1j0j0i131k1j0j0i131k1j0l4.1270.5132.0.5971.25.14.7.0.0.0.154.1506.6j8.14.0....0...1c.1j4.64.psy-ab..6.19.1347...0i10k1j0i10i42k1.0.q48xC31oxTg
+				- 되도록 영문과 숫자 정도만 전송
+				
+			2. post
+				- 패킷의 본문안에 데이터를 넣어서 전송하는 방식 (FM)
+				- 데이터 노츌이 없음 (보안 조금 더 안전)
+				- 제한 크기 무제한 
+				- 한글 상관없이 전송
+	  -->
+	  
+	  <h1>데이터 입력</h1>
+	
+	<form action="ex21_ok.jsp" method="get">
+		이름 : <input name = "name"><br>
+		나이 : <input name = "age"><br>
+		<input type="submit" value="입력하기"> 
+	</form>
+	
+	<a href="ex21_ok.jsp?name=aaa&age=10">페이지 이동하기</a>
+	
+	<hr>
+	<!-- https://search.naver.com/search.naver
+	?
+	where=nexearch
+	&
+	sm=top_hty
+	&
+	fbm=1&ie=utf8
+	&
+	query=java -->
+	
+	<h1>네이버 검색</h1>
+
+	<form action="https://search.naver.com/search.naver" method="get">
+	
+		검색어 : <input name = "query"><br>
+		<input type="submit" value="검색하기">
+	
+	</form>
+
+</body>
+</html>

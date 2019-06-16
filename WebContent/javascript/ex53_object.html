@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+	
+	/*  
+	
+	자바스크립트 객체
+	- Object
+	
+	1. 내장 객체
+	- Array, Math, Date 등..
+	
+	2. 브라우저 객체
+		a. BOM 객체
+			- window, document, form, text, button 등..
+		b. DOM 객체
+			- element, attribute, text, comment 등..
+	
+	3. 사용자 정의 객체
+		- 클래스 정의 > 객체화 : 유사한 작업
+		
+	
+	사용자 정의 객체 만들기
+	1. Object 클래스
+	2. 객체 상수 표기법(***)
+	*/
+	
+	//홍길동 정보 객체 생성
+	var name = "홍길동";
+	var age = 20;
+	var address = "서울시";
+	
+	var hong = new Object();
+	//Object hong = new Object();
+	
+	//자바스크립트 프로퍼티(Property)
+	// - 프로피티의 추가/삭제가 자유롭다.
+	hong.name = "홍길동";
+	hong.age = 20;
+	hong.address = "서울시";
+	
+	console.log(hong);
+	console.log(hong.name);
+	
+	//이순신 객체
+	// - 홍길동 객체 같은 성질의 객체 > 규격이 동일한 객체
+	var lee = new Object();
+	
+	lee.name = "이순신";
+	lee.age = 30;
+	lee.address = "서울시";
+	
+	console.log(lee);
+	
+	
+	//호호호 객체 
+	//객체 상수 표기법 > JSON 표기법
+	var ho = { 
+		name: "호호호", 
+		age: 25, 
+		address: "인천시" 
+	};
+	
+	console.log(ho);
+	
+	ho.age = 24;
+	
+	console.log(ho);
+	
+	ho.tel = "010-1234-4567";
+	ho["mobile-number"] = "010-1234-5677";
+	
+	console.log(ho);
+	
+	//for문 -> 객체의 프로퍼티 탐색
+	for (var p in ho) {
+		console.log(p + ":" + ho[p]);
+	}
+	
+	ho.address = "서울시 강남구 역삼동 22-4번지";
+	console.log(ho.address);
+	
+	var address = {
+		sido: "서울시",
+		gugun: "강남구",
+		dong: "역삼동",
+		bunji: "22-4번지"
+	};
+	
+	ho.address = address;
+	console.log(ho);
+	
+	var test = {
+		name: "테스트",
+		age: 26,
+		tel: "010-234-5677",
+		address: {
+			sido: "서울시",
+			gugun: "동대문구",
+			dong: "이문동",
+			bunji: "55번지"
+		},
+		gender: "남자",
+		color: "빨강"
+	};
+	
+	//------------------------
+	
+	//전역 멤버 vs 지역 변수
+	//전역 멤버
+	//	- <script> 자식으로 선언
+	//지역 멤버
+	// 	- 함수내에서 선언
+	
+	var n1 = 10; //전역 변수
+	
+	function test() {
+		var n2 = 20; //지역 변수
+	}
+	
+	//모든 전역 멤버는 자동으로 window 객체의 프로퍼티가 된다.
+	console.log(window.n1);
+	
+	var n3 = 30;
+	window.n4 = 40;
+	
+	console.log(n3, n4);
+	
+	for (var p in window) {
+		console.log(p);
+	}
+	
+	
+	var ha = {
+		name: "하하하", //멤버 변수
+		age: 20,
+		hello: function() { //멤버 메소드
+			console.log("안녕하세요.");
+			console.log(this.name);
+		}
+	};
+	
+	ha.hello();
+	
+	//btn1.title = "도움말";
+	//btn1.onclick = function() {};
+	
+	
+	//변수 vs 프로퍼티의 차이
+	// - 둘 다 데이터 저장 공간
+	// - 프로퍼티 : 맵의 요소같은 성격(추가/삭제 가능)
+	
+	var m1 = 10;
+	
+	//m1을 삭제
+	// - 변수 삭제 불가능 > 변수의 생명주기 끝나야 삭제 > 명시적 삭제 불가
+	
+	hong.name = "홍길동";
+	console.log(hong.name);
+	
+	delete hong.name; //프로퍼티 삭제
+	console.log(hong.name);
+	console.log(hong);
+	
+	//사용자 객체 + 프로퍼티
+	//1. 사용자 객체 멤버 > 프로퍼티(값 or 함수)
+	//2. 전역 멤버 > window 객체 프로퍼티
+	
+</script>
+</head>
+<body>
+	<!-- ex53_object.htm -->
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

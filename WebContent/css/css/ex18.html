@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+/* CSS 초반 작업  */
+	body, p , div, span , ul, ol, li, table, th, td, input, textarea, a, h1 ,h2, h3, h4, h5, h6, fieldset,legend{
+		/* PCDATA 소유 */
+		font-family: '맑은 고딕';
+		font-size: 14px;
+		color: #444;
+	}
+	
+	#tbl1 th{
+		background-color: #eee;
+		border-width:3px 1px;
+		font-variant: small-caps;
+		padding: 4px;
+	}
+	
+
+	h1{
+		/* text-decoration: underline; */
+		border-bottom: 1px dashed black; 
+		width: 800px;
+		padding-bottom: 20px;
+		font-size: 30px; 
+	}
+	
+	#tbl1 {
+		border: 1px solid #aaa;
+		border-collapse: collapse;
+		width: 800px;
+	}
+	
+	#tbl1 th, #tbl1 td{
+		border: 1px solid #aaa;
+		padding: 4px;
+	}
+	
+	#tbl1 #col1{width: 150px;}
+	#tbl1 #col2{width: 250px;}
+	#tbl1 #col3{width: 350px;}
+	#tbl1 #col4{width: 50px;}
+	
+	#tbl1 .cell1{text-align: center;}
+	#tbl1 .cell2{padding-left: 10px;}	
+	#tbl1 .cell4{text-align: center;}
+	
+	.tag {
+		color: cornflowerblue; font-weight: bold;
+	}
+	.attr{
+		color: tomato;
+		font-weight: bold;
+	}
+	.keyword{ color: green; font-weight: bold; border-bottom: 1px dotted green;}
+
+</style>
+</head>
+<body>
+	
+	<h1>HTML</h1>
+	
+	<table id="tbl1">
+		<tr>
+			<th id = "col1">Name</th>
+			<th id = "col2">Code</th>
+			<th id = "col3">Description</th>
+			<th id = "col4">Level</th>
+		</tr>
+		
+		<tr>
+			<td class="cell1">Paragraph</td>
+			<td class="cell2">&lt;<span class="tag">p</span>&gt;&lt;<span class="tag">/p</span>&gt;</td>
+			<td class="cell3">
+				<ul>
+					<li>문단을 출력합니다.</li>
+					<li>텍스트의 집합은 되도록 문단 태그를 사용합니다.</li>
+				</ul>
+			
+			</td>
+			<td class="cell4">E</td>
+		</tr>
+		<tr>
+			<td class="cell1">Link</td>
+			<td class="cell2">&lt;<span class="tag">a</span> <span class="attr">href</span>="url"&gt;&lt;<span class="tag">/a</span>&gt;</td>
+			<td class="cell3">
+				<ul>
+					<li><span class="keyword">링크</span>를 출력합니다.</li>
+					<li>url : 이동할 리소스의 주소입니다.</li>
+					<li>text: 클릭할 시각적 요소입니다.</li>
+				</ul>
+			</td>
+			<td class="cell4">C</td>
+		</tr>
+		<tr>
+			<td class="cell1">List</td>
+			<td class="cell2">
+				&lt;<span class="tag">ul</span>><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>text&lt;/li><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>text&lt;/li><br>
+				&lt;<span class="tag">/ul</span>>
+			
+			</td>
+			<td class="cell3">
+				<ul>
+					<li>목록을 출력합니다</li>
+					<li><span class="keyword">ul</span> : 목록 태그</li>
+					<li>li : 항목 태그</li>
+					<li>text : 항목 텍스트</li>
+				</ul>
+			
+			</td>
+			<td class="cell4"></td>
+		</tr>
+		<tr>
+			<td class="cell1"></td>
+			<td class="cell2"></td>
+			<td class="cell3"></td>
+			<td class="cell4"></td>
+		</tr>
+		
+		
+		
+	</table>
+
+
+</body>
+</html>

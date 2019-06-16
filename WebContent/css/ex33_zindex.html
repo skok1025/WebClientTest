@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	#box1{
+		z-index: 3; /* position: static 은 좌표지정 불가능  */
+	}
+
+	#box2{
+		position: absolute;
+		left: 100px;
+		top: 100px;
+		z-index: 1
+	}
+	
+	#box3{
+		position: absolute;
+		left: 150px;
+		top: 150px;
+		z-index: 2;
+	}
+	
+</style>
+</head>
+<body>
+
+	<!-- ex33_zindex.html  -->
+
+	<div id="box1" class="box medium red">상자1</div>
+	<div id="box2" class="box medium blue">상자2</div>
+	<div id="box3" class="box medium green">상자3</div>
+
+	
+
+</body>
+</html>

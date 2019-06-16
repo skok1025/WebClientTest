@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	fieldset{
+		border: 1px solid #A9A9A9;
+		padding: 10px 20px 20px 20px;
+		border-radius: 5px;
+		margin-bottom: 30px;
+	}
+	
+	fieldset legend{
+		text-align: left;
+	}
+	
+	
+
+</style>
+<script>
+
+	var btn1,btn2,btn3;
+	var btn4,btn5,btn6;
+	
+	// 여러개의 객체(태그)가 동일한 성격의 업무를 진행하는 경우...
+	
+	window.onload = function(){
+		
+		btn1 = document.all.btn1;
+		btn2 = document.all.btn2;
+		btn3 = document.all.btn3;
+		
+		btn4 = document.all.btn4;
+		btn5 = document.all.btn5;
+		btn6 = document.all.btn6;
+
+		btn1.onclick = function(){
+			document.body.bgColor = "white";
+		};
+		btn2.onclick = function(){
+			document.body.bgColor = "yellow";
+		};
+		btn3.onclick = function(){
+			document.body.bgColor = "blue";
+		};
+		
+	}; // window.onload
+	
+	function change4(){ document.body.bgColor = "white";}
+	function change5(){ document.body.bgColor = "yellow";}
+	function change6(){ document.body.bgColor = "blue";}
+	
+	function change7(color){ document.body.bgColor = color;}
+	
+	function change10(){
+		//event.srcElement : 이벤트를 발생시킨 객체(태그)의 참조를 반환
+		//alert(event.srcElement.value);
+		if(event.srcElement.name == "btn10"){
+			document.body.bgColor = "white";
+		} else if(event.srcElement.name == "btn11"){
+			document.body.bgColor = "yellow";
+		} else if(event.srcElement.name == "btn12"){
+			document.body.bgColor = "blue";
+		} 
+	}
+	
+	function change13(btn){
+		// change13(this) ->btn
+		//alert(btn.name);
+		
+		if(btn.name == "btn13"){
+			document.body.bgColor = "white";
+		} else if(btn.name == "btn14"){
+			document.body.bgColor = "yellow";
+		} else if(btn.name == "btn15"){
+			document.body.bgColor = "blue";
+		} else if(btn.name == "btn19"){
+			document.body.bgColor = "orange";
+		}
+		
+	}
+	
+	function change16(){	
+		document.body.bgColor = event.srcElement.value;	
+	}
+	
+	function change21(){
+		
+		//alert(event.srcElement.color); // BOM
+		//alert(event.srcElement.getAttribute("color")); // DOM
+	
+		//<input type="button" color = "blue" /> : 사용자 정의 데이터
+		document.body.bgColor = event.srcElement.getAttribute("color");
+		//document.body.bgColor = event.srcElement.getAttribute("data-color");
+	}
+	
+	function change24(){
+		//alert(event.srcElement.dataset.color);
+		//alert(event.srcElement.dataset["color"]);
+		//document.body.bgColor = event.srcElement.dataset.color;
+		//document.body.bgColor = event.srcElement.dataset.background-color; // - 마이너스 기호다
+		document.body.bgColor = event.srcElement.dataset["background-color"];
+	}
+	
+</script>
+</head>
+<body>
+	
+	<h1>이벤트 총정리</h1>
+	
+	<fieldset>
+		<legend>배경색 바꾸기(동적 이벤트 매핑)</legend>
+		<input type="button" value="흰색" name="btn1" />	
+		<input type="button" value="노랑" name="btn2" />	
+		<input type="button" value="파랑" name="btn3" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기(정적 이벤트 매핑)</legend>
+		<input type="button" value="흰색" name="btn4" onclick="change4();" />	
+		<input type="button" value="노랑" name="btn5" onclick="change5();" />	
+		<input type="button" value="파랑" name="btn6" onclick="change6();" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기</legend>
+		<input type="button" value="흰색" name="btn7" onclick="change7('white');" />	
+		<input type="button" value="노랑" name="btn8" onclick='change7("yellow");' />	
+		<input type="button" value="파랑" name="btn9" onclick="change7('blue');" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기 (이벤투 주체: event.srcElement)</legend>
+		<input type="button" value="흰색" name="btn10" onclick="change10();" />	
+		<input type="button" value="노랑" name="btn11" onclick='change10();' />	
+		<input type="button" value="파랑" name="btn12" onclick="change10();" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기 (이벤트 주체: this)</legend>
+		<input type="button" value="흰색" name="btn13" onclick="change13(this);" />	
+		<input type="button" value="노랑" name="btn14" onclick='change13(this);' />	
+		<input type="button" value="파랑" name="btn15" onclick="change13(this);" />	
+		<input type="button" value="주황" name="btn19" onclick="change13(this);" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기</legend>
+			<input type="button" value="white" name="btn16" onclick="change16();" />	
+			<input type="button" value="yellow" name="btn17" onclick="change16();" />	
+			<input type="button" value="blue" name="btn18" onclick="change16();" />	
+			<input type="button" value="orange" name="btn18" onclick="change16();" />	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기</legend>
+			<input type="button" value="흰색" name="btn21" onclick="change21();" color = "white" />	
+			<input type="button" value="노랑" name="btn22" onclick="change21();" color = "yellow"/>	
+			<input type="button" value="파랑" name="btn23" onclick="change21();" color = "blue"/>	
+			<input type="button" value="주황" name="btn24" onclick="change21();" color = "orange"/>	
+	</fieldset>
+	
+	<fieldset>
+		<legend>배경색 바꾸기(***** 신형)</legend>
+			<input type="button" value="흰색" name="btn24" onclick="change24();" data-color = "white" data-background-color = "white"/>	
+			<input type="button" value="노랑" name="btn25" onclick="change24();" data-color = "yellow" data-background-color = "yellow"/>	
+			<input type="button" value="파랑" name="btn26" onclick="change24();" data-color = "blue" data-background-color = "blue"/>
+			
+			<!--  
+			
+			자바, 자바스크립트. SQL : 식별자에 - 기호 사용안함
+			HTML, CSS : 식별자에 - 기호 잘사용함
+			
+			-->	
+	</fieldset>
+	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	
+	
+	/*  
+	자바스크립트 함수
+	- JavaScript 함수는 1급 객체이다.
+	
+	1. 함수를 변수나 데이터 구조에 담을 수 있다.
+	2. 함수를 매개변수에 전달할수 있다.
+	3. 함수를 반환값으로 사용할 수 있다.
+	
+	*/
+	
+	function f1(){
+		alert("f1");
+	}
+	
+	var m1;
+	
+	// 1. 함수를 변수나 데이터 구조에 담을 수 있다.
+	// btn1.onclick = function(){}
+	m1 = f1;
+	//m1();
+	
+	var m2 = function(){
+		alert("f2");
+	};
+	
+	//m2();
+	
+	
+	//*************************************************
+	// 2. 함수를 매개변수에 전달할수 있다.
+	function f3(){
+		alert("f3");
+	}
+	
+	function m3(m){
+		m();
+		alert("m3");
+	}
+	
+	//m3(f3);
+	//m3(function(){
+	//	alert("익명");
+	//});
+	
+	//btn1.addEventListener("click",function(){});
+	//btn1.addEventListener("click",f3);
+	
+	//*************************************************
+	// 3. 함수를 반환값으로 사용할 수 있다.
+	function f4(){
+		alert("f4");
+	}
+	function m4(){
+		return f4;
+	}
+	m4()();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

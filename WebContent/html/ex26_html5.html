@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+	<!-- <form> 관련 -->
+	<form action="ex26_ok.jsp" method="post">
+		<input type="text" value="이름을 입력하세요" onfocus="this.value = '';">
+		
+		<hr>
+		<input type="password" value="암호를 입력하세요." onfocus="this.value='';">
+		<hr>
+		
+		<input type="text" placeholder="이름을 입력하세요.">	
+		<hr>
+		
+		<input type="password" placeholder="암호를 입력하세요">
+		<hr>
+		
+		<textarea placeholder="자기 소개"></textarea>
+		
+		<hr>
+		
+		아이디: <input type="text" required value="base"> (*** 필수 입력)
+		
+		<hr>
+		<!-- 의미만 부여 -->
+		전화번호: <input type="tel">
+		<hr>
+		
+		<!-- 의미 + 유효성 검사(기능)  -->
+		URL: <input type="url">
+		<hr>
+		
+		Email: <input type="email">
+		<hr>
+		
+		숫자: <input type="number" value="0" min="0" max="100" step="2">
+		<hr> 
+		범위: <input type="range" value="500" min="0" max="1000" step="10" oninput="document.getElementById('txt1').value = this.value;">
+		<input type="text" id="txt1">
+		<hr>
+		
+		색상(RGB): <input type="color" value="#ff00ff" onchange="document.body.bgColor= this.value;">
+		
+		<hr>
+		<input type="date" min="2018-10-10" max="2018-10-28">
+		<hr>
+		
+		<input type="month">
+		<hr>
+		<input type="week">
+		<hr>
+		<input type="time">
+		<hr>
+		<input type="datetime"><!-- 크롬이 지원하지 않음  -->
+		<hr>
+		<input type="datetime-local">
+		<hr>
+		나이: <input type="number" min="0" max="120">
+		<hr>
+		
+		<!-- HTML5 input 정규표현식 지원  -->
+		아이디(영문+숫자+_+4~12자 이내): <input type="text" pattern="[A-Za-z_]][A-Za-z0-9_]{3,11}">
+		<hr>
+		<hr>		
+		<hr>
+		이름: <input type="text" pattern="[가-힣]{2,5}"> <!-- required  -->
+		<hr>
+		
+		사원명 : <input type="text" list="list1">
+		
+		<datalist id="list1">
+			<option value="홍길동">
+			<option value="홍바동">
+			<option value="홍나동">
+			<option value="홍유동">
+			<option value="홍지동">
+		</datalist>
+		<hr>
+	
+		<progress>
+		
+		</progress>
+	
+		<hr>
+		<progress value="50" max="100">
+		
+		</progress>
+		
+		<hr>
+		<progress value="100">
+		
+		</progress>
+	
+	
+		
+		<hr>
+		<meter></meter>
+		<hr>
+		정보처리결과 : <meter min="0" max="100" value="85" low="60" high="100"></meter>
+		<hr>
+		
+		정보처리결과 : <meter min="0" max="100" value="55" low="60" high="100"></meter>
+		<hr>
+		
+		<details>
+			<summary>자바</summary>
+			<p>
+			자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.
+			자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.
+			자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.
+			자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.자바에 대한 설명입니다.
+			</p>
+		</details>
+		
+		
+
+		
+		<hr>		
+		<input type="submit" value="보내기"> 
+	</form>
+	
+</body>
+</html>

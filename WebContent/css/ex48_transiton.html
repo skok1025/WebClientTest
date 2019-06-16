@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#tbl1{
+		width: 500px;
+	}
+	
+	#tbl1 td{
+		transition-property: background-color;
+		transition-duration:0.5s;
+	}
+	
+	#tbl1 td:hover{
+		background-color: yellow;
+	}
+
+	.box{ width: 150px; height: 150px; margin: 15px; border-width: 10px;}
+	
+	/*  
+	
+	
+	transition 효과
+	- CSS3 전 : Flash(Adobe), JavaFX(Oracle), Silverlight(MS) 등 ...
+	- CSS3 후 : HTML(CSS3)
+	
+	transition, 전환
+	- 객체(태그) 의 속성(상태) 값이 변화되는 과정을 순차적으로 보여주는 속성
+	1. 전환과정을 보여줄 속성이 미리 정의되어 있어야 한다.
+	2. 전환에 걸리는 소요 시간을 정의한다.
+	
+	CSS 시간 표기법
+	1. 1s : 1초
+	2. 0.5s : 0.5초
+	3. 1ms : 1/1000 초
+	
+	
+	*/
+	
+	#box1{
+		width: 150px;
+		font-size: 16px;
+		color:white;
+		
+		/* transition-property: width font-size padding; */
+		transtion-property: all; /* 모든 속성에 대해 transition 적용 */
+		transition-duration:1000ms;
+		
+	}
+	
+	#box1:hover {
+		/* 
+		width: 300px;
+		font-size: 100px;
+		padding: 50px;
+	 */
+	 
+	 	/*  
+	 	transition 적용 가능 vs 불가능 속성
+	 	1. 적용 가능 : 수치 속성
+	 	2. 적용 불가능 : 열거형 속성
+	 	
+	 	
+	 	*/
+	 	/* width: 500px; */
+	 	/* padding: 100px; */
+	 	/* margin: 100px; */
+	 	/* font-size: 5em; */
+	 	
+	 	/* border-width: 30px; */
+	 	/* border-width: 1px 30px; */
+	 	background-color: cornflowerblue;
+	 	
+	 	/* 적용 안됨 */
+	 	/* border-style: dotted; */
+	 	/* font-family: 궁서; */
+	 }
+	
+	#box2{
+		height: 150px;
+		
+		transition-property: height;
+		transition-duration:100ms;
+		
+		position: relative;
+		left: 0px;
+		top: 0px;
+		z-index: 2;
+	}
+	
+	#box2:hover {
+		height: 300px;
+	}
+	
+	#box3{
+		width: 300px;
+		height: 50px;
+		
+		transition-property: width,height;
+		transition-duration:1s;
+		
+		position: absolute;
+		left: 0px;
+		top: 400px;
+	}
+	
+	#box3:hover {
+		width: 50px;
+		height: 300px;
+	}
+	
+	#box4 {
+		transition: all 1s;
+		/* background-color: green; */
+		/* color: #444; */
+		/* background-image: url(../images/catty01.png);
+		background-repeat: no-repeat;
+		background-position: 0px 0x; */
+		font-size: 16px;
+		line-height: 1.1em;
+		font-style: normal;
+		position: relative;
+		left: 0px;
+		top: 0px; 
+		transform : translate(0px,0px);
+	}
+	
+	
+	
+	#box4:hover{
+		/* background-color: tomato; */
+		/* color: white; */
+		/* background-image: url(../images/catty02.png); */
+		/* background-position: 100px 0px;
+		font-size: 0x;
+		line-height: 3em; */
+		/* text-indent: 1em */
+	/* 	left: 100px;
+		top: 100px; */
+		transform:tanslate(0px,100px);
+		
+	}
+	
+	#txt1 {
+		width: 300px;
+		background-image: url(../images/hangame.png);
+		background-repeat:no-repeat;
+		background-position: center center;
+		border: 1px solid #A9A9A9;
+		padding: 3px;
+		outline: 0px;
+		letter-spacing: 30px;
+		transition: background-position 1s;
+		border-radius : 0px;
+	}
+	
+	#txt1:focus {
+		/* background-image: url(); */
+		background-position: center 50px;
+		border-radius : 20px;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<div id="box4" class="box green">상자4<br>상자4<br>상자4<br>상자4</div>
+	
+	<hr>
+	
+	<input type="text" id="txt1" />
+	
+	<hr>
+	<table id="tbl1" class="table">
+		<tr>
+			<th>헤더</th>
+			<th>헤더</th>
+			<th>헤더</th>
+			<th>헤더</th>
+			<th>헤더</th>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+		<tr>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+			<td>데이터</td>
+		</tr>
+	</table>
+	
+	<hr>
+	
+	<div id="box1" class="box red">상자1</div>
+	<div id="box2" class="box yellow">상자2</div>
+	<div id="box3" class="box blue">상자3</div>
+
+</body>
+</html>

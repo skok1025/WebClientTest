@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	/*
+	1, 2, 3, 4 > 5, 6 > 7, 8 : ***** 
+	
+	1. 태그 선택자
+	2. id 선택자
+	3. class 선택자
+	4. 그룹 선택자
+	
+	5. 자손 선택자
+	6. 자식 선택자
+	
+	7. 형제 선택자, Sibling Selector
+		- 선택자 ~ 선택자
+		- 자손 선택자 유사
+		- 내 위의 형제를 조건으로 
+		
+	8. 인접 형제 선택자, Adjacent Sibling Selector
+		- 선택자 + 선택자
+		- 자식 선택자 유사
+		- 바로 위의 형제를 조건으로 
+	*/
+	div ~ span {color: blue;}
+
+	p ~ p{ color: red;}
+
+</style>
+</head>
+<body>
+
+	<!-- ex06_selector.html  -->
+
+	<p>p</p>
+	<div>div</div>
+	<span>span</span>
+	<p>p</p>
+	<p>p</p>
+	<p>p</p>
+	<div>div</div>
+	<p>p</p>
+	<span>span</span>
+	<p>p</p>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	.container{
+		border: 1px solid black;
+		margin: 0px auto;
+		width: 70%;
+	}
+	
+	.number{
+		font-size: 20px;
+		width: 31%;
+		height: 100px;
+		font-size: 40px;
+		text-align: center;
+	}
+	
+	input[type="button"]{
+		width: 32.5%;
+		height: 75px;
+		font-size: 20px;
+	}
+	
+	.bt{
+		cursor: pointer;
+	}
+	
+	.bt:disabled {
+		cursor:not-allowed;
+	}
+	
+	input[disabled]{
+		opacity: 0.7;
+	}
+
+</style>
+<script>
+	var num1,num2,num3;
+	var start_bt,pause_bt,end_bt;
+	var n1=0;
+	var n2=0;
+	var n3=0;
+	var timer = 0;
+	
+	window.onload = function(){
+		start_bt = document.all.start_bt;
+		pause_bt = document.all.pause_bt;
+		end_bt = document.all.end_bt;
+		
+		num1 = document.all.num1;
+		num2 = document.all.num2;
+		num3 = document.all.num3;
+		
+		start_bt.avail = true
+		b2_avail = false;
+		b3_avail = false;
+		
+		
+		start_bt.onclick = function(){
+			start_bt.disabled = true;
+			pause_bt.disabled = false;
+			end_bt.disabled = false;
+			
+			if(timer == 0){
+				timer = setInterval(function(){
+					if(num3.value>98){
+						n3 = 0;
+						n2++;
+						num2.value = n2>9?n2:"0"+n2;
+						if(num2.value>58){
+							num1.value = n1>=10?n1:"0"+n1;
+							n2 = 0;
+							n1++;
+						}
+					}
+					num3.value = num3.value>9?n3:"0"+n3;
+					n3++;
+				},10);
+				console.log(timer);
+			}
+		};
+		pause_bt.onclick = function(){
+			start_bt.disabled = false;
+			pause_bt.disabled = true;
+			end_bt.disabled = false;
+			
+			clearInterval(timer);
+			timer = 0;
+			
+		};
+		end_bt.onclick = function(){
+			start_bt.disabled = false;
+			pause_bt.disabled = true;
+			end_bt.disabled = true;
+			clearInterval(timer);
+			timer = 0;
+			num1.value = "00";
+			num2.value = "00";
+			num3.value = "00";
+			n1= 0;
+			n2= 0; 
+			n3 = 0;
+		};
+	};
+	
+	function pad(n, width){
+	      n = n + "";
+	      return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+	  }
+</script>
+</head>
+<body>
+
+	<div class="container">
+		<input type="text" name="num1" class="number" value="00" />:
+		<input type="text" name="num2" class="number" value="00"/>:
+		<input type="text" name="num3" class="number" value="00"/>
+	<input type="button" value="시작" name="start_bt"  class="bt"/>
+	<input type="button" value="멈춤" name="pause_bt"  class="bt" disabled/>
+	<input type="button" value="종료" name="end_bt"  class="bt" disabled/>
+	</div>
+	
+
+</body>
+</html>

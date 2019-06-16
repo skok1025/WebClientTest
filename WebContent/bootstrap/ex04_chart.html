@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+	#chart1{
+		width: 800px;
+	}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/bootstrap/js/highcharts.js"></script>
+<script>
+	$(document).ready(function(){
+		Highcharts.chart('chart1', {
+
+		    title: {
+		        text: '2018년 노트북 판매량'
+		    },
+
+		    subtitle: {
+		        text: 'HP Slim NoteBook'
+		    },
+
+		    yAxis: {
+		        title: {
+		            text: '노트북 판매량(만개)'
+		        }
+		    },
+		    // 범례
+		    legend: {
+		        layout: 'vertical',
+		        align: 'right',
+		        verticalAlign: 'middle'
+		    },
+
+		    plotOptions: {
+		        series: {
+		            label: {
+		                connectorAllowed: false
+		            },
+		            pointStart: 1
+		        }
+		    },
+
+		    series: [{
+		        name: '홍길동',
+		        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175,154175,154175,157175,158975]
+		    },{
+		        name: '아무개',
+		        data: [43934, 52503, 57177, 64558, 97031, 100000, 137133, 156175,159175,154175,157175,158975]
+		    }
+		    ],
+
+		    responsive: {
+		        rules: [{
+		            condition: {
+		                maxWidth: 500
+		            },
+		            chartOptions: {
+		                legend: {
+		                    layout: 'horizontal',
+		                    align: 'center',
+		                    verticalAlign: 'bottom'
+		                }
+		            }
+		        }]
+		    }
+
+		});
+	});
+</script>
+</head>
+<body>
+
+	<h1>jQuery Chart</h1>
+	
+	<div id="chart1"></div>
+	
+</body>
+</html>

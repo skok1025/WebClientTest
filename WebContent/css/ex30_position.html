@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#main{
+		border: 10px solid black;
+		width: 800px;  /* 페이지 크기 */
+		margin: 0px auto;  /* 페이지 전체의 수평정렬 */
+		padding: 20px;
+		
+		/* 현재 개체의 위치를 지정하는 목적(x), 자식 태그 중 absolute 가진 자식의 기준점 역할(***) */
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	 
+	#main #search{
+		width: 400px;
+	}
+	
+	#main header{
+		text-align: center;
+		padding: 30px 0px;
+	}
+	
+	#wlist{
+		border: 1px solid gray;
+		width: 400px;
+		position: absolute;
+		top:75px;
+		left:242px;
+		background-color: white;
+		 visibility: hidden;  
+	}
+	
+	#wlist div{
+		padding: 5px 10px;
+	}
+	
+	#wlist div:hover{
+		background-color: #eee;
+		cursor: pointer;
+	}
+	
+</style>
+</head>
+<body>
+
+<!--페이지 컨테이너-->
+	<div id="main">
+		<header>
+			검색 : <input type="text" id="search"  />
+		</header>
+		
+		<section>
+			<h2>Contents</h2>
+			<table id="list" class="table">
+			<tr>
+				<th id="col1">pic</th>
+				<th id="col2">name</th>
+				<th id="col3">info</th>
+				<th id="col4">etc</th>
+			</tr>
+			<tr>
+				<td><img src="../images/woman_03.png" alt="" /></td>
+				<td>Lorem ipsum.</td>
+				<td class="cell3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A omnis earum porro neque eaque aliquid.</td>
+				<td>Lorem ipsum dolor sit amet.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_01.png" alt="" /></td>
+				<td>Corrupti aspernatur!</td>
+				<td class="cell3">Voluptas beatae officiis accusantium voluptate? Sit veritatis ipsa mollitia autem officiis explicabo blanditiis quo fugiat.</td>
+				<td>Non nulla maiores reiciendis ullam!</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_02.png" alt="" /></td>
+				<td>Inventore eos!</td>
+				<td class="cell3">Corrupti tempora culpa unde aliquam nesciunt vel soluta placeat quibusdam commodi neque molestias magni eveniet.</td>
+				<td>Ut dolor aut esse accusantium!</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_03.png" alt="" /></td>
+				<td>Ducimus corporis?</td>
+				<td class="cell3">Vel laborum repellat doloribus perspiciatis praesentium recusandae harum distinctio eum eaque dolorum consequatur illum cumque.</td>
+				<td>Dolor optio at magnam quis.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_01.png" alt="" /></td>
+				<td>Pariatur quo!</td>
+				<td class="cell3">Ducimus quidem veritatis fugiat suscipit enim necessitatibus eveniet sapiente eaque ex at dignissimos asperiores atque.</td>
+				<td>Quas magnam accusantium quia a!</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_02.png" alt="" /></td>
+				<td>Vitae voluptatum.</td>
+				<td class="cell3">Ad pariatur reprehenderit in magnam expedita iure quidem fugit nisi aspernatur error consequuntur iste mollitia.</td>
+				<td>Voluptates quidem dolorum ducimus tenetur?</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_03.png" alt="" /></td>
+				<td>Assumenda sit.</td>
+				<td class="cell3">Officia eum soluta velit architecto voluptates eaque expedita ut incidunt sed odit excepturi cum laudantium.</td>
+				<td>Libero maxime aliquid soluta architecto?</td>
+			</tr>
+		</table>
+		
+		<div style="clear:both;"></div>
+		
+		</section>
+		<div id="wlist">
+		<div>Java</div>
+		<div>Java Convention</div>
+		<div>Java Setting</div>
+		<div>Java</div>
+		<div>Java Convention</div>
+		<div>Java Setting</div>
+		<div>Java</div>
+		<div>Java Convention</div>
+		<div>Java Setting</div>
+	</div>
+	</div>
+	
+	
+	
+	<!-- 추천 검색어 창 -->
+	
+	<!--  
+		id = "list" : 유일한 값
+			-> 중복값 발생 -> 대부분의 브라우저는 id도 중복이 되면 class 처럼 중복 적용한다.
+	-->
+	
+	
+	<script type="text/javascript">
+		document.getElementById("search").onfocus = function(){
+			document.getElementById("wlist").style.visibility = "visible";
+			
+		};
+		document.getElementById("search").onblur = function(){
+			document.getElementById("wlist").style.visibility = "hidden";
+			
+		}; 
+		
+	
+	</script>
+	
+
+</body>
+</html>

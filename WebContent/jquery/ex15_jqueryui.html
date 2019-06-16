@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+
+	#list1 .ui-selected{
+		color: red;
+	}
+	
+	#list2{
+		list-style: none;
+		border: 1px solid #a9a9a9;
+		border-radius: 3px;
+		padding: 5px;
+		width: 120px;
+	}
+	
+	#list2 > li {
+		border: 1px solid #a9a9a9;
+		width: 100px;
+		height: 60px;
+		text-align: center;
+		margin: 3px auto;
+		padding: 3px;
+		padding-top: 40px;
+		border-radius: 3px;
+		background-color: #eee;
+		cursor: pointer;
+	}
+	
+	#list2 .ui-selected{
+		background-color: #fff;	
+		box-shadow: 2px 2px 3px #777;
+	}
+	
+	#list3{
+		border: 10px solid #a9a9a9;
+		padding:5px;
+		width: 830px;
+		text-align: center;
+	}
+	
+	#list3 img{
+		border: 10px solid #a9a9a9;
+		margin: 3px;
+		padding: 3px;
+		cursor: pointer;
+		opacity: .3;
+	}
+	
+	#list3 .ui-selected{
+		opacity: 1;
+	}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+	
+		$("#list1, #list2, #list3").selectable();
+		//$("#list1, #list2, #list3").sortable();
+		
+	});
+	
+	
+</script>
+</head>
+<body>
+
+	<h1>사무용품</h1>
+	
+	<ol id="list1">
+		<li>a4 용지</li>
+		<li>볼펜</li>
+		<li>노트</li>
+		<li>클립</li>
+		<li>포스트잇</li>
+	</ol>
+
+	<h1>사무용품</h1>
+	
+	<ol id="list2">
+		<li>a4 용지</li>
+		<li>볼펜</li>
+		<li>노트</li>
+		<li>클립</li>
+		<li>포스트잇</li>
+	</ol>
+	
+	<h1>고양이</h1>
+
+	<div id="list3">
+		<img src="/WebClientTest/images/catty01.png"/>
+		<img src="/WebClientTest/images/catty02.png"/>
+		<img src="/WebClientTest/images/catty03.png"/>
+		<img src="/WebClientTest/images/catty04.png"/>
+		<img src="/WebClientTest/images/catty05.png"/>
+	</div>
+
+</body>
+</html>

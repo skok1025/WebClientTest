@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	table{
+		width: 600px;
+	}
+	
+	td > img{
+		border: 1px solid gray;
+	}
+	
+	input[type="text"]{
+		width: 100px;
+	}
+	
+	#money_bt{
+		margin-top:10px;
+		margin-left: 40px; 
+		width: 50px;
+		height: 50px;
+	}
+	
+	.item >span> img {
+		border:1px solid gray;
+		width: 10%;
+	}
+	
+	.item{
+		text-align: center;
+	}
+
+</style>
+<script src="/WebClientTest/javascript/js/basic.js"></script>
+<script>
+
+
+var img1,img2,img3;
+var money_txt;
+var start_bt;
+var timer = 0;
+var n1,n2,n3;
+var score = [[1,1,1,2], [2,2,2,3], [3,3,3,4], [4,4,4,5], [5,5,5,6], [1,1,2,7], [1,2,3,8], [2,3,4,9]];
+
+window.onload = function(){
+	img1 = document.getElementById("img1");
+	img2 = document.getElementById("img2");
+	img3 = document.getElementById("img3");
+	
+	money_txt = document.getElementById("money_txt");
+	start_bt = document.getElementById("start_bt");
+	
+	start_bt.onclick = function(){
+		var money = parseInt(money_txt.value);
+		if(timer == 0){
+			money_txt.value =  money- 100;
+			timer = setInterval(function(){
+				n1 = parseInt(Math.random()*5)+1;
+				n2 = parseInt(Math.random()*5)+1;
+				n3 = parseInt(Math.random()*5)+1;
+				
+				img1.src = "/WebClientTest/images/catty0"+n1+".png";
+				img2.src = "/WebClientTest/images/catty0"+n2+".png";
+				img3.src = "/WebClientTest/images/catty0"+n3+".png";
+				
+			},100);
+		} else{
+			
+			clearInterval(timer);
+			timer = 0 ;
+			
+			for (var i=0; i<score.length; i++) {
+				if (score[i][0] == n1 && score[i][1] == n2 && score[i][2] == n3) {
+					money += 100 * score[i][3];
+					money_txt.value =  money;
+					break;
+				}
+			}
+			
+			if(money_txt.value ==0){
+				start_bt.disabled = true;
+			}
+			
+		}
+	};
+	
+	
+	
+	
+	
+};
+</script>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+</head>
+<body>
+
+	<table class="table">
+		<tr>
+			<td>
+				<img src="/WebClientTest/images/catty01.png" id="img1" />
+				<img src="/WebClientTest/images/catty02.png" id="img2" />
+				<img src="/WebClientTest/images/catty03.png" id="img3" />
+			
+			</td>
+			<td>
+				$<input type="text" id="money_txt" value="1000" /> <br />
+				<input type="button" id="start_bt" value="$" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div class="item">
+					<span>
+					<img src="../../images/catty01.png">
+					<img src="../../images/catty01.png">
+					<img src="../../images/catty01.png">
+					x 2
+					</span>
+					<span>
+					<img src="../../images/catty02.png">
+					<img src="../../images/catty02.png">
+					<img src="../../images/catty02.png">
+					x 3
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="../../images/catty03.png">
+					<img src="../../images/catty03.png">
+					<img src="../../images/catty03.png">
+					x 4
+					</span>
+					<span>
+					<img src="../../images/catty04.png">
+					<img src="../../images/catty04.png">
+					<img src="../../images/catty04.png">
+					x 5
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="../../images/catty05.png">
+					<img src="../../images/catty05.png">
+					<img src="../../images/catty05.png">
+					x 6
+					</span>
+					<span>
+					<img src="../../images/catty01.png">
+					<img src="../../images/catty01.png">
+					<img src="../../images/catty02.png">
+					x 7
+					</span>
+				</div>
+				<div class="item">
+					<span>
+					<img src="../../images/catty01.png">
+					<img src="../../images/catty02.png">
+					<img src="../../images/catty03.png">
+					x 8
+					</span>
+					<span>
+					<img src="../../images/catty02.png">
+					<img src="../../images/catty03.png">
+					<img src="../../images/catty04.png">
+					x 9
+					</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

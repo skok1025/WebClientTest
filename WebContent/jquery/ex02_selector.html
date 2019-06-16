@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		//alert("hello")
+		
+		// CSS : 1. 태그 검색(선택자) -> 2. 속성 제어
+		// JavaScript : 1. 태그 검색(BOM,DOM) -> 2. 속성, PCDATA, CSS 제어
+		// jQuery : 1. 태그 검색(BOM,DOM) -> 개량 -> 2. 속성, PCDATA, CSS 제어 개량
+		
+		// 1. DOM
+		var div = document.getElementsByTagName("div");
+		
+		for(var i=0; i<div.length; i++){
+			//div[i].style.color = "red";
+		}
+		
+		
+		// 2. jQuery
+		//$("div").css("background-color","yellow");
+		
+		//jQuery(CSS 선택자) 함수
+		//	- 태그를 검색해서 반환하는 역할
+		
+		// jQuery의 대부분 함수(기능)
+		//	- 앞의 적용 대상이 단일 객체든 배열 객체든 무조건 루프를 돌면서 적용한다.
+		
+		// jQuery 는 태그를 검색할 때 BOM, DOM 을 사용하지 않고 CSS 선택자를 사용한다.
+		// A. 태그 선택자
+		// div{}
+		//console.log(jQuery("div"));
+		//jQuery("div").css("color","blue");
+		
+		// B. id 선택자
+		//jQuery("#box1").css("color","orange");
+		
+		// C. class 선택자
+		//jQuery(".box").css("color","yellow");
+		
+		// D. 자식/자손 선택자
+		//jQuery("#list1 > li").css("color","green");
+		
+		// E. 형제/인접 형제 선택자
+		//jQuery("div + div").css("color","blue")
+		//jQuery("ul+ul").css("display","none");
+		
+		// F.속성 선택자
+		//jQuery("div[title]").css("color","red");
+		
+		// G. 여러가지 필터
+		//jQuery("li:nth-child(even)").css("color","blue");
+		
+		
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+	
+	
+	<div title="도움말">상자</div>
+	<div>상자</div>
+	<div title="도움말">상자</div>
+	
+	<hr>
+	<ul id="list1">
+		<li>하나</li>
+		<li>둘</li>
+		<li>셋</li>
+	</ul>
+	
+	<ul id="list2">
+		<li>하나</li>
+		<li>둘</li>
+		<li>셋</li>
+	</ul>
+	
+	<hr />
+	<div id="box1" class="box">상자1</div>
+	<div id="box2">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	<div>상자6</div>
+	<div>상자7</div>
+	
+		
+</body>
+</html>

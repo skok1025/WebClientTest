@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#box{
+		border: 10px solid black;
+		width: 650px;
+		height: 1000px;
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	.ball{
+		border: 10px solid black;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin: 10px;
+	}
+	
+	@keyframes ballKey{
+		0%{transform:translate(0,0px); }
+		100%{transform:translate(0,730px);}
+	}
+	
+	#ball1{
+		animation-name:ballKey;
+		animation-duration:0.8s;
+		animation-timing-function:linear;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball2{
+		animation-name:ballKey;
+		animation-duration:0.8s;
+		animation-timing-function:ease-in;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball3{
+		animation-name:ballKey;
+		animation-duration:1s;
+		animation-timing-function:ease-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball4{
+		animation-name:ballKey;
+		animation-duration:0.8s;
+		animation-timing-function:ease-in-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball5{
+		animation-name:ballKey;
+		animation-duration:1.1s;
+		animation-timing-function:ease-out;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball6{
+		animation-name:ballKey;
+		animation-duration:0.5s;
+		animation-timing-function:ease-in;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	#ball7{
+		animation-name:ballKey;
+		animation-duration:0.8s;
+		animation-timing-function:ease-in;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div id="box">
+	<div id="ball1" class="ball" style="background-color: red;"></div>
+	<div id="ball2" class="ball" style="background-color: blue;"></div>
+	<div id="ball3" class="ball" style="background-color: yellow;"></div>
+	<div id="ball4" class="ball" style="background-color: green;"></div>
+	<div id="ball5" class="ball" style="background-color: black;"></div>
+	<div id="ball6" class="ball" style="background-color: aqua;"></div>
+	<div id="ball7" class="ball" style="background-color: red; "></div>
+	<div style="clear: both;"></div>
+	</div>
+
+</body>
+</html>

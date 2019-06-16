@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var post1,post2,check_bt,addressTxt;
+	window.onload = function(){
+		post1 = document.all.post1;
+		post2 = document.all.post2;
+		check_bt = document.all.check_bt;
+		addressTxt = document.all.addressTxt;
+		
+		check_bt.onclick = function(){
+			window.open("ex4_child.html","child","width = 300, height = 300");
+		};
+		
+	};
+</script>
+</head>
+<body>
+
+
+	<table class="table">
+	
+		<tr>
+			<th>우편번호</th>
+			<td>
+				<input type="text" name="post1" size="4" />
+				-
+				<input type="text" name="post2" size="4" />
+				<input type="button" name="check_bt" value="우편번호 검사하기" />
+			</td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td>
+				<input type="text" name="addressTxt" />
+			</td>
+		</tr>
+		<tr>
+			<th>상세주소</th>
+			<td>
+				<input type="text" />
+			</td>
+		</tr>
+	
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#desc{
+		display: none;
+	}
+	
+	#cb1:checked ~ #desc { /* 체크박스를 눌러주면 설명이 나옴 */
+		display: block;
+	}
+	
+	#box{
+		border: 1px solid gray;
+		width: 300px;
+		margin: 50px 9px;
+	}
+	#box #cb2{
+		display: none;
+	}
+	#box label{
+		background-color: #ddd;
+		width: calc(100% - 20px); /* 전체너비 100%에서 패딩 10 *2 뺀 값  */
+		display: inline-block;
+		padding: 10px;
+		cursor: pointer;
+	}
+	#box #desc2{
+		display: none;
+	}
+	#box #cb2:checked ~#desc2{
+		display: block;
+	}
+	
+	/* .item label{
+		text-decoration: line-through;
+	} */
+	
+	.item input[type='checkbox']:checked + label{
+		text-decoration: line-through;
+		opacity: .5;
+	}
+	
+	.item input[type='checkbox']:checked{
+		opacity: .5;
+	}
+	
+</style>
+</head>
+<body>
+
+	<input type="checkbox" id="cb1"/> <label for="cb1">자바의 클래스</label>
+	<p id = "desc">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quisquam possimus reiciendis repellat quibusdam atque esse perspiciatis nostrum saepe similique ducimus facilis quam ipsa iusto officiis adipisci molestiae est ut a dolore blanditiis vitae laudantium accusantium ratione aut laborum magnam vel. Ratione nisi nostrum nulla obcaecati repudiandae eum in enim autem mollitia impedit ea itaque qui deserunt est totam fugit veritatis consequatur deleniti cum voluptas modi odit dicta nesciunt magni velit repellendus inventore! Quidem nemo labore pariatur recusandae ab dolor quae vel maiores illo non soluta aut perspiciatis voluptatibus incidunt unde placeat adipisci! Quod ipsa odit molestias vero nemo ipsum dicta quidem vitae voluptate beatae praesentium modi corporis doloribus expedita eveniet dolorum sapiente necessitatibus soluta voluptatibus eius a possimus unde delectus est corrupti quas sunt odio ea distinctio molestiae consequuntur ab quam provident accusantium ratione laboriosam quis aperiam. Ducimus odio ab maiores laborum aspernatur excepturi obcaecati placeat tempora perspiciatis possimus?
+	</p>
+	
+	
+	<hr>
+	
+	<div id="box">
+	<input type="checkbox" id="cb2"/> <label for="cb2">자바의 클래스</label>
+	<p id = "desc2">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quisquam possimus reiciendis repellat quibusdam atque esse perspiciatis nostrum saepe similique ducimus facilis quam ipsa iusto officiis adipisci molestiae est ut a dolore blanditiis vitae laudantium accusantium ratione aut laborum magnam vel. Ratione nisi nostrum nulla obcaecati repudiandae eum in enim autem mollitia impedit ea itaque qui deserunt est totam fugit veritatis consequatur deleniti cum voluptas modi odit dicta nesciunt magni velit repellendus inventore! Quidem nemo labore pariatur recusandae ab dolor quae vel maiores illo non soluta aut perspiciatis voluptatibus incidunt unde placeat adipisci! Quod ipsa odit molestias vero nemo ipsum dicta quidem vitae voluptate beatae praesentium modi corporis doloribus expedita eveniet dolorum sapiente necessitatibus soluta voluptatibus eius a possimus unde delectus est corrupti quas sunt odio ea distinctio molestiae consequuntur ab quam provident accusantium ratione laboriosam quis aperiam. Ducimus odio ab maiores laborum aspernatur excepturi obcaecati placeat tempora perspiciatis possimus?
+	</p>
+	</div>
+	
+	
+	<div>다른 내용...</div>
+	
+	<hr>
+	
+	<h2>오늘의 할일</h2>
+	
+	<div class="item">
+		<input type="checkbox" id="cb1">
+		<label for="cb1">자바 이클립스 설치하기</label>
+	</div>
+	<div class="item">
+		<input type="checkbox" id="cb2">
+		<label for="cb2">회식참여하기</label>
+	</div>
+	<div class="item">
+		<input type="checkbox" id="cb3">
+		<label for="cb3">키보드 가지고 가기</label>
+	</div>
+	<div class="item">
+		<input type="checkbox" id="cb4">
+		<label for="cb4">집가서 디비 자기</label>
+	</div>
+	
+	
+</body>
+</html>

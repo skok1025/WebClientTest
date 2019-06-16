@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	div{
+		float: left;
+	}
+	
+	.sdiv{
+		overflow: hidden;
+	}
+
+	.imgs{
+		transition: all 1s;
+	}
+
+</style>
+<script src="/WebClientTest/javascript/js/basic.js"></script>
+<script>
+
+
+var timer = 0;
+var temp;
+window.onload = function(){
+	
+	var div = document.createElement("div");
+	var imgs = document.getElementsByClassName("imgs");
+	div.style.width = "640px"
+	div.style.height = "640px";
+	div.style.border = "1px solid black";
+	
+	document.body.appendChild(div);
+	
+	for(var i=0;i<25;i++){
+		var sdiv = document.createElement("div");
+		
+		sdiv.className = "sdiv";
+		sdiv.style.width = "126px";
+		sdiv.style.height = "126px";
+		sdiv.style.border = "1px solid black";
+		
+		div.appendChild(sdiv);
+		var num = parseInt(Math.random()*9)+1;
+		var img = document.createElement("img");
+		img.className = "imgs";
+		img.src = "/WebClientTest/images/rect_icon0"+num+".png";
+		img.style.width = "126px";
+		img.style.height = "126px";
+		sdiv.appendChild(img);
+	}
+	
+	for(var i=0;i<imgs.length;i++){
+		
+		imgs[i].onclick = function(){
+			//alert(event.srcElement);
+			if(timer == 0){
+				event.srcElement.style.transform = "translate(126px,126px)";
+				temp = event.srcElement;
+				timer = setTimeout(function(){
+					temp.style.transform = "translate(0px,0px)";
+					timer =0;
+				},1000);
+			}
+		};
+		
+	}
+	
+	
+	
+};
+</script>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+</head>
+<body>
+
+
+
+
+</body>
+</html>

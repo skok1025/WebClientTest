@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	#box {
+		border: 10px solid black;
+		width: 1260px;
+		height: 630px;
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	#box .icon {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
+		animation-direction: alternate;
+		animation-iteration-count: infinite;
+	}
+		
+	#box #icon1 {	z-index: 10;	animation-duration: 5s;	}
+	#box #icon2 {	z-index: 9;	animation-duration: 5s;	}
+	#box #icon3 {	z-index: 8;	animation-duration: 5s;	}
+	#box #icon4 {z-index: 7;	animation-duration: 5s;	}
+	#box #icon5 {	z-index: 6;	animation-duration: 5s;	}
+	#box #icon6 {z-index: 5;	animation-duration: 5s;	}
+	#box #icon7 {	z-index: 4;	animation-duration: 5s;	}
+	#box #icon8 {z-index: 3;	animation-duration: 5s;	}
+	#box #icon9 {z-index: 2;	animation-duration: 5s;	}
+	#box #icon10 {z-index: 1;	animation-duration: 5s;	}
+	
+	
+	#box:hover #icon1 {
+		animation-name: key1;
+	}
+	@keyframes key1 {
+		0% { left: 0px; top: 0px; }
+		2% { left: 0px; top: 0px; }
+		20% { left: 1134px; top: 0px; }
+		22% { left: 1134px; top: 126px;}
+		40% { left: 0px; top: 126px; }
+		42% { left: 0px; top: 252px;}
+	
+		60% { left: 1134px; top: 252px; opacity:.5; }
+		62% { left: 1134px; top: 378px; opacity:0;}
+		80% { left: 0px; top: 378px; opacity:0;}
+		82% { left: 0px; top: 504px; opacity:.5;}
+		100% { left: 1134px; top: 504px;}
+	}
+	#box:hover #icon2 {
+		animation-name: key1;
+		animation-delay: .1s;
+	}
+	#box:hover #icon3 {
+		animation-name: key1;
+		animation-delay: .2s;
+	}
+	#box:hover #icon4 {
+		animation-name: key1;
+		animation-delay: .3s;
+	}
+	#box:hover #icon5 {
+		animation-name: key1;
+		animation-delay: .4s;
+	}
+	#box:hover #icon6 {
+		animation-name: key1;
+		animation-delay: .5s;
+	}
+	#box:hover #icon7 {
+		animation-name: key1;
+		animation-delay: .6s;
+	}
+	#box:hover #icon8 {
+		animation-name: key1;
+		animation-delay: .7s;
+	}
+	#box:hover #icon9 {
+		animation-name: key1;
+		animation-delay: .8s;
+	}
+	#box:hover #icon10 {
+		animation-name: key1;
+		animation-delay: .9s;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="box">
+	<img src="../images/rect_icon01.png" id="icon1" class="icon">
+	<img src="../images/rect_icon02.png" id="icon2" class="icon">
+	<img src="../images/rect_icon03.png" id="icon3" class="icon">
+	<img src="../images/rect_icon04.png" id="icon4" class="icon">
+	<img src="../images/rect_icon05.png" id="icon5" class="icon">
+	<img src="../images/rect_icon06.png" id="icon6" class="icon">
+	<img src="../images/rect_icon07.png" id="icon7" class="icon">
+	<img src="../images/rect_icon08.png" id="icon8" class="icon">
+	<img src="../images/rect_icon09.png" id="icon9" class="icon">
+	<img src="../images/rect_icon10.png" id="icon10" class="icon">
+	<div style="clear: both;"></div>
+	</div>
+</body>
+</html>

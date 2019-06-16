@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	window.onload = function(){
+		
+		
+	};
+	
+	window.onmousedown = function(){
+		
+		var x = event.clientX;
+		var y = event.clientY;
+		
+		var box = document.createElement("div");
+		box.className = "box medium";
+		box.style.position = "absolute";
+		box.style.left = x - 100 + "px";
+		box.style.top = y - 100 + "px";
+		
+		var r = parseInt(Math.random()*256);
+		var g = parseInt(Math.random()*256);
+		var b = parseInt(Math.random()*256);
+		var a = Math.random();
+		
+		box.style.backgroundColor = "rgba("+r+","+g+","+b+","+a+")";
+		box.style.borderWidth = parseInt(Math.random()*10)+"px";
+		
+		
+		document.body.appendChild(box);
+		
+	};
+	
+</script>
+</head>
+<body>
+
+	
+
+
+</body>
+</html>

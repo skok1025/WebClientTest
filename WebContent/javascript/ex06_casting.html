@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	/*
+	형변환, Type Casting
+		- 대부분 상황에서는 자바스크립트가 자동으로 형변환을 한다. (암시적 형변환)
+	ex) "10" * 2
+	
+	형변환 함수
+	1. int parseInt()
+	2. float parseFloat()
+	
+	*/
+	
+	var n1 = 3.14;
+	console.log(parseInt(n1));
+
+	var n2 = 3.99;
+	console.log(parseInt(n2));
+	
+	var n3 = "10";
+	console.log(parseInt(n3),typeof parseInt(n3));
+	console.log(n3, typeof n3);
+	
+	var n4 = "3.14";
+	console.log(parseInt(n4));
+	console.log(parseFloat(n4));
+	
+	var n5 = "100점";
+	console.log(parseInt(n5));
+	
+	n5 = "87점입니다. 아 기쁘다.";
+	console.log(parseInt(n5));
+	
+	n5 = "국어점수 : 90 점";
+	console.log(parseInt(n5)); // NaN
+	
+	// HTML , CSS 조작할 때 주로 사용
+	var width = "200px";
+	console.log(parseInt(width)*2);
+	
+	console.log(parseFloat("1.5em")/2);
+	
+	
+	
+	//isNaN(value)
+	//is Not a Number? 숫자가 아니냐?
+	// 자료형은 따지지 않는다.
+	
+	var a1 = 20;
+	console.log(isNaN(a1));
+	
+	var a2 = "홍길동";
+	console.log(isNaN(a2));
+	
+	var a3 = "20";
+	console.log(isNaN(a3));
+
+	var a4 = "20세";
+	console.log(isNaN(a4));
+	
+	// 유효성 검사
+	// -> 주민번호 -> 901111
+	
+</script>
+</head>
+<body>
+
+	
+
+
+</body>
+</html>

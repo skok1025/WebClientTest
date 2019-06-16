@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	#list1{
+		/* list-style-type:none; */
+		list-style-image: url(../images/bullet03.png);
+		font-size: 2.5em;
+	}
+	
+	#list2{
+		font-size: 2.5em;
+		border: 1px solid black;
+		list-style-type: none;
+		padding-left: 20px;
+	}
+	
+	#list2 li{
+		border: 1px solid red;
+		background-image: url(../images/bullet03.png);
+		background-repeat: no-repeat;
+		background-position: 0px 15px;
+		padding-left: 18px;
+	}
+	
+	.mylist{
+		font-size: 16px;
+		border: 1px solid lightgray;
+		width: 250px;
+		border-radius: 5px;
+	}
+	
+	.mylist h1{
+		font-size: 16px;
+		border-bottom: 1px solid lightgray;
+		padding: 10px 0px 10px 0px;
+		margin:0px; 
+		background-color:gray; 
+		color: white;
+	}
+
+	.mylist ul{
+		list-style-type: none;
+		padding-left: 0;
+	}
+	
+	.mylist ul li {
+		border-bottom: 1px dashed gray;
+		padding-left: 10px;
+		margin-bottom: 5px;
+		padding-bottom: 2px;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<!-- ex31_list.html -->
+	
+	<h1>오늘의 할일</h1>
+	<ul id="list1">
+		<li>저녁 퇴근할 때 헬스장 가입하기</li>
+		<li>강아지 간식 챙겨주기</li>
+		<li>코딩 공부 열심히 하기</li>
+		<li>html복습 열심히 하기</li>
+		<li>마우스 패드 구매하기</li>
+	</ul>
+	
+	<h1>오늘의 할일</h1>
+	<ul id="list2">
+		<li>저녁 퇴근할 때 헬스장 가입하기</li>
+		<li>강아지 간식 챙겨주기</li>
+		<li>코딩 공부 열심히 하기</li>
+		<li>html복습 열심히 하기</li>
+		<li>마우스 패드 구매하기</li>
+	</ul>
+	
+	<hr>
+	
+	<div class="mylist">
+		<h1>오늘의 할일</h1>
+		<ul>
+			<li>저녁 퇴근할 때 헬스장 가입하기</li>
+			<li>강아지 간식 챙겨주기</li>
+			<li>코딩 공부 열심히 하기</li>
+			<li>html복습 열심히 하기</li>
+			<li>마우스 패드 구매하기</li>
+		</ul>
+	</div>
+</body>
+</html>

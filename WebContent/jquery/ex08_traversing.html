@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	html, body {
+		border: 5px solid #A9A9A9;
+		margin: 10px;
+		padding: 10px;
+		
+	}
+
+	div{
+		border: 5px solid #A9A9A9;
+		margin: 10px;
+		padding: 10px;
+	}
+	
+	#me{
+		border-color: orange;
+	}
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// DOM 노드 검색
+		// 1. getXXX() x 4개
+		// 2. Axis
+		//		- childNodes, children, firstChild, lastChild
+		//		- parentNode
+		//		- nextSibling, previousSibling
+		
+		// 노드 검색(태그 검색)
+		// 1. $("")
+		// 2. Axis
+		//	-현재 수업내용
+		
+		$("#me").click(function(){
+			
+			// 부모 검색
+			//$("#me").parent().css("border-color","cornflowerblue");
+			//$("#me").parent().parent().css("border-color","cornflowerblue");
+			//$("#me").parents().css("border-color","cornflowerblue");
+			//$("#me").parentsUntil("html").css("border-color","cornflowerblue");
+			
+			// 자식 검색
+			//$("#me").children().css("border-color","tomato");
+			
+			//$("#me").children().css("border-color","tomato")
+			//		.children().css("border-color","tomato");
+			
+			// 내 자손들을 대상으로 검색하는 메소드
+			//$("#me").find(".a").css("border-color","green");
+			
+			// 형제 
+			//$("#me").prev().css("border-color","yellow");
+			//$("#me").next().css("border-color","yellow");
+			$("#me").siblings().css("border-color","yellow");
+			
+			
+			
+			
+			
+		});
+	
+	});
+</script>
+</head>
+<body>
+	<div>
+		<div></div>
+		<div id="me">
+			<div></div>
+			<div>
+				<div></div>
+				<div class="a"></div>
+			</div>
+			<div></div>
+		</div>
+		<div class="a"></div>
+	</div>	
+
+</body>
+</html>

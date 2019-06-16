@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// jQuery Effect
+		// - 일부 CSS 속성 지원
+		
+		// jQueryUI Effect
+		// - 나머지 CSS 속성 지원
+		
+		// jQuery Effect
+		// - hide(), fadeOut(), slideUp()
+		// - show(), fadeIn(), slideDown()
+		// - toggle(), fadeToggle(), slideToggle()
+		// - slow(600ms), fast(400ms), 숫자(ms)
+		
+		// - animate(객체, 시간) : 사용자 정의형(CSS 속성을 가지고 제어)
+		
+		$("#btn1").click(function(){
+			//$("#box1").hide(2000); // display:none
+			//$("#box1").fadeOut(1000);
+			//$("#box1").slideUp();
+			$("#box1").animate({
+				opacity:0,
+				width:"0px",
+				height:"0px"
+				//transform : "translate(0px,-300px)"
+			},1000);
+		});
+		
+		$("#btn2").click(function(){
+			//$("#box1").show(2000);
+			//$("#box1").fadeIn(1000);
+			//$("#box1").slideDown();
+			$("#box1").animate({
+				opacity:1,
+				width:"200px",
+				height:"200px"
+			},1000);
+		});
+		
+		$("#btn3").click(function(){
+			//$("#box1").toggle(2000); // hide, show
+			//$("#box1").fadeToggle(1000);
+			//$("#box1").slideToggle();
+			$("#box1").animate({
+				opacity: "toggle",
+				width: "toggle",
+				height: "toggle"
+			});
+		});
+		
+		$("#btn4").click(function(){
+			// 1. 상자의 현재 크기 얻어오기
+			// 2. += 20 누적
+			
+			$("#box1").animate({
+				width: "+=20px"
+			},1000)
+		});
+		$("#btn5").click(function(){
+			// jQuery 도 메소드 체이닝을 지원한다.
+			// 반환값 처리를 잘 해놓은 상태
+			// - 행동을 연속적으로 할 수 있는 상태
+			
+			//$("#box1").hide(1000);
+			//$("#box1").show(1000);
+			/* 
+			$("#box1")
+				.hide(1000)
+				.show(1000)
+				.slideUp()
+				.slideDown(); */
+				
+			$("#box1").animate({
+				width: "+=200px"
+			},1000).animate({
+				height: "+=200px"
+			},1000).animate({
+				opacity: 0
+			},300).animate({
+				opacity: 1
+			},300).animate({
+				opacity: 0
+			},300).animate({
+				opacity: 1
+			},300).animate({
+				opacity: 0
+			},300).animate({
+				opacity: 1
+			},300).animate({
+				opacity: 0
+			},300).animate({
+				opacity: 1
+			},300).animate({
+				width: "-=200px"
+			},1000).animate({
+				height: "-=200px"
+			},1000);
+			
+		});
+		
+		$("#btn6").click(function(){
+			// 콜백 함수, Callback Function
+			// - 사용자(개발자)가 직접 호출하지 않고, 시스템(런타임)에 의해서 호출하는 함수
+			/* 
+			$("#box1").hide(5000);
+			setTimeout(function(){
+				alert("상자가 사라졌습니다");
+			},5000);
+			*/
+			
+			$("#box1").hide(5000,function(){
+				//alert("상자가 사라졌습니다");
+				$("#btn6").val("상자 보이기");
+			});
+		});
+		
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+
+	<input type="button" value="버튼1" id="btn1"/>
+	<input type="button" value="버튼2" id="btn2"/>
+	<input type="button" value="버튼3" id="btn3"/>
+	<input type="button" value="버튼4" id="btn4"/>
+	<input type="button" value="버튼5" id="btn5"/>
+	<input type="button" value="버튼6" id="btn6"/>
+	<hr />
+	<div id="box1" class="box medium red">상자</div>
+	
+	
+
+</body>
+</html>

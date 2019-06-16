@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	
+	<!--
+	<img> 태그
+	- image
+	- 해당위치에 이미지를 출력하는 역할
+	- 단독 태그
+	- 인라인 태그
+	
+	<img> 속성
+	1. src
+		- source
+		- 이미지 파일의 URL(상대, 절대, 외부)
+	
+	2. alt
+		- Alternate Text
+		- 대체 문자열
+		- 이미지를 출력하지 못하면 대신 보여주는 텍스트
+		- 이미지를 대변하는 메타 정보로 사용된다.
+		
+	-->
+	
+	<h1>고양이</h1>
+	
+	<img alt="야옹이" src="../images/cat01.jpg">
+	<img alt="고양이" src="../images/cat02.jpg">
+	<img alt="" src="/WebClientTest/images/cat03.jpg">
+	
+	<hr>
+	
+	<img src="images/cat01.jpg" width="250" height="188">
+	<img src="images/cat01.jpg" width="500" height="376">
+	<img src="images/cat01.jpg" width="125" height="94">
+	<img src="images/cat01.jpg" width="25" height="18">
+	<img src="images/cat01.jpg" width="500" height="94">
+	<img src="images/cat01.jpg" width="3" height="3">
+	<!-- <img src="images/cat01.jpg" width="25000" height="18800">
+	 -->
+	 
+	 <!-- width 나 height중에 하나만 명시되어 있으면 나머지값은 원본의 종횡비를 기준으러 자동으로 계산한다.  -->
+	<img src="images/cat01.jpg" width="50">
+	<img src="images/cat01.jpg" height="50">
+	
+	
+	<!-- 쇼핑몰 : 상품 사진(소,중,대) -->
+	
+	<h1>A.</h1>
+	<img src="images/cat01.jpg" width="250" height="188">
+	
+	<h1>B.</h1>
+	<img src="images/cat01.jpg" >
+	
+	<hr>
+	
+	<h1>링크</h1>
+	
+	<!--
+	<a> 태그는 인라인 태그
+	-> 인라인 태그는 자식으로 인라인 태그만 올 수 있다.
+	  -->
+	<a href="#">고양이</a><!-- 텍스트 링크 -->
+	<br>
+	<a href="#"><img src="images/catty01.png" border="0"></a><!-- 이미지 링크  -->
+	<br>
+	<!-- <a href="#"><p>문단입니다.</p></a> -->
+	
+	<!--
+	
+	웹에서 사용 가능한 이미지 파일 포맷
+	- jpg(jpeg), gif, png
+	
+	이미지 포맷
+	1. 래스터 방식
+		- 비트맵 이미지
+		- 흔히 우리가 사용하는 이미지
+		- 사진, 아이콘 등..
+		- 이미지 정보를 화소로 저장
+		- 장점 : 디테일한 이미지(사진) 
+		- 단점 : 확대/ 축소 취약 > 이미지 열화 (품질 저하)
+		
+		a. jpg(jpeg)
+			- 사진 표현
+			- 손실 압축 방식
+			- 16만 색상 지원
+			
+		b. gif
+			- 비손실 압축 방식
+			- 최대 256 색상 지원
+			- 아이콘, 그래프 표현
+			- 투명 레이어 지원
+			- 애니매이션 지원 -> Animated GIF
+			
+		c. png
+			- 비손실 압축
+			- jpg + gif > gif 폐기 png 대체 
+		
+		----------------------------------- 웹 공식 지원
+		d. bmp
+			- MS 자체 포맷
+			- 그림판
+			- 브라우저가 지원함. (공식 X)
+			
+			
+			
+	2. 벡터 방식
+		- 플래시, 일러스트
+		- 아이콘, 그래프
+		- 수학 공식으로 저장
+		- 폰트
+		- 장점 : 확대/ 축소 품질 변화 없음
+		- 단점 : 디테일 이미지 표현 불가능
+		- HTML5 > SVG(XML)
+	
+	  -->
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

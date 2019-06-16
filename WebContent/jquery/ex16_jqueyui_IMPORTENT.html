@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+
+	*{
+		outline: none;
+	}
+	
+	#slider1 {
+		width: 500px;
+		margin: 10px;
+	}
+
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// 아코디언
+		//	- 다량의 데이터를 아코디언 형태로 정보제공
+		$("#a1").accordion({
+			collapsible : true, // 다 닫을 수 있다
+			heightStyle : "content" // 컨텐츠 내용 크기만큼
+		});
+		
+		// 버튼
+		//$("#btns input").button(); // 디자인 바꾸기
+		$(":button").button();
+		$("#btns").controlgroup();
+		
+		// 라디오 (체크박스)
+		$("#level input").button();
+		$("#level").controlgroup();
+		
+		
+		// 날짜/ 시간 
+		$("#birthday").datepicker({
+			//minDate: "11/03/2018",
+			//maxDate: "11/25/2018"
+			//minDate:"-5",
+			//maxDate:"5"		// 5일 텀
+			minDate:"-1M -5D",
+			maxDate:"1M 5D"
+		});
+		$("#birthday").datepicker("option","dateFormat","yy-mm-dd");
+	
+		// 대화상자의 형태
+		//	1. Modeless
+		//		- 자식창이 있어도 부모창에 포커스를 가질 수 있다.
+		//		- 부모와 자식이 업무상 순서가 상관없는 경우(따로 진행해도 괜찮은 경우)
+		
+		//  2. Modal
+		// 		- 자식창이 있으면 부모창에 커서를 가질 수 없다.
+		//		- 부모와 자식이 업무상 순서가 필요한 경우
+	
+		
+		$("#dialog1").hide();
+		$("#btn1").click(function(){
+			//$("#dialog1").show();
+			$("#dialog1").dialog({
+				title : "삭제",
+				width: 300,
+				height: 250,
+				draggable: false,
+				resizable : false,
+				modal : true,
+				buttons: {
+					"확인":function(){
+						alert("확인");
+					},
+					"취소":function(){
+						$("#dialog1").dialog("close");
+					}
+					
+				}
+			});
+		});
+		
+		
+		$("#sel1").selectmmnu();
+		
+		$("#slider1").slider();
+	});
+</script>
+</head>
+<body>
+
+	<h1>jQuery UI Controls, Widgets, Components</h1>
+
+	<ol>
+		<li>미리 정해진 규칙 태그 작성</li>
+		<li>1의 결과에 jQuery 함수 호출</li>
+	</ol>
+	<h2>슬라이더</h2>
+	<input type="range" />
+	<div id="slider1"></div>
+	
+	
+	
+	
+	
+	<h2>셀렉트 박스</h2>
+	
+	<select id="sel1">
+		<option value="">대한민국</option>
+		<option value="">미국</option>
+		<option value="">일본</option>
+		<option value="">중국</option>
+		<option value="">대만</option>
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<h2>대화상자</h2>
+	<input type="button" value="확인" id="btn1" />
+	<div id="dialog1">
+		정말 삭제하시겠습니까?
+		<!-- <button>확인</button> -->
+	</div>
+	
+	<h2>테스트</h2>
+	
+	<h2>날짜/시간</h2>
+	생일: <input type="date" />
+	<hr />
+	생일 : <input type="text" id="birthday" />
+	
+	
+<!-- 	<div id="money">
+		<label for="txt1">금액</label>
+		<input type="number" id="txt1" />
+		<input type="button"  value="입력"/>
+	</div>
+	 -->
+	<h2>라디오(체크박스)</h2>
+	<div id="level">
+		<input type="radio" name="rb" id="rb1" /><label for="rb1">상</label>
+		<input type="radio" name="rb" id="rb2" /><label for="rb2">중</label>
+		<input type="radio" name="rb" id="rb3" /><label for="rb3">하</label>
+	</div>
+	
+	<h2>버튼</h2>
+	
+	<div id="btns">
+		<input type="button" value="버튼" />
+		<input type="button" value="버튼" />
+		<input type="button" value="버튼" />
+		<button type="button">버튼</button>
+		<button type="button">버튼</button>
+		<button type="button">버튼</button>
+	</div>
+	
+	
+	<h2>Accordion</h2>
+	
+	<div id="a1">
+		<h3>자바, Java</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quam quae reprehenderit vero fugit minima molestiae at atque cupiditate quaerat nisi non blanditiis illo. Delectus nemo unde voluptas incidunt nisi qui odit distinctio eveniet quae error. Eius voluptatum maxime aut ducimus tenetur atque eos enim mollitia hic illo sequi repellendus fuga dignissimos rem nesciunt incidunt blanditiis modi ipsa quod cum voluptate doloremque ex aperiam placeat accusantium? Doloribus facilis pariatur quas quaerat accusantium possimus aperiam voluptas commodi voluptatum similique placeat veritatis dicta itaque ipsa maiores. Corporis repellendus maiores necessitatibus libero veritatis et tempora ratione sed eius quidem excepturi maxime sapiente labore.</p>
+		<h3>오라클, Oracle</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime earum qui totam molestiae ea voluptas eum libero sapiente expedita aut cumque neque praesentium aliquid quod unde dolor voluptatem necessitatibus accusamus nihil illo fugit itaque facilis quis consequatur magni provident voluptatibus est voluptate eaque. Porro laborum ducimus harum temporibus ab magnam ipsam ad adipisci nulla assumenda nam praesentium debitis reiciendis ratione distinctio quidem nostrum aliquid dignissimos animi iusto aspernatur ipsum sint minima voluptate fugiat facere quaerat velit excepturi ex doloribus quam asperiores aut alias! Ipsa aspernatur voluptatem sed iste totam suscipit recusandae modi reprehenderit fugit ducimus at maxime libero voluptatum quos quis! Optio incidunt accusamus fuga architecto ea quae perferendis modi nisi quisquam adipisci dolor veritatis totam eaque alias magni inventore quo fugiat sint eius quos numquam ut eum commodi quam quaerat tenetur ratione non laborum nulla aliquam eligendi ullam quasi reprehenderit expedita aspernatur velit consequatur aliquid voluptatem dignissimos voluptatum est eos! Ab nostrum earum aperiam quia excepturi sint iste facilis itaque id provident vel aspernatur facere porro enim odio eos dolor exercitationem veritatis ullam eveniet nam est aliquid. Deserunt sit quo deleniti tenetur nihil possimus corporis obcaecati pariatur doloremque explicabo officiis quidem quis consequuntur quibusdam perspiciatis voluptatum fugiat eligendi nam!</p>		
+		<h3>서블릿, Servlet</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam modi quam doloribus quae nemo voluptatem ratione incidunt enim dignissimos sequi autem architecto qui fugit blanditiis iure fuga unde dolores perferendis earum praesentium aut labore debitis tempore? Ipsum veritatis perspiciatis eligendi quod excepturi neque quibusdam sed dolorum quos iusto cumque earum dolores numquam sint pariatur. Totam repellendus consequuntur nisi consectetur similique possimus amet esse excepturi eligendi debitis non maxime atque numquam ea iusto adipisci modi voluptas est cupiditate quisquam ipsa aliquam ab iure commodi tempora expedita id in. Earum nobis ipsam possimus cum beatae itaque provident voluptate veniam maiores illo accusamus.</p>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#calc{
+		border: 1px solid gray;
+		width: 600px;
+		height: 700px;
+	}
+	
+	#numBox{
+		margin:10px auto;
+		border: 1px solid gray;
+		width: 90%;
+		height: 100px;
+		position: relative;
+	}
+	
+	#numBox > div {
+		margin-left:20px;
+		border: 1px solid red;
+		width: 20%;
+		height:100%;
+		float: left;
+		font-size: 50px;
+		text-align: center;
+	}
+	
+	#btns{
+		margin: 0px auto;
+		border: 1px solid gray;
+		width: 90%;
+		height: 550px;
+	}
+	
+	#btns > div {
+		border: 1px solid red;
+		width: 170px;
+		height: 130px;
+		float: left;
+		text-align: center;
+		font-size: 50px;
+		cursor: pointer;
+	}
+	
+	#del, #enter{
+		border: 1px solid red;
+		width: 170px;
+		height: 130px;
+		float: left;
+		text-align: center;
+		font-size: 50px;
+	}
+	
+	
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+
+
+	var btns;
+	var num1,num2,num3,num4;
+	var del, enter;
+	window.onload = function(){
+		btns = document.getElementById("btns").children;
+		num1 = document.getElementById("num1");
+		num2 = document.getElementById("num2");
+		num3 = document.getElementById("num3");
+		num4 = document.getElementById("num4");
+		
+		del = document.getElementById("del");
+		enter = document.getElementById("enter");
+		
+		
+		
+		for(var i=0;i<btns.length;i++){
+			btns[i].onclick = function(){
+				if(!isNaN(event.srcElement.innerText)){
+					if(num1.innerText == ""){
+						num1.innerText = event.srcElement.innerText;
+					} else if(num2.innerText == ""){
+						num2.innerText = event.srcElement.innerText;
+					} else if(num3.innerText == ""){
+						num3.innerText = event.srcElement.innerText;
+					} else if(num4.innerText == ""){
+						num4.innerText = event.srcElement.innerText;
+					}
+				}
+			};
+		}
+		
+		del.onclick = function(){
+			if(num4.innerText != ""){
+				num4.innerText = "";
+			} else if(num3.innerText != ""){
+				num3.innerText = "";
+			} else if(num2.innerText != ""){
+				num2.innerText = "";
+			} else if(num1.innerText != ""){
+				num1.innerText = "";
+			}
+		};
+		
+		var cnt = 0;
+		enter.onclick = function(){
+			if(num1.innerText == 2 && num2.innerText == 5 
+					&& num3.innerText == 8 && num4.innerText == 0){
+				document.body.bgColor = "blue";
+			} else {
+				cnt++;
+				if(cnt<3){
+					document.body.bgColor = "tomato";
+				} else{
+					document.body.bgColor = "red";
+				}
+			}
+		}
+		
+	};
+	
+	window.onkeydown = function(){
+		//alert(event.keyCode);
+		if(event.keyCode>=48 && event.keyCode<=57){
+			btns["n"+(event.keyCode-48)].click();
+		}
+		if(event.keyCode == 13){
+			enter.click();
+		}
+		if(event.keyCode == 8){
+			del.click();
+		}
+		
+	};
+
+</script>
+</head>
+<body ondragstart="return false">
+
+	<div id="calc">
+		
+		<div id="numBox">
+			<div id="num1"></div>
+			<div id="num2"></div>
+			<div id="num3"></div>
+			<div id="num4"></div>
+		</div>
+		
+		<div id="btns">
+			<div id="n7">7</div>
+			<div id="n8">8</div>
+			<div id="n9">9</div>
+			<div id="n4">4</div>
+			<div id="n5">5</div>
+			<div id="n6">6</div>
+			<div id="n1">1</div>
+			<div id="n2">2</div>
+			<div id="n3">3</div>
+			<div id="n0">0</div>
+			<div id="del">del</div>
+			<div id="enter">enter</div>
+		</div>
+		
+	</div>
+
+
+</body>
+</html>

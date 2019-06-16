@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	div{
+		border: 1px solid black;
+		padding: 15px;
+		margin: 15px;
+	}
+	
+	#n8{
+		border: 5px solid orange;
+	}
+
+</style>
+<script>
+	window.onload = function(){
+		
+		document.getElementById("btn1").onclick = function(){
+			
+			// Node 기본 구조 + 나를 기준으로 하는 상대 표현법(검색)
+			var me = document.getElementById("n8");
+			
+			// DOM
+			// 	- 문서상의 모든 태그(속성, PCDATA 등)을 객체화 시킨 뒤 트리 구조로 만든다.
+			//  - DOM 트리를 구성하는 요소 > 노드(Node)
+			
+			// Node, 노드
+			// - 태그, 속성, PCDATA, 주석 등...
+			// 1. nodeName
+			// 	 a. 태그 : 태그명을 반환
+			//   b. PCDATA : #text
+			//   c. 주석 : #comment
+			//   d. 속성 : 속성명을 반환
+			
+			// 2. nodeType
+			//	 a. 태그 : 1
+			//   b. PCDATA : 3
+			//   c. 주석 : 8
+			//	 d. 속성 : 2
+			
+			
+			// 3. nodeValue
+			//	 a. 태그 : 항상 null 
+			//   b. PCDATA : 자신의 문자열
+			//   c. 주석 : 주석내용
+			//   d. 속성 : 속성값
+			
+			//  me -> <div id = "n8">
+			//console.log(me);
+			// 태그일 경우
+			console.log(me.nodeName);	// 태그명 (DIV)
+			console.log(me.nodeType);	// 1
+			console.log(me.nodeValue);	// null
+			
+			// 자식 접근 (속성 제외)
+			// - firstChild : 첫번째 자식 노드 (childNodes[0])
+			// - lastChild : 마지막 자식 노드 (childNodes[childNodes.length-1])
+			// - childNodes[i]
+			console.log(me.firstChild.nodeName); // #text
+			console.log(me.firstChild.nodeType); // 3
+			console.log(me.firstChild.nodeValue); // "나"
+			console.log(me.childNodes.length); // 7
+			
+			// 첫째 자식 + <div>
+			console.log(me.childNodes[1].nodeName);
+			console.log(me.childNodes[1].nodeType);
+			console.log(me.childNodes[1].nodeValue);
+			
+			console.log(me.childNodes[3].nodeName);
+			console.log(me.childNodes[3].nodeType);
+			console.log(me.childNodes[3].nodeValue);
+			
+			// 자식 + 속성
+			console.log(me.attributes["title"].nodeName);
+			console.log(me.attributes["title"].nodeType);
+			console.log(me.attributes["title"].nodeValue);
+			
+			
+		};
+		
+	};
+</script>
+</head>
+<body>
+
+	<input type="button" value="테스트" id="btn1"></input>
+	<hr />
+	
+	<div id="n1">
+	
+		할아버지
+		<div id="n2">
+		큰아빠
+			<div id="n5">사촌</div>
+		</div>
+		<div id="n3">
+		아빠
+			<div id="n7">형</div>
+			<div id="n8" title="나입니다.">나
+				<div id="n10">첫째자식</div>
+				<!-- 자식 목록  -->
+				<div id="n11">둘쨰자식
+					<div id="n13">손자</div>
+				</div>
+				<div id="n12">셋째자식</div>
+			</div>
+			<div id="n9">동생</div>
+		</div>
+		<div id="n4">
+			작은아빠
+			<div id="n6">사촌</div>
+		</div>
+		
+	
+	</div>
+
+
+</body>
+</html>

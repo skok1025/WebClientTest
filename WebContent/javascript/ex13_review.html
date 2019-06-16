@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	
+	
+	
+</script>
+</head>
+<body>
+	<!--  
+	
+	CSS 동작 순서
+		1. 태그 검색(선택자 사용)
+		2. 1의 결과에 서식을 적용
+	
+	JavaScript 동작 순서
+		1. 이벤트 추가
+			a. 특정 태그 검색
+				- 이벤트를 걸고 싶은 태그 검색
+				- BOM 사용 (window.document.form1.btn1)
+				- DOM 사용 (document.getElementById("btn1"))
+			b. onXXX 매핑 (Event Mapping)
+		
+		2. 이벤트 핸들러(이벤트에 걸린 실행함수)
+			a. 특정 태그 검색
+				- 조작을 하고 싶은 태그 검색
+				- BOM 사용
+				- DOM 사용
+			b. 속성(PCDATA) 을 조작
+				- HTML 이 제공하는 속성 그대로 자바스크립트도 프로퍼티;로 제공
+	-->
+
+	<form name="form1">
+	
+	<input type="text" name="txt1"/><br />
+	<input type="button" name="btn1" value="현재시간 알아내기(동적)" /><br />
+	<!-- 안쓰는 추세  -->
+	<input type="button" name="btn2" value="현재시간 알아내기(정적)" onclick="test();"/><br />
+	
+	</form>
+
+	<script>
+		// BOM 도구 -> 1.a.이벤트를 걸고 싶은 태그 검색
+		// 			   1.b.원하는 종류의 이벤트 추가
+		window.document.form1.btn1.onclick = function(){
+			
+			var now = new Date();
+			
+			// 출력
+			// 2.a 조작하고 싶은 태그 검색 + BOM
+			// 2.a 조작하고 싶은 태그의 속성 조작
+			window.document.form1.txt1.value = now.toLocaleString();
+		};
+		
+		function test(){
+			var now = new Date();
+			window.document.form1.txt1.value = now.toLocaleString();
+		}
+		
+		
+	</script>
+
+</body>
+</html>

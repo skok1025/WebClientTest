@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	window.onload = function(){
+		
+	};
+	var num;
+	function ex1(){
+		
+		//console.log(getFileName(event.srcElement.src).indexOf("cat0"));
+
+		num = event.srcElement.dataset.num;
+		 if(getFileName(event.srcElement.src).indexOf("cat0")==0){ 
+			event.srcElement.src = "../../images/dog0"+num+".jpg"
+		 } else{
+			
+			event.srcElement.src = "../../images/cat0"+num+".jpg"
+			
+		} 
+		
+		
+		
+	}
+	
+	function getFileName(path){
+		var index = path.lastIndexOf("/");
+		if(index>-1){
+			return path.substring(index+1);
+		} else{
+			return null;
+		}
+	}
+</script>
+</head>
+<body>
+
+	<img src="../../images/cat01.jpg" onmouseover="ex1();" data-num = "1"/>
+	<img src="../../images/cat02.jpg" onmouseover="ex1();" data-num = "2"/>
+	<img src="../../images/cat03.jpg" onmouseover="ex1();" data-num = "3"/>
+	<img src="../../images/cat04.jpg" onmouseover="ex1();" data-num = "4"/>
+	<img src="../../images/cat05.jpg" onmouseover="ex1();" data-num = "5"/>
+
+</body>
+</html>

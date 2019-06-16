@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	div{
+		margin: 10px;	padding: 10px;
+	}
+</style>
+<script>
+
+	window.onload = function(){
+		document.getElementById("btn1").onclick = function(){
+			
+			// DOM 검색
+			// 1. 식별자 (절대)
+			//		a. name 속성 : 사용안함
+			//		b. id 속성 : 사용 많음
+			//		c. class 속성
+			// 		d. 태그명
+			// 2. Axis 표현(상대)
+			//	- 자식 노드
+			//	a. firstChild
+			//  b. lastChild
+			//  c. childNodes
+			//	- 부모 노드
+			//	d. parentNode
+			//  - 형제 노드
+			//	e. previousSibling : 형
+			//  f. nextSibling : 동생
+			
+			// class 검색
+			//var box = document.getElementsByClassName("box");
+			
+			// 태그명 검색
+			var box = document.getElementsByTagName("div");
+			//alert(box.length);
+			
+			//alert(box.length);
+/* 
+			for(var i = 0 ; i< box.length; i++){
+				box[i].onclick = function(){
+					// 각각의 박스에 클릭이벤트 추가
+					//alert("클릭");
+					// 이벤트는 일괄적으로 추가했지만 클릭이벤트 함수내에서는 어떤 버튼이 눌렸는지를 구분할 수 있어야한다. (***)
+					// box[i].innerText : 사용불가!!
+					alert(event.srcElement.innerText);
+				};
+			}
+*/
+			
+			// 내가 찾고자 하는 div 태그들의 부모
+			var list = document.getElementById("list2");
+			
+			for(var i=0;i<list.childNodes.length;i++){
+				list.childNodes[i].onclick = function(){
+					event.srcElement.innerText = "클릭함";
+				};
+			}
+			
+			var box3 = document.getElementById("btn3");
+			
+			//alert(box3.parentNode.id);
+			//alert(box3.parentNode.parentNode.nodeName);
+			//alert(box3.parentNode.parentNode.nodeType);
+			//alert(box3.parentNode.parentNode.nodeValue);
+			
+			//alert(box3.parentNode.parentNode.parentNode.nodeName);
+			//alert(box3.parentNode.parentNode.parentNode.nodeType);
+			//alert(box3.parentNode.parentNode.parentNode.nodeValue);
+			
+			// #document - 문서 객체 (루트 태그보다 위에 있는 부모 객체)
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeName); 
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeType); // 9
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeValue); // null
+			
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName); 
+			
+			// box3 형
+			//alert(box3.previousSibling.nodeType);
+			// 공백 주의
+			
+			box3.previousSibling.previousSibling.innerText = "바로 위의 형";
+			
+			box3.nextSibling.nextSibling.innerText = "바로 밑의 동생";
+			
+			
+		};	
+	};
+</script>
+</head>
+<body>
+	
+	<input type="button" value="테스트"  id="btn1" />
+	
+	<div id="list1">
+		<div id="btn1" class="box">상자1</div>
+		<div id="btn2" class="box">상자2</div>
+		<div id="btn3" class="box">상자3</div>
+		<div id="btn4" class="box">상자4</div>
+		<div id="btn5" class="box">상자5</div>
+		<div id="btn6" class="box">상자6</div>
+		<div id="btn7" class="box">상자7</div>
+		<div id="btn8" class="box">상자8</div>
+		<div id="btn9" class="box">상자9</div>
+		<div id="btn10" class="box">상자10</div>
+	</div>
+	
+	<div id="list2">
+		<div>Box1</div>
+		<div>Box2</div>
+		<div>Box3</div>
+		<div>Box4</div>
+		<div>Box5</div>
+		<div>Box6</div>
+		<div>Box7</div>
+		<div>Box8</div>
+		<div>Box9</div>
+		<div>Box10</div>
+	</div>
+	
+	
+	
+</body>
+</html>

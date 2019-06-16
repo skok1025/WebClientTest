@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+	/* 
+		btn1.onclick = function(){
+			
+		};
+		btn1.click(function(){});
+		//--------------------------------------------
+		btn1.addEventListener("click",function(){});
+				// Invocation List
+		btn1.on("click",function(){});
+		 */
+		 
+		
+		
+		// - jQuery("#btn1")
+		$("#btn1").click(function(){
+			alert("버튼1 클릭");
+		});	 
+		 
+		$("#btn1").on("click", function(){
+			alert("buttn");
+		});
+		
+		// mouseover == mouseenter
+		// mouseout == mouseleave
+		/* 
+		$("#btn2").mouseenter(function(){
+			$(".box").css("background-color","tomato");		
+		});
+		
+		$("#btn2").mouseleave(function(){
+			$(".box").css("background-color","transparent");		
+		});
+		 */
+		// btn2 와 btn3 동일한 코드 (코드 재사용)
+		// 1. 반복되는 코드를 함수로 추출한다.
+		// 2. jQuery 특징 : 이벤트를 모아서 객체로 만든다.
+		// 3. CSS 선택자
+		
+		//1. 반복되는 코드를 함수로 추출한다.
+		/* 
+		$("#btn2").mouseenter(f1);
+		$("#btn2").mouseleave(f2);
+		
+		$("#btn3").mouseenter(f1);
+		$("#btn3").mouseleave(f2);
+		 */
+		
+		//2. jQuery 특징 : 이벤트를 모아서 객체로 만든다.
+		var evt = {
+			mouseenter: function(){
+				$(".box").css("background-color","red");
+			},
+			mouseleave: function(){
+				$(".box").css("background-color","transparent");	
+			}
+		};
+		/* 
+		 $("#btn2").on(evt);
+		 $("#btn3").on(evt);
+		 $("#btn1").on({
+				mouseenter: function(){
+					$(".box").css("background-color","red");
+				},
+				mouseleave: function(){
+					$(".box").css("background-color","transparent");	
+				}
+		});
+		 */
+		 
+		 $("#btn1 ,#btn2, #btn3").on(evt);
+		  
+		 
+		
+		
+	}); // ready
+	
+	function f1(){
+		$(".box").css("background-color","red");		
+	}
+	
+	function f2(){
+		$(".box").css("background-color","transparent");		
+	}
+</script>
+</head>
+<body>
+
+	<input type="button" value="테스트" id="btn1">
+	<input type="button" value="테스트" id="btn2" />
+	<input type="button" value="테스트" id="btn3" />
+	<hr/>
+	
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+
+</body>
+</html>

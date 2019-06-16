@@ -1,0 +1,65 @@
+ @import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+
+@font-face { font-family: 'TmonMonsori'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff'); font-weight: normal; font-style: normal; }
+ 
+body, p, div, span, ul, ol, li, table, th, td, input, textaream button, a{
+	font-family:'TmonMonsori';
+	color: #444;
+}
+
+.table {
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+.table th, .table td{
+	border: 1px solid gray;
+	padding: 4px;
+}
+
+.table th{
+	background-color: #eee;
+}
+
+
+.box{
+	border: 1px solid black;
+	
+}
+
+.box.big{ width: 300px; height: 300px; }
+
+.box.medium{ width: 200px; height: 200px;}
+
+.box.small{width: 100px; height: 100px;}
+
+.box.red{background-color: tomato;}
+.box.blue{background-color: cornflowerblue;}
+.box.yellow{background-color: #FFF766;}
+.box.green{background-color: lightgreen;}
+.box.orange{background-color: #E5C361;}
+
+a{
+	text-decoration: none;	
+}
+a:hover {
+	color: tomato;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

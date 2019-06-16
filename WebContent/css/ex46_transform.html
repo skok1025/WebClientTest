@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	body{
+		padding-bottom: 200px;
+	}
+	
+	#list{
+		border: 0px solid red;
+		width: 800px;
+	}
+
+	.box{
+		width: 150px;
+		height: 150px;
+		/* 블럭 태그 수평 정렬 */
+		margin: 10px auto;
+	}
+	
+	.box:hover{
+		transform : translate(0px,15px);
+	}
+	
+	#box1{
+		/* translate(x,y)  */
+		/* transform: translate(0px,0px); */
+	}
+	
+	#list .cat{
+		width: 150px;
+		border: 1px solid gray;
+		/* transform: translate(100px,100px); */
+		
+	}
+	
+	#list .cat:hover {
+		/* 
+		transform: translate(0px,-15px);
+		box-shadow: 0px 15px 10px gray;
+		 */
+		/* transform : scale(-1,1); */
+		transform: rotate(15deg);
+	}
+	
+	#list .cat:nth-child(odd):hover{
+		transform: rotate(-15deg);
+	}
+	
+	#box2{
+		/* scale(x,y) : x,y(백분율(0~1))  */
+		/* transform : scale(2,2); */
+		/* transform : scale(-1,-1); */
+		
+		/* rotate(deg) : deg(회전할 각도) */
+		/* transform: rotate(-45deg); /* 시계방향 45 도 */*/
+		
+		/* skew(Xdeg,Ydeg)  */
+		
+	}
+	
+	#box4{
+		/* 
+		width: 300px;
+		height: 300px; 
+		*/
+		transform : skew(0deg,40deg);
+	}
+	
+	.txt{
+		/* transform: scale(-1,1); */
+		/* transform: rotate(45deg);
+		margin-bottom: 150px; */
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+
+	<!--  
+	transform , 변형
+	- CSS3 추가 (이전에는 JavaScript 구현하던 기능들...)
+	- transform: 속성값;
+	- 객체(태그)의 위치, 배율(크기), 회전, 왜곡  변형 적용
+	
+	transform의 속성값
+	1. translate()
+		-위치 변형
+	2. scale()
+		- 배율(크기) 변형
+		- 배율(확대,축소) 조정, 반전 효과 등...
+	3. rotate()
+		- 회전 변형
+	4. skew()
+		- 왜곡 변형(비틀기)
+	5. matrix()
+		- 위의 1~4번 포함 + 사용자 정의
+		- 행렬
+	
+	-->
+	
+	
+
+	<div id="box1" class="box red">상자1</div>
+	<div id="box2" class="box blue">상자2</div>
+	<div id="box3" class="box yellow">상자3</div>
+	<div id="box4" class="box orange">상자4</div>
+	<div id="box5" class="box green">상자5</div>
+	
+	<hr>
+	
+	<div id="list">
+		<img src="../images/cat01.jpg" alt="" class="cat" />
+		<img src="../images/cat02.jpg" alt="" class="cat" />
+		<img src="../images/cat03.jpg" alt="" class="cat" />
+		<img src="../images/cat04.jpg" alt="" class="cat" />
+		<img src="../images/cat05.jpg" alt="" class="cat" />
+	</div>
+	
+	<hr>
+	
+	<input type="text" class="txt">
+	
+	<hr>
+	
+	<textarea cols="50" rows="5" class="txt"></textarea>
+
+	
+</body>
+</html>

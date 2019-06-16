@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var bt1,bt2,bt3,bt4,bt5,img;
+	window.onload = function(){
+		bt1 = document.form1.bt1;
+		bt2 = document.form1.bt2;
+		bt3 = document.form1.bt3;
+		bt4 = document.form1.bt4;
+		bt5 = document.form1.bt5;
+		
+		img = document.images["img"];
+		
+		bt1.onmouseover = function(){
+			img.src = "../../images/dog01.jpg";
+		};
+		bt2.onmouseover = function(){
+			img.src = "../../images/dog02.jpg";
+		};
+		bt3.onmouseover = function(){
+			img.src = "../../images/dog03.jpg";
+		};
+		bt4.onmouseover = function(){
+			img.src = "../../images/dog04.jpg";
+		};
+		bt5.onmouseover = function(){
+			img.src = "../../images/dog05.jpg";
+		};
+		
+		bt1.onclick = function(){
+			window.open("../../images/dog01_big.jpg",'child','target = "_blank"');
+		};
+		
+	};
+</script>
+</head>
+<body>
+
+	<form action="" name="form1" style="float: left;">
+		<div>
+			<input type="button" name="bt1" value="강아지1"/><br />
+			<input type="button" name="bt2" value="강아지2"/><br />
+			<input type="button" name="bt3" value="강아지3"/><br />
+			<input type="button" name="bt4" value="강아지4"/><br />
+			<input type="button" name="bt5" value="강아지5"/><br />
+		</div>
+	</form>
+	<img src="../../images/dog01.jpg" name="img" alt="" style="float: left;" />
+
+</body>
+</html>

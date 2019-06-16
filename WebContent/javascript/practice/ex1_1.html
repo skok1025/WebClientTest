@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var img1,img2;
+	var switch_bt;
+	
+	window.onload = function(){
+		img1 = window.document.all.img1;
+		img2 = window.document.images["img2"];
+		switch_bt = window.document.images["switch"];
+		document.body.bgColor = "black";
+			
+		switch_bt.onclick = function(){
+				if(switch_bt.src == "../../images/switch_off.png"){
+					switch_bt.src = "../../images/switch_on.png";
+					document.body.bgColor = "white";
+				} else if(switch_bt.src == "../../images/switch_on.png"){
+					switch_bt.src = "../../images/switch_off.png";
+					document.body.bgColor = "black";
+				} 
+		};
+	
+	};
+	
+	var num1=0;
+	var num2=0;
+	/* window.onmousedown = function(){
+		num2++;
+		
+		if(num2>9){
+			num2=0;
+			num1++;
+		}
+		
+		img2.src = "../../images/"+num2+".png"; 
+		img1.src = "../../images/"+num1+".png";
+	}; */
+	
+	window.onkeydown = function(){
+		if(event.keyCode == 38){
+			num2++
+			if(num2>9){
+				num2=0;
+				num1++;
+			}
+		} else if(event.keyCode == 40){
+			num2--;
+			if(num2<0){
+				num2 = 9;
+				num1--;
+			}
+		}
+		img2.src = "../../images/"+num2+".png"; 
+		img1.src = "../../images/"+num1+".png";
+	};
+	
+	function getFileName(path){
+		var index = path.lastIndexOf("/");
+		if(index>-1){
+			return path.substring(index+1);
+		} else{
+			return null;
+		}
+	}
+</script>
+</head>
+<body onselectstart="return false;" ondragstart = "return false;">
+
+	<img src="../../images/0.png" name="img1" />
+	<img src="../../images/0.png" name="img2" />
+	
+	<hr />
+	
+	<img src="../../images/switch_off.png" name="switch" alt="" />
+
+</body>
+</html>

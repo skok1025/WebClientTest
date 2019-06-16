@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+
+	.box{
+		border: 1px solid black;
+		width: 350px; height: 350px;
+		background-color: yellow;
+		margin: 50px;
+	}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#cat1").draggable({
+			//axis: "y"
+			grid:[128,128] // 기준점을 이용
+		});
+		$("#cat2").draggable({
+			containment:"#box1"
+		});
+		
+		$("#cat3, #cat4").draggable({
+			containment:"parent",
+			cursor:"move"
+		});
+	});
+</script>
+</head>
+<body>
+
+	<img src="/WebClientTest/images/catty01.png" id="cat1" />
+	
+	<div class="box" id="box1">
+		<img src="/WebClientTest/images/catty02.png" id="cat2" />
+	</div>
+	<div class="box" id="box2">
+		<img src="/WebClientTest/images/catty03.png" id="cat3" />
+	</div>
+	<div class="box" id="box3">
+		<img src="/WebClientTest/images/catty04.png" id="cat4" />
+	</div>
+	
+
+</body>
+</html>

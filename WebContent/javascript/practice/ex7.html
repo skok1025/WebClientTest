@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	input[type="checkbox"]{
+		/* visibility: hidden; */
+	}
+</style>
+<script>
+	var img1,img2,img3,img4,img5,img6,img7,img8,img9;
+	window.onload = function(){
+		img1 = document.images["img1"];
+		img2 = document.images["img2"];
+		img3 = document.images["img3"];
+		img4 = document.images["img4"];
+		img5 = document.images["img5"];
+		img6 = document.images["img6"];
+		img7 = document.images["img7"];
+		img8 = document.images["img8"];
+		img9 = document.images["img9"];
+		
+		img1.onmouseover = function(){
+			img1.click();
+			img1.src = "../../images/rect_icon02.png";
+		};
+		img2.onmouseover = function(){
+			img2.click();
+			img2.src = "../../images/rect_icon02.png";
+		};
+		img3.onmouseover = function(){
+			img3.click();
+			img3.src = "../../images/rect_icon02.png";
+		};
+		img4.onmouseover = function(){
+			img4.click();
+			img4.src = "../../images/rect_icon02.png";
+		};
+		img5.onmouseover = function(){
+			img5.click();
+			img5.src = "../../images/rect_icon02.png";
+		};
+		img6.onmouseover = function(){
+			img6.click();
+			img6.src = "../../images/rect_icon02.png";
+		};
+		img7.onmouseover = function(){
+			img7.click();
+			img7.src = "../../images/rect_icon02.png";
+		};
+		img8.onmouseover = function(){
+			img8.click();
+			img8.src = "../../images/rect_icon02.png";
+		};
+		img9.onmouseover = function(){
+			img9.click();
+			img9.src = "../../images/rect_icon02.png";
+		};
+		
+	};
+	
+	function compelte(){
+		var form1=  document.forms["form1"];
+		
+		if(form1.elements[0].checked &&
+				form1.elements[3].checked &&
+				form1.elements[6].checked && 
+				form1.elements[7].checked &&
+				form1.elements[8].checked ){
+			
+			alert("성공");
+			location.href = "http://naver.com";
+		} else{
+			alert("실패");
+		}
+		
+		for(var i =0; i<document.images.length; i++){
+			document.images[i].src = "../../images/rect_icon01.png";
+			
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+		
+		<form name="form1">
+			<input type="checkbox" name="cb1" id="cb1"/>
+			<label for="cb1">
+				<img src="../../images/rect_icon01.png" name="img1" />
+			</label>
+			<input type="checkbox" name="cb2" id="cb2"/>
+			<label for="cb2">
+				<img src="../../images/rect_icon01.png" name="img2" />
+			</label>
+			<input type="checkbox" name="cb3" id="cb3"/>
+			<label for="cb3">
+				<img src="../../images/rect_icon01.png" name="img3" />
+			</label>
+			<div style="clear: both;"></div>
+			<input type="checkbox" name="cb4" id="cb4"/>
+			<label for="cb4">
+				<img src="../../images/rect_icon01.png" name="img4" />
+			</label>
+			<input type="checkbox" name="cb5" id="cb5"/>
+			<label for="cb5">
+				<img src="../../images/rect_icon01.png" name="img5" />
+			</label>
+			<input type="checkbox" name="cb6" id="cb6"/>
+			<label for="cb6">
+				<img src="../../images/rect_icon01.png" name="img6" />
+			</label>
+			
+			<div style="clear: both;"></div>
+			<input type="checkbox" name="cb7" id="cb7"/>
+			<label for="cb7">
+				<img src="../../images/rect_icon01.png" name="img7" />
+			</label>
+			<input type="checkbox" name="cb8" id="cb8"/>
+			<label for="cb8">
+				<img src="../../images/rect_icon01.png" name="img8" />
+			</label>
+			<input type="checkbox" name="cb9" id="cb9"/>
+			<label for="cb9">
+				<img src="../../images/rect_icon01.png" name="img9" />
+			</label>
+		</form>
+		<br />
+		<input type="button" name="complete_bt" value="결과보기" onclick="compelte();" />
+	
+</body>
+</html>

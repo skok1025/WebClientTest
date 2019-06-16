@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+	
+		
+		var div = document.createElement("div");
+		div.style.border = "1px solid black";
+		div.style.width = "640px";
+		div.style.height = "640px";
+		
+		document.body.appendChild(div);
+		
+		for(var i =0; i<25; i++){
+			var sdiv = document.createElement("div");
+			sdiv.style.border = "1px solid black";	
+			sdiv.style.width = "126px";
+			sdiv.style.height = "126px";
+			sdiv.style.float = "left";
+			
+			div.appendChild(sdiv);
+			
+			
+			
+			var num = parseInt(Math.random()*6)+1;
+			var img = document.createElement("img");
+			img.style.width = "126px";
+			img.style.height= "126px";
+			img.src = "/WebClientTest/images/rect_icon0"+num+".png";
+			
+			sdiv.appendChild(img);
+			
+		}
+		
+		
+	});
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

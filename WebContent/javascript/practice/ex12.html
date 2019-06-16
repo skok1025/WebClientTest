@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+	td {
+		width: 126px;
+		height: 126px;
+		text-align: center;
+		font-size: 50px;
+		font-weight: bold;
+	}
+
+</style>
+<script src="/WebClientTest/javascript/js/basic.js"></script>
+<script>
+
+	
+		
+	window.onload = function(){
+		var cells = document.getElementsByTagName("td");
+		
+		for(var i=0;i<cells.length; i++){
+			
+			cells[i].onmousedown = function(){
+				var num = parseInt(event.srcElement.innerText);
+				
+				
+					if(event.buttons == 1){
+						event.srcElement.innerText = num+1;
+						
+					} else if(event.buttons == 2 && event.srcElement.innerText>0){
+						event.srcElement.innerText = num-1;
+						
+					}
+				
+				if(event.srcElement.innerText == 0){ 
+					event.srcElement.bgColor = "gray";
+					
+				}
+				else{
+					event.srcElement.bgColor = "white";
+				}
+			};
+			
+		}
+		
+	};
+</script>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+</head>
+<body oncontextmenu="return false;">
+
+
+	<table class="table">
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/javascript/js/cookie.js"></script>
+<script>
+
+	var btn2;
+	
+	window.onload = function(){
+		
+		btn2 = document.all.btn2;
+
+		btn2.onclick = function(){
+			//alert(num); // 절대로 다른페이지의 자원은 접근 불가능: 0%
+			// 웹에서는 상태유지가 되질 않는다.
+			alert(getCookie("data"));
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+	<h1>두번째 페이지</h1>
+	
+	<fieldset>
+		<legend>페이지 이동하기</legend>
+		<a href="ex29_a.html">첫번째 페이지</a>
+		<a href="ex29_b.html">두번째 페이지</a>
+		<a href="ex29_c.html">세번째 페이지</a>
+	</fieldset>
+	
+	<fieldset>
+		<input type="button" value="불러오기" name="btn2" />
+	</fieldset>
+	
+</body>
+</html>

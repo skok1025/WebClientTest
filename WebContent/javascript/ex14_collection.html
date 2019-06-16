@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	img{
+		
+	}
+</style>
+<script>
+
+	// 자바 스크립트에서 기본으로 제공하는 배열(컬렉션)
+	// 1. window.document.all : 모든 태그 배열 (비표준 - MS > 대다수 브라우저가 지원)
+	// 2. window.document.images : 문서상의 모든 <img> 태그 배열
+	// 3. window.document.links  : 문서상의 모든 <a href=""> 태그 배열
+	// 4. window.document.forms  : 문서상의 모든 <form> 태그 배열
+	// 5. window.document.forms.elements : 특정 <form>의 내부 하위 컨트롤 태그배열
+	// 6. window.document.anchors : 문서상의 모든 <a name = "" id=""> 태그 배열
+
+// 브라우저가 페이지의 모든 내용을 읽고 난 뒤에 호출되는 이벤트 > 페이지의 모든 태그를 읽고 난 뒤라서 모든 태그에 접근이 가능하다.
+	
+	
+	window.onload = function(){
+	
+		// 버튼 검색 > onclick > 업무 (조작)
+		var btn1 = window.document.form1.btn1; // 버튼 검색
+		
+		btn1.onclick = function(){
+			
+		// 이미지 태그 검색
+			/* window.document.cat01.width = 300;
+			window.document.cat02.width = 300;
+			window.document.cat03.width = 300; */
+			
+			//alert(window.document.images.length);
+			//window.document.images[0].border= 1; // 루프용
+			
+			//window.document.images["cat01"].border = 5; // 권장
+			
+			window.document.body.bgColor = "red";
+			
+			for(var i=1; i<=3; i++){
+				window.document.images["cat0"+i].border = 10;
+			}
+			
+			// 링크 태그 검색
+			// <a href="" name="link1">
+			
+			//window.document.link1.target = "_blank";
+			//alert(window.document.links.length);
+
+			window.document.links[0].target = "_blank";
+			window.document.links["link2"].target = "_blank";
+			
+			// 폼 태그 검색
+			//window.document.form1
+			//window.document.forms[0]
+			//window.document.forms["form1"]
+			
+			// 폼 하위 태그 검색(텍스트박스, 버튼, 라디오, 체크박스 등...)
+			window.document.forms["form1"].txt1.value = "홍길동";
+			
+			//alert(window.document.forms["form1"].elements.length);
+			
+			var list = window.document.forms["form1"].elements;
+			
+			for(var i=0;i<list.length;i++){
+				//list[i].value = i +"번째 요소";
+				//alert(list[i].type);
+				if(list[i].type == "text"){
+					list[i].value = i + "번째 요소";
+				}
+			}
+			
+			// 4번째 텍스트 박스에 접근
+			//window.document.all.txt4
+			//window.document.all[8]
+			window.document.all["txt4"].value = "아무개";
+			
+			//window.document.forms["form1"].images["cat04"].border = 10;
+			window.document.images["cat04"].border = 10;
+			
+		};
+	};
+
+</script>
+</head>
+<body>
+
+	<h1>&lt;BOM 도구를 사용해서 검색할 수 있는 태그들&gt;</h1>
+
+
+	<h2>이미지</h2>
+	<img alt="" src="../images/catty01.png" name = "cat01">
+	<img alt="" src="../images/catty02.png" name = "cat02">
+	<img alt="" src="../images/catty03.png" name = "cat03">
+
+	<h2>링크</h2>
+	<a href="http://naver.com" name="link1">네이버</a>
+	<a href="http://google.com" name="link2">구글</a>
+	<a href="http://daum.net" name="link3">다음</a>
+
+	<h2>폼</h2>
+	
+	<form name="form1">
+		텍스트 박스1 : <input type="text" name="txt1" /> <br />
+		텍스트 박스2 : <input type="text" name="txt2" /> <br />
+		텍스트 박스3 : <input type="text" name="txt3" /> <br />
+		<img alt="" src="../images/catty04.png" name = "cat04">
+		
+		<hr />
+			<input type="button" value="확인" name="btn1"/>
+		<hr />
+		
+	</form>
+	
+	텍스트 박스4 : <input type="text" name="txt4" /> <br />
+			
+	
+
+</body>
+</html>

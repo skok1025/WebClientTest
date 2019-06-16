@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	console.log(new Date());
+
+	var txt2;
+	var cbAgree,btnNext;
+	var name1,name2,address1,address2, cbCopy, bgColorBt, txtpractice, txt1;
+	function init(){
+		window.document.form1.press.onclick = function(){
+			alert("눌렸어요");
+		};
+		
+		name1 = window.document.form1.name1;
+		name2 = window.document.form1.name2;
+		address1 = window.document.form1.address1;
+		address2 = window.document.form1.address2;
+		cbCopy = window.document.form1.cbCopy;
+		cbAgree = window.document.form1.cbAgree;
+		btnNext = window.document.form1.btnNext;
+		
+		cbCopy.onchange = function(){
+			if(cbCopy.checked){
+				name2.value = name1.value;
+				address2.value = address1.value;
+			} else{
+				name2.value = "";
+				address2.value = "";
+				name2.focus();
+			}
+		};
+		
+		cbAgree.onchange = function(){
+			if(cbAgree.checked){
+				btnNext.disabled = false;
+			} else{
+				btnNext.disabled = true;
+			}
+			
+		};
+		
+		bgColorBt = window.document.form1.bgColorBt;
+		
+		bgColorBt.onmousedown = function(){
+			
+			if(event.buttons == 1){
+				window.document.body.bgColor = "red";
+			} else if(event.buttons == 2){
+				window.document.body.bgColor = "blue";
+			} else if(event.buttons == 4){
+				window.document.body.bgColor = "yellow";
+			}
+				
+		};
+		
+		txtpractice = window.document.form1.txtpractice;
+		
+		txtpractice.onmousemove = function(){
+			
+			if(event.clientX % 3 == 0){
+				window.document.body.bgColor = "red";
+			} else if(event.clientX % 3 == 1){
+				window.document.body.bgColor = "blue";
+			} else if(event.clientX % 3 == 2){
+				window.document.body.bgColor = "yellow";
+			}
+			
+		};
+		
+		txt1 = window.document.form1.txt1;
+		
+		txt1.onkeydown = function(){
+			console.log(event.keyCode);
+		};
+		
+		txt2 = window.document.form1.txt2;
+		
+		txt2.onmousemove = function(){
+			if(event.clientX  %3 == 0){
+				window.document.body.bgColor = "red";
+			} else if(event.clientX % 3 ==1){
+				window.document.body.bgColor = "blue";
+			} else if(event.clientX % 3 ==2){
+				window.document.body.bgColor = "yellow";
+			} 
+		};
+		
+		
+		
+	}
+	
+	
+	
+
+</script>
+</head>
+<body onload = "init();">
+
+<form name="form1">
+	<input type="button" value="누르기" name="press" />
+	
+	<hr />
+	
+	<h1>배송지</h1>
+	<h2>회원주소</h2>		
+	
+	<input type="text" name="name1" value="홍길동" /><br />
+	<input type="text" name="address1" value="서울시 강남구 역삼동"/>
+	
+	<div style="margin-top: 20px;">
+		<input type="checkbox" name="cbCopy" />
+		회원과 받는분의 주소가 동일합니다.
+	</div>
+	
+	<h2>배송주소</h2>		
+	
+	<input type="text" name="name2" placeholder="받는분 성함" /><br/>
+	<input type="text" name="address2" placeholder="받는분 주소"/>
+	
+	<h1>약관</h1>
+		
+		<div style="width: 300px; height: 200px; border: 1px solid gray; overflow: auto; margin-bottom: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique numquam at alias nesciunt esse doloribus beatae labore nobis! Nihil ex accusamus voluptate iste quasi rem possimus! Repellendus sapiente aperiam modi earum voluptate sunt nisi temporibus laborum unde. Repellendus velit et explicabo natus quae quas distinctio ea sequi veniam voluptatibus modi provident dolores dignissimos cupiditate deleniti voluptate necessitatibus repudiandae amet totam inventore qui quidem harum atque aliquid accusantium excepturi consectetur eius alias nam optio maiores aliquam earum mollitia dolorem cumque facilis illum. Nobis voluptates corporis mollitia iusto ad facilis ratione distinctio quasi in odio nihil recusandae consequuntur voluptas! Nulla consequatur culpa omnis labore sint eaque provident sequi nobis eum inventore odit aperiam molestias non quibusdam tempore ad perferendis. Vel adipisci vero temporibus dolorum facere reprehenderit doloremque voluptates sint iste reiciendis incidunt minima officiis eaque ea quaerat velit ab excepturi fugiat nulla in quas illum doloribus dicta beatae sunt minus tempora quam! Incidunt sint suscipit ut atque in illo facilis. Magnam earum debitis animi porro corporis ipsam atque? Eveniet nam ducimus facere fuga deserunt eum dolores neque asperiores excepturi labore obcaecati corporis est fugit nemo alias architecto aliquid esse illo temporibus sint similique perferendis quasi at cumque doloremque molestiae a. Sunt veritatis porro recusandae impedit aspernatur est sint fuga optio rerum a non vero doloribus dolore deserunt ullam provident voluptatem maiores necessitatibus at cumque velit nulla magni iste quasi saepe id harum ipsa assumenda qui perspiciatis! Ipsum ex iusto magnam illum velit modi alias nihil rerum expedita veritatis itaque suscipit magni accusamus ipsa pariatur nostrum omnis dolorum rem unde laudantium eveniet dolore recusandae mollitia sapiente necessitatibus. Sunt repellat impedit expedita iste tenetur quisquam eos facere esse accusamus illo at mollitia inventore iure commodi consequuntur repudiandae eligendi maxime deleniti ratione numquam rerum possimus modi aliquam sapiente fugiat ipsa architecto ad vero sit temporibus!</div>
+		
+		<input type="checkbox" name="cbAgree" id="cbAgree">
+		<label for="cbAgree">약관에 동의합니다.</label>
+		
+		<input type="button" value="다음 단계로"
+			name="btnNext" disabled 
+			onclick="alert('다음으로...');">
+			
+			
+	<br/>
+	
+	<input type="button" name="bgColorBt" value="bgColorChange" />
+	
+	<br />
+	
+	<input type="text" name="txtpractice"/>
+	<br />
+	<input type="text" name="txt1" />
+	
+	<hr />
+	
+	<textarea name="txt2" cols="30" rows="10">
+	
+	</textarea>
+	
+</form>
+</body>
+</html>

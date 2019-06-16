@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	/*  
+		자주 사용하는 패턴
+	*/
+	#menu{
+		border: 0px solid black;
+		width: 630px;
+		height: 126px;
+		margin: 0px auto;
+		transform : translate(0px,0px);
+	}
+	
+	/* #menu:hover{
+		transform: translate(0px,-10px);
+	} */
+	
+	#menu > div{
+		float: left;
+	}
+	
+	#menu img{
+		/* float:left; */
+		cursor: pointer;
+	}
+	
+	#menu img:hover {
+		transform: translate(0px,90px);
+	}
+	
+	#fmenu{
+		border: 0px solid black;
+		width: 630px;
+		height: 126px;
+		margin: 0px auto;
+		
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		left: 0px;
+		
+		transform: translate(0px,100px);
+		
+		
+	}
+	
+	#fmenu img{
+		float:left;
+		cursor: pointer;
+	}
+	
+	#fmenu img:hover {
+		transform : translate(0px,-90px);
+	}
+	
+	
+	#smenu{
+		border: 0px solid black;
+		width: 126px;
+		height: 630px;
+		transform : translate(-110px,0px);
+		position: fixed;
+		top: 100px;
+		left: 0px;
+	}
+	
+	#smenu img{
+		float: left;
+		cursor: pointer;
+	}
+
+	#smenu img:hover {
+		transform : translate(100px,0px);
+	}
+	
+	#menu > div > div{
+		position: absolute;
+		left:20px;
+		top:95px;
+		
+		background-color: rgba(255,255,255,0.5);
+		padding: 5px 20px;
+		width: 60px;
+	}
+	]
+	/* 
+	
+	x 5번 
+	#menu > div:nth-child(5) > div {
+		left:540px;
+		top:100px;
+	} 
+	*/
+	
+	#menu > div {
+		position: relative;
+		left:0px;
+		top: 0px; 
+	}
+
+</style>
+</head>
+<body>
+
+	<nav id="menu">
+		<div>
+			<img src="../images/rect_icon01.png" alt="" />
+			<div>음악</div>
+		</div>
+		<div>
+			<img src="../images/rect_icon02.png" alt="" />
+			<div>동영상</div>
+		</div>
+		<div>
+			<img src="../images/rect_icon03.png" alt="" />
+			<div>홈</div>
+		</div>
+		<div>
+			<img src="../images/rect_icon04.png" alt="" />
+			<div>전화</div>
+		</div>
+		<div>
+			<img src="../images/rect_icon05.png" alt="" />
+			<div>고객센터</div>
+		</div>
+		<div style="clear: both"></div>
+	</nav>
+	
+	<nav id="fmenu">
+		<img src="../images/rect_icon01.png" alt="" />
+		<img src="../images/rect_icon02.png" alt="" />
+		<img src="../images/rect_icon03.png" alt="" />
+		<img src="../images/rect_icon04.png" alt="" />
+		<img src="../images/rect_icon05.png" alt="" />
+		<div style="clear: both"></div>
+	</nav>
+	
+	<nav id="smenu">
+		<img src="../images/rect_icon01.png" alt="" />
+		<img src="../images/rect_icon02.png" alt="" />
+		<img src="../images/rect_icon03.png" alt="" />
+		<img src="../images/rect_icon04.png" alt="" />
+		<img src="../images/rect_icon05.png" alt="" />
+	</nav>
+	
+	
+	<section style="width: 900px; margin: 0px auto;">
+		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+		
+		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque omnis.</h2>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere tempore dolore laborum ex quisquam pariatur cumque ut ullam voluptate nihil nobis sunt mollitia beatae rem veniam accusamus vitae voluptatum.</span>
+			<span>Unde possimus libero ducimus nesciunt expedita officia voluptates commodi tempore minus eaque quos voluptatem dolorem enim optio amet dicta molestias quas iste necessitatibus vero incidunt reiciendis deleniti debitis similique itaque!</span>
+			<span>Recusandae non molestiae doloribus dolorem incidunt quod similique ipsa ullam sunt laboriosam pariatur quas commodi qui quae maxime harum exercitationem placeat eum illo assumenda laudantium neque velit reprehenderit ea labore.</span>
+			<span>Temporibus dolore sapiente ad excepturi. Repellat temporibus eveniet aliquid aspernatur quasi nesciunt consequuntur. Voluptatibus blanditiis reiciendis asperiores repudiandae vel nesciunt consequuntur quasi aliquam alias odit sapiente aspernatur quisquam ipsa tempora.</span>
+			<span>Eos ullam harum aut officia optio eius minima veniam! Recusandae minus labore sequi facilis ullam suscipit possimus excepturi perferendis quae deserunt! Vero hic distinctio et tempora asperiores commodi optio illo.</span>
+		</p>
+		<h2>Autem atque ipsa unde impedit consectetur animi commodi fugit a.</h2>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque itaque commodi quasi atque facere omnis provident molestias qui ut sequi et maiores soluta voluptatum repudiandae delectus quidem ratione non sunt.</span>
+			<span>Quibusdam incidunt sunt corrupti placeat quia rem amet nostrum voluptatum mollitia eius dignissimos facilis qui quas enim aut architecto quae voluptas odit. Eaque deserunt possimus nobis totam sequi atque ullam.</span>
+			<span>Natus necessitatibus officia perspiciatis ut atque amet est fugit enim ipsum laboriosam illo incidunt sit similique temporibus omnis ipsa repellendus doloribus mollitia esse dignissimos! Nisi quisquam aperiam earum facilis voluptate.</span>
+			<span>Similique delectus natus nostrum earum at blanditiis nisi tenetur dolores aperiam distinctio officia expedita quaerat voluptatibus hic numquam aliquid consequatur amet odit consequuntur architecto minima adipisci cupiditate! Illum recusandae at.</span>
+			<span>Id provident esse culpa fuga et deserunt ipsam mollitia hic error temporibus sapiente eveniet voluptatem quo iure velit soluta reprehenderit! Deleniti enim explicabo eius error ipsum eveniet in esse provident.</span>
+		</p>
+		<h2>Quod dolorum laboriosam explicabo culpa cupiditate cumque ea dolorem ratione.</h2>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolorem praesentium tempore illum repudiandae alias fugit voluptatum dolor dicta provident repellendus eum vitae quam similique itaque ratione culpa voluptatem voluptatibus.</span>
+			<span>Fugit molestias reprehenderit veniam dolorum doloribus! Vero reiciendis eveniet minima ipsum perspiciatis corporis et est pariatur neque minus. Eos commodi error numquam dolor ad consectetur a quos culpa iusto praesentium.</span>
+			<span>Officia asperiores nisi expedita ea neque quisquam praesentium consequuntur soluta facere tempora architecto earum reiciendis minima assumenda ratione exercitationem temporibus provident molestiae repudiandae impedit accusamus excepturi eum nemo fugiat blanditiis?</span>
+			<span>Totam aliquam pariatur ipsam quibusdam doloribus iste unde cum commodi tenetur quam voluptatum fugiat culpa ullam perferendis quasi doloremque consequatur labore earum excepturi rerum quisquam quos laboriosam id et incidunt.</span>
+			<span>Sint facilis in similique commodi possimus ullam repudiandae voluptatem rerum quia facere officiis neque ducimus asperiores odit quam tempore natus animi. Repellat fugit ea ipsa laborum pariatur facere nemo aliquid.</span>
+		</p>
+		<h2>Quisquam nesciunt vitae consequuntur ullam officiis corporis impedit voluptates. Modi.</h2>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim magnam alias velit sint facere ut aliquam corporis distinctio nulla commodi blanditiis quaerat ullam labore recusandae similique architecto doloremque eaque. Quaerat.</span>
+			<span>Deserunt totam ut harum tempore accusamus architecto vel iusto odit voluptatem aut obcaecati alias hic iste ratione ea officiis minus quos quis laudantium excepturi. Esse assumenda iure velit corporis provident.</span>
+			<span>Velit reiciendis neque earum dicta repellendus repudiandae at voluptatem molestias saepe accusantium dolorum aliquam ipsa cum eius ullam itaque corporis alias iusto. Dolore officia quaerat repellendus minus debitis expedita eligendi.</span>
+			<span>Impedit est quae corporis culpa voluptatibus molestias omnis unde porro tempore fuga debitis officia dignissimos a ipsa necessitatibus aliquid ex repudiandae voluptatum voluptatem dicta laudantium animi assumenda nam! Nulla quo.</span>
+			<span>Culpa illo sint nisi corporis esse eius labore accusantium modi doloribus provident dicta facere. Odit consectetur tempora adipisci dolore neque rem molestias dolorum ipsum hic dolor enim repellat perspiciatis aliquam!</span>
+		</p>
+		<h2>Odio veniam obcaecati laborum ex adipisci illum error voluptatibus in!</h2>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel mollitia tenetur deserunt officiis aliquid suscipit esse unde. Ducimus eos rem eaque tempora dolor aspernatur ullam dicta cumque eligendi facilis nihil.</span>
+			<span>Quo modi recusandae optio minus iusto magnam ad dolores earum eum sit culpa nihil pariatur perspiciatis quibusdam beatae nesciunt illum assumenda quas accusantium aperiam in vitae id nisi aspernatur reiciendis?</span>
+			<span>Nobis libero minima sint hic adipisci fuga quidem eum atque optio ex ea consequatur assumenda aliquid mollitia non omnis velit laboriosam excepturi cupiditate consectetur odit id doloribus qui ipsum iure.</span>
+			<span>Totam consequatur optio consectetur architecto possimus at enim adipisci. Alias optio molestias quo asperiores repellendus minima aliquid iure cumque soluta tenetur quibusdam possimus cum dolorem molestiae aliquam? Iusto in fuga.</span>
+			<span>Distinctio saepe debitis asperiores explicabo maiores non voluptatibus dolore minima delectus aperiam enim commodi quibusdam nulla neque doloribus. Dolorum necessitatibus fugiat non enim amet vitae sequi recusandae corrupti dicta nesciunt!</span>
+		</p>
+	</section>
+
+</body>
+</html>

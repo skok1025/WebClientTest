@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	var btn1;
+
+	window.onload = function(){
+		
+		btn1 = document.all.btn1;
+		
+		btn1.onclick = function(){
+			// 메세지 박스
+			//	- 사용자에게 메세지를 돌려주기 위한 도구
+			//1. alert(메세지)
+			//2. confirm(메세지)
+			//3. prompt(메세지,초기값)
+			
+			/* window.alert("안녕");
+			window.location.href = "";
+			window.history.back();
+			 window.event
+			*/
+			
+			//alert("메세지");
+			//var result = confirm("메세지");
+			//alert(result);
+			
+			/* if(confirm("정말 삭제하시겠습니까?")){
+				location.href = "delete.html";
+			 }*/
+			
+			//prompt("메세지","초기값");
+			
+			/*  
+			var pw = promt("암호를 입력하세요.");
+			 
+			 if(pw == "1234"){
+				 location.href = "lecture.html";
+			 } else{
+				 alert("암호가 틀렸습니다!");
+			 }
+			*/
+		};	
+	};
+</script>
+</head>
+<body>
+	<input type="button" value="버튼1" name="btn1" />
+</body>
+</html>

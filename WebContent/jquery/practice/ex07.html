@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		$("#btn1").click(function(){
+			/* 
+			$('#box1').css({
+				"background-color":"red",
+				width: "+=100px"
+			});
+			 */
+			/* 
+			$("#box1").animate({
+				width : "+=100px"
+			},1000);
+			 */
+			 
+			$("#box1").prepend("<img src = '../../images/catty01.png'>"); 
+		});
+	
+	});
+</script>
+</head>
+<body>
+
+	<h1>jQuery 사용한 HTML 조작(추가/삭제/수정)</h1>
+	
+	
+	<input type="button" value="버튼1" id="btn1" class="btn"/>
+	<input type="button" value="버튼2" id="btn2" class="btn"/>
+	<input type="button" value="버튼3" id="btn3"/>
+	<hr />
+	<div id="box1" class="box medium red">상자</div>
+	<hr />
+	<input type="text" id="txt1" />
+	<hr />
+	<a href="http://naver.com" id="link1">네이버</a>
+	
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<style>
+	/*
+	 박스 모델, Box Model
+	 - 태그들이 가지는 디자인과 관련된 기본 성질
+	 - 모든 태그는 상자 형태로 랜더링이 된다. > 모든 태그는 사각형 형태로 출력된다.
+	 
+	 1. 테두리
+	 2. 너비, 높이
+	 3. 여백
+	 
+	 1. 테두리
+	 - 모든 태그는 자신의 영역을 가진다 > 영역의 형태가 사각형이다.
+	 - 일부 태그는 영역의 테두리를 시각적으로 출력한다. 나머지 태그는 테두리 출력 안한다.
+	 - CSS의 테두리 속성은 모든 태그의 테두리를 출력 가능하다.
+	 
+	  */
+
+	 #box2{
+	 	/* background-color: yellow; */
+	 	border-color: red; /* 테두리 색상 */
+	 	border-width: 10px; /* 테두리 두께  */
+	 	border-style: groove; /* 테두리 형태 (solid, dashed, dotted)  */
+	 	
+	 }
+	 
+	 #box1{
+	 	/* 속성의 그룹화: 접두어가 동일한 속성들은 한번에 선언이 가능하다.  */
+	 	border: blue 10px dashed;
+	 }
+	 
+	 #box3{
+	 	/* border-top-color: blue;
+	 	border-top-width: 10px; 
+	 	border-top-style: solid; */
+	 	border-top: tomato 20px solid;
+	 	border-bottom: black 10px solid;
+	 	border-left: red 15px solid;
+	 	border-right: green 30px solid;
+	 }
+	 
+	 h1{
+	 	border-left: 10px solid #777;
+	 	border-right: 10px solid #777;
+	 	border-bottom: 1px solid #777;
+	 	border-top: 1px solid #777;
+	 	text-align: center;
+	 }
+	 
+	 p{
+	 	font-size: 14px;
+	 	color: #444;
+	 	line-height: 1.4em;
+	 	border-left: #777 15px solid;
+	 	background-color: #eee;
+	 	padding: 10px;
+	 }
+	 
+	 #search{
+	 	border: 5px solid #42C642;
+	 	font-size: 2em;
+	 	color: #444;
+	 }
+	 
+	 #btnSearch{
+	 	background-color: #42C642;
+	 	color: white;
+	 	font-size: 30px;
+	 	border: 0px;
+	 	padding: 7px 9px;
+	 	transform : translate(0px,-1px);
+	 }
+	 
+	 #txt1{
+	 	background-color: black;
+	 	color: white;
+	 	font-size: 2em;
+	 	border: 0px;
+	 	padding: 7px;
+	 }
+	 
+</style>
+</head>
+<body>
+
+	<h1>박스 모델</h1>
+	
+	<p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam laudantium delectus ratione quos qui nulla tempore doloribus iusto officia eum corrupti esse earum iure similique facilis officiis tenetur perspiciatis.
+	</p>
+	
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<hr>
+	
+	<input type="text" id="search">
+	<button id="btnSearch"><i class="fas fa-search"></i></button>
+	
+	<hr>
+	
+	<input type="text" id="txt1">
+	
+	
+	<hr>
+	<button><i class="fas fa-pencil-alt"></i>글쓰기</button>
+	
+	
+
+</body>
+</html>

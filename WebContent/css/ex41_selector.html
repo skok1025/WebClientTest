@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	/*  
+	전후 선택자
+	1. :before
+	2. :after
+	
+	전후 선택자에서 사용하는 추가 키워드
+	1. none
+	2. 문자열
+	3. attr(속성)
+	4. open-quote
+	5. close-quote
+	
+	*/
+	
+	#p1 span{
+		color: tomato;
+	}
+	
+	#p1 span:before{
+		/* content: "중요!! ["; */
+		/* content: "<b>" */
+		content: open-quote;
+	}
+	
+	#p1 span:after {
+		/* content: "]" */
+		/* content: "</b>" */
+		content: close-quote;
+	}
+	
+	a{
+		text-decoration: none;
+	}
+	
+	a:after {
+		content: "(" attr(href) ")";
+	}
+	
+	.tistory {
+		width: 90%;	
+		font-weight: bold;
+		background-color: #D8D8D8;
+		border-left: 10px solid #FF8224;	
+		border-righht: 10px solid #FF8224;
+		margin: 1.5em 10px;	
+		padding: 0.5em 10px;
+		quotes:"\201C""\201D""\2018""\2019";
+	}
+	.tistory:before {
+		color: #FF8224;	
+		content: open-quote;	
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;		
+	}
+	
+	#cb1:checked + label:before {
+		content: "추가 삽입";
+	}
+	#cb1:checked + label:after {
+		content: "!!!!";
+	}
+	
+</style>
+</head>
+<body>
+
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In esse at itaque sit quia ratione eius rerum repellendus eos <span>perspiciatis</span> hic natus sed tempora. <a href="http://google.com">구글</a>Nesciunt fugit iure numquam adipisci eum esse saepe consequuntur libero <span>itaque</span> magni non nam nihil veniam cum labore quam beatae obcaecati optio totam error! Quia quos quis quidem illum nobis obcaecati <a href="http://naver.com">네이버</a> accusantium! Excepturi eius neque sequi veritatis saepe facilis non vel esse sed officiis <span>dolorem</span> est unde quibusdam quia ipsam molestias ut dolor suscipit quae perferendis <span>maiores</span> laborum sit. Cupiditate distinctio facilis repudiandae id ipsam aspernatur ipsum delectus a doloribus sequi totam molestiae pariatur earum ut.</p>	
+
+<hr>
+
+<blockquote class="tistory">홍길동 왈. 자바공부를 열심히 하세요.</blockquote>
+
+<hr>
+
+<table>
+	<tr>
+		<td>테이블</td>
+	</tr>
+</table>
+
+<input type="checkbox" id="cb1"><label for="cb1">체크박스</label>
+
+</body>
+</html>

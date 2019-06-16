@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+   /*  div{color : blue;}  */
+   /*  p#test1{color : lightgreen;}  */
+   /*  #test1{color : tomato;}  */
+   /*  *#test1{color : lightgreen;}  *(wildcard) : all -> 모든 태그*/
+   /*  * {color : blue;}  사용하지 않는 표현  */ 
+   
+   /*  div.item{color : yellow;}  */
+   /*  *.item{color : yellow;}  */
+   /*  .item{color : yellow;}   태그에 상관 없이, item 클래스를 식별*/
+   
+   /*
+      선택자의 종류
+         1. 태그 선택자
+         2. id 선택자
+         3. class 선택자
+         4. 그룹 선택자
+            -태그, id, class 선택자를 그룹으로 묶어서 일괄 적용
+   */
+   
+   /* 
+   p {color : red;}
+   span {color : red;} 
+   */
+   
+  /*  p, span{ color : blue;} */
+  
+ 	 p,.item,#test1{color: orange;} 
+   
+</style>
+</head>
+<body>
+   <!-- ex04_selector.htm -->
+
+   <p>p 태그입니다.</p>
+   <div class = "item">div 태그입니다.</div>
+   <p>p 태그입니다.</p>
+   <span class = "item">span 태그입니다.</span>
+   <div>div 태그입니다.</div>
+   <p id = "test1">p 태그입니다.</p>
+   <span>span 태그입니다.</span>
+   <div class = "item">div 태그입니다.</div>
+   <p class = "item" >p 태그입니다.</p>
+   <span>span 태그입니다.</span>
+   <p>p 태그입니다.</p>
+   
+
+</body>
+</html>

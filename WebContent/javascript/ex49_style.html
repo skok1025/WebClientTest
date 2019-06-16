@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#tbl1 td {
+		width: 100px;
+		height: 100px;
+	}
+
+</style>
+<script>
+	var cell;
+	var index = 0;
+	window.onload = function(){
+		cell = document.getElementsByTagName("td");
+		cell[index].style.backgroundColor =  "tomato";
+	};
+	
+	window.onkeydown = function(){
+
+		clear();
+		
+		if(event.keyCode == 37){ // 좌
+			index--;
+			if(index < 0) index = cell.length-1;
+		} else if(event.keyCode == 39){ // 우 
+			index++;
+			if(index>cell.length-1) index = 0;
+		}
+		
+		cell[index].style.backgroundColor =  "tomato";
+	};
+	
+	function clear(){
+		
+		for(var i =0;i<cell.length;i++){
+			cell[i].style.backgroundColor = "transparent";
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+	<table id="tbl1" class="table">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+</body>
+</html>

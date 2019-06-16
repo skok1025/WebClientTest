@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="basic.css">
+<title></title>
+<style>
+	#clock {
+		width: 700px;
+		height: 700px;
+		border: 1px solid #A9A9A9;
+		position: relative;
+		margin: 100px auto;
+		border-radius: 50%;
+	}
+	#clock img {
+		position: absolute;
+		opacity: .3;
+	}
+</style>
+<script>
+
+	//마우스 오른쪽 버튼 -> 메뉴 보이기 직전에 발생하는 이벤트
+	window.oncontextmenu = function() {
+		event.preventDefault();
+		return false;
+	};
+
+	var list;
+
+	window.onload = function() {
+
+		list = document.getElementsByTagName("img");
+
+		var angleplus = 0, rad = Math.PI / 180,
+		cx = 700, cy = 700 ,r = 350,		
+		startangle = 240,angle=30,x=0,y=0, endangle = 0;
+
+		for(var i=0; i<12; i++) {
+			endangle = startangle + angle ;
+
+			x = cx + r  * Math.cos(endangle * rad);
+			y = cy + r * Math.sin(endangle * rad);
+
+			 
+			list[i].style.left = x - 64 - 350 + "px";
+			list[i].style.top = y - 64 - 350 + "px";
+
+			startangle = endangle;
+		}
+
+
+
+		setInterval(function() {
+			var now = new Date();
+			var index = parseInt(now.getSeconds() / 5);
+			for (var i=0; i<list.length; i++) {
+				list[i].style.opacity = ".3";
+			}
+			list[index].style.opacity = "1";
+		}, 1000);
+
+	};
+	
+</script>
+</head>
+<body>
+	
+	<div id="clock">
+		<img src="/WebClientTest/images/catty01.png">
+		<img src="/WebClientTest/images/catty02.png">
+		<img src="/WebClientTest/images/catty03.png">
+		<img src="/WebClientTest/images/catty04.png">
+		<img src="/WebClientTest/images/catty05.png">
+		<img src="/WebClientTest/images/catty06.png">
+		<img src="/WebClientTest/images/catty07.png">
+		<img src="/WebClientTest/images/catty08.png">
+		<img src="/WebClientTest/images/catty09.png">
+		<img src="/WebClientTest/images/catty10.png">
+		<img src="/WebClientTest/images/catty11.png">
+		<img src="/WebClientTest/images/catty12.png">
+	</div>
+
+	<div style="text-align: center;">
+	<br><br>
+	<a href="ex16_template.zip">HTML 페이지 소스 다운로드</a><br>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

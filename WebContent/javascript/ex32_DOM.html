@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script src="/WebClientTest/javascript/js/my.js"></script>
+<script>
+
+	var btn2, box2;
+
+	window.onload = function(){
+		var btn1 = document.getElementById("btn1");
+		
+		btn2 = document.getElementById("btn2");
+		box2 = document.getElementById("box2");
+		
+		btn1.onclick = function(){
+			var link1 = document.getElementById("link1");
+			var cat1 = document.getElementById("cat");
+			var txt1 = document.getElementById("txt1");
+			var box1 = document.getElementById("box1");
+			var span1 = document.getElementById("span1");
+			
+			link1.innerText = "링크입니다.";
+			txt1.value = "홍길동";
+			box1.innerText = "박스";
+			span1.innerText = "공간";
+			
+		};
+		
+		btn2.onclick = function(){
+			
+			// <tag>content</tag>
+			// 1. innerText
+			//	- 시작 태그와 끝 태그 사이의 문자열 (PCDATA)
+			//  - 비표준(IE), 사용빈도가 높음 (대다수 브라우저가 지원함)
+			
+			// 2. innerHTML
+			//  - 시작태그와 끝 태그 사이의 문자열 (태그 인식)
+			//	- 표준, 모든 브라우저가 지원함. 사용빈도가 높음
+			//  - 동적으로 HTML 태그 생성하는 용도
+			
+			// 3. outerText
+			//	- 본인 + 내용물 문자열 조작
+			
+			// 4. outerHTML
+			//  - 본인 + 내용물 문자열(태그 인식) 조작
+			//  - 표준
+			
+			//alert(box2.innerText);
+			//box2.innerText = "Box";
+			//box2.innerText = "텍스트박스 : <input type='text>'";
+			
+			
+			//alert(box2.innerHTML);
+			//box2.innerHTML = "Box";
+			//box2.innerHTML = "<input type='text'>";
+			
+			//alert(box2.outerText);
+			//alert(box2.outerHTML);
+			
+			//box2.outerText = "Box";
+			//box2.outerHTML = "Box";
+			
+			//box2.outerText = "<h1>Box</h1>";
+			//box2.outerHTML = "<h1>Box</h1>";
+			
+			for(var i =1; i<=9; i++){
+				//box2.innerHTML += "<div>상자</div>"
+				//box2.innerHTML += "<div>아이템"+i+"."+"<input type='text'>"+"</div>"
+				box2.innerHTML += "<div><img src = '../images/catty0"+i+".png'></div>"
+			}
+		};
+		
+		get("btnDog").onclick = function(){
+			//alert("강아지");
+			var n = parseInt(Math.random()*5) +1;
+			get("box3").innerHTML += "<img src = '../images/dog0"+n+".jpg'>";
+		};
+		
+		get("btnCat").onclick = function(){
+			//alert("고양이");
+			var n = parseInt(Math.random()*5) +1;
+			get("box3").innerHTML += "<img src = '../images/cat0"+n+".jpg'>";
+		};
+		
+		get("btnAdd").onclick = function(){
+			get("filelist").innerHTML += "<div>파일:<input type='file'></div>";
+		};
+		
+		get("btnRow").onclick = function(){
+			get("tbody1").innerHTML += "<tr><td>5</td><td>홍길동</td><td>20</td><td>서울시 강남구 역삼동</td></tr>";
+		};
+		
+	};
+</script>
+</head>
+<body>
+	<input type="button" value="테스트" id="btn1"/>
+	<hr />
+	<a href="#" id="link1">링크</a>
+	<img src="../images/catty01.png" id="cat" />
+	<input type="text" id="txt1" />
+	
+	<div id="box1"></div>
+	<span id="span1"></span>
+	
+	<hr />
+	<input type="button" value="테스트" id="btn2" />
+	<div id="box2">상자</div>
+	<hr />
+	
+	<input type="button" value="강아지" id="btnDog"/>
+	<input type="button" value="고양이" id="btnCat"/>
+	<div id="box3"></div>
+	
+	<hr />
+	<h1>게시판 첨부파일</h1>
+	<label for="">첨부파일:</label>
+	<div id="filelist">
+		<div>파일:<input type="file"></div>
+	</div>
+	<input type="button" id="btnAdd" value="첨부파일 추가하기" />
+	<hr />
+	
+	<input type="button" id="btnRow" value="추가하기" />
+	
+	<table id="tbl1" class="table">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="tbody1">
+			<tr>
+				<td>5</td>
+				<td>홍길동</td>
+				<td>20</td>
+				<td>서울시 강남구 역삼동</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+</body>
+</html>

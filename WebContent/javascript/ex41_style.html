@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	.box{
+		position: absolute; left: 50px; top: 50px; transition: all 0.5s;
+	}
+
+</style>
+<script>
+
+	var btn1, box1;
+	var index = 0;
+	var box;
+	var zindex = 1;
+	
+	window.onload = function(){
+		btn1  =document.getElementById("btn1");
+		box1 = document.getElementById("box1");
+		box = document.getElementsByClassName("box");
+		/* 
+		btn1.onclick = function(){
+			box1.style.position = "absolute";
+			box1.style.left = "300px";
+			box1.style.top = "200px";
+		};
+		
+		box1.onclick = function(){
+			box1.style.position = "static";
+			box1.style.left = "0px";
+			box1.style.top = "0px";
+		};
+		*/
+		
+		
+		
+	};
+	
+	
+	window.onmousedown = function(){
+		
+		// 문서의 좌측 상단 기준점 -> 마우스 포인터 좌표값
+		//	= absolute 의 기준점과 동일
+		//box1.style.left = event.clientX - 50 + "px";
+		//box1.style.top = event.clientY -50 + "px";
+		
+		box[index].style.left = event.clientX - 50 + "px";
+		box[index].style.top = event.clientY -50 + "px";
+		box[index].style.zIndex = zindex;
+		index++;
+		zindex++;
+		
+		if(index == box.length) index = 0;
+		
+	}
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+	<input type="button" value="테스트" id="btn1" />
+	<hr />
+	
+	<div id="box1" class="box small red">상자</div>
+	<div id="box2" class="box small orange">상자</div>
+	<div id="box3" class="box small blue">상자</div>
+	<div id="box4" class="box small yellow">상자</div>
+	<div id="box5" class="box small green">상자</div>
+
+
+</body>
+</html>

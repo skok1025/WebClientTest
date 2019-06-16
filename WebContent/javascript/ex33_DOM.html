@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#tbl1 td{
+		width: 126px;
+		height: 126px;
+		padding: 0px;
+	}
+	
+	#tbl1 td img{
+		display: block;
+	}
+
+
+</style>
+<script>
+	window.onload = function(){
+		var cells = document.getElementsByTagName("td");
+		//alert(cells.length);
+		
+		for(var i=0; i<cells.length; i++){
+			/* cells[i].onmouseover = function(){
+				// 태그를 여러개 검색해서 일괄로 이벤트 거는 경우
+				// 1. 이벤트 함수내에서는 루프 변수 참조하지 말것!!
+				// 2. event.srcElement 사용
+				
+				//alert(cells);
+				//cells[i].innerText = "here!!";
+				//alert(i);
+				
+				//event.srcElement.innerText = "here!!";
+			}; */
+			cells[i].onmousedown = function(){
+				// 클릭된 <td>
+				
+				// 어느 버튼을 눌렀는지
+				//alert(event.buttons);
+				
+				if(event.buttons ==1){
+				event.srcElement.innerHTML = "<img src ='../images/rect_icon01.png'>";
+				} else if(event.buttons ==2) {
+					// 오른쪽 버튼 : 컨텍스트 메뉴 (Context Menu)
+					//alert(event.srcElement.parentNode.nodeName);
+					event.srcElement.parentNode.innerHTML = "";
+				
+				}
+			};
+			
+			
+			
+		}
+		
+	};
+</script>
+</head>
+<body oncontextmenu="return false;">
+	<table id="tbl1" class="table">
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+	
+	</table>
+
+
+</body>
+</html>

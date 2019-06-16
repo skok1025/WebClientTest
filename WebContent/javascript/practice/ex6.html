@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	
+	div{
+		border: 1px solid black;
+		float: left;
+		width: 100px;
+		height: 200px;
+	}
+</style>
+<script>
+
+	
+	var select1,select2;
+	var addBt,removeBt,addAllBt,removeAllBt;
+	window.onload = function(){
+		
+		select1 = document.all.select1;
+		select2 = document.all.select2;
+		
+		addBt = document.all.addBt;
+		removeBt = document.all.removeBt;
+		addAllBt = document.all.addAllBt;
+		removeAllBt = document.all.removeAllBt;
+		
+		addBt.onclick = function(){
+			
+			var item = select1.options[select1.selectedIndex];
+			
+			var newop = new Option();
+			newop.value = item.value;
+			newop.text = item.text;
+			
+			select2.options.add(newop);
+			select1.options.remove(select1.selectedIndex);
+		};
+		
+		removeBt.onclick = function(){
+			var item = select2.options[select2.selectedIndex];
+			
+			var newop = new Option();
+			newop.value = item.value;
+			newop.text = item.text;
+			select1.options.add(newop);
+			select2.options.remove(select2.selectedIndex);
+		};
+		
+		addAllBt.onclick = function(){
+			
+			var count = select1.options.length;
+			for(var i=0; i<count;i++){
+				var item = select1.options[i];
+				
+				var newop = new Option();
+				newop.value = item.value;
+				newop.text = item.text;
+		
+				select2.options.add(newop);	
+			}
+			for(var i=0; i<count;i++){
+				select1.options.remove(0);
+			}
+			
+		};
+		
+		removeAllBt.onclick = function(){
+			
+			var count = select2.options.length;
+			for(var i=0; i<count;i++){
+				var item = select2.options[i];
+				
+				var newop = new Option();
+				newop.value = item.value;
+				newop.text = item.text;
+		
+				select1.options.add(newop);	
+			}
+			for(var i=0; i<count;i++){
+				select2.options.remove(0);
+			}
+			
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+
+		<div>
+			<form name="form1">
+				<select name="select1" size="8" style="width: 80px;">
+					<option value="1" >강한님</option>
+					<option value="2" >권순도</option>
+					<option value="3" >김경빈</option>
+					<option value="4" >김용기</option>
+					<option value="5" >김용식</option>
+				</select>
+			</form>
+		</div>
+		
+		<div>
+			<form action="form2">
+				<input type="button" value="Add >" name = "addBt" /> <br />
+				<input type="button" value="< Remove" name = "removeBt" /> <br />
+				<input type="button" value="Add All >" name = "addAllBt" /> <br />
+				<input type="button" value="< Remove All" name = "removeAllBt" />
+			
+			</form>
+		</div>
+		
+		<div>
+			<form name="form3">
+				<select name="select2" size="10" style="width: 80px;">
+					
+				</select>
+			</form>
+		</div>
+
+</body>
+</html>

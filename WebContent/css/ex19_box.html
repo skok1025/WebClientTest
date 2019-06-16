@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	/*  
+	박스 모델
+	1. 테두리
+	2. 너비, 높이
+		- width, height : 개체의 크기 (x) , 컨텐츠 영역의 크기(o)
+	3. 여백
+	*/
+	.box{
+		border:10px solid black;
+		width: 150px;
+		height: 150px;
+	}
+	
+	#box1{
+		background-color: tomato;
+		border-color: red;
+	}
+	#box2{
+		background-color: cornflowerblue;
+		border-color: blue;
+		/*  padding: 40px 30px 20px 10px;*/
+		/* margin-top: 10px;
+		margin-bottom: 30px;
+		 */
+		 padding: 10px;
+		/* margin: 테두리와 바깥쪽의 요소와의 거리. 바깥쪽 여백 */
+		/* margin: 50px; */
+		margin: 10px;
+	}
+	#box3{
+		background-color: lightgreen;
+		border-color:green;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="box1" class="box">상자</div>
+	<hr size="5" color="red" style="width: 150px;" align="left">
+	<div id="box2" class="box">상자</div>
+	<div id="box3" class="box">상자</div>
+	
+</body>
+</html>

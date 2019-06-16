@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	#txt{
+		width: 400px;
+		padding: 0px;
+		border-width:0px;
+		margin: 15px 0px;
+		/* opacity: 0; */
+		transition : all 1s;
+		height: 10px;
+		height:0px;
+		overflow: hidden;
+		transform: scale(0,0) rotate(0deg);
+		opacity: 0;
+	}
+	
+	#cb1{
+		opacity: 0;
+	}
+	#cb1 + label{
+		cursor: pointer;
+	}
+	
+	
+	#cb1:checked + label + div{
+		/* opacity: 1; */
+		padding: 15px;
+		border-width: 1px;
+		height:350px;
+		transform: scale(1,1) rotate(3600deg);
+		opacity: 1;
+	}
+	
+	body{
+		padding-bottom: 300px;
+	}
+	
+	.switch{
+		border: 20px solid #A9A9A9;
+		width: 252px;
+		transform : scale(.5,.5);
+	}
+	
+	.switch > input{
+		display: none;
+	}
+	
+	.switch > label{
+		width: 126px;
+		height: 126px;
+		display:block;
+		background-color: #eee;
+		cursor: pointer;
+		
+		float: left;
+		
+		position: relative;
+		left: 0;
+		top: 0;
+		z-index: 2;
+	}
+	
+	/* .switch >div:hover + img{
+		transform : translate(0px,0px);
+	} */
+	
+	.switch > img{
+		float: left;
+		transform: translate(-126px,0px);
+		transition : all 0.5s;
+		z-index: 1;
+	}
+	
+	.switch:after{
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	.switch> input:checked + label + img{
+		transform: translate(0px,0px);
+	}
+	
+	.switch > input:checked + label {
+		background-color:#ccc; 
+	}
+	
+	#panel{
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+	}
+	
+	#panel > div{
+		width: 100px;
+		height: 66px;
+		background-color: #ddd;
+		float: left;
+		outline: 1px solid gray;
+		text-align: center;
+		padding-top: 34px;
+	}
+	
+	#cat{
+		position: absolute;
+		left: 800px;
+		top: 300px;
+		transition: all 1s;
+	}
+	
+	#panel > div:nth-child(2):hover ~ #cat{ top: 300px; }
+	#panel > div:nth-child(3):hover ~ #cat{ top: 300px; left: 1100px; }
+	#panel > div:nth-child(4):hover ~ #cat{ left: 500px; }
+	#panel > div:nth-child(6):hover ~ #cat{ left:  1100px; }
+	#panel > div:nth-child(8):hover ~ #cat{ top: 900px; }
+	
+	#dog img{
+		transition : all 1s;
+	}
+	
+	#dog img:hover {
+		/* 250 X 188 */
+		border-radius: 96px; 
+	}
+	
+	#menu{
+		border: 10px solid black;
+		width: 126px;
+		height: 126px;
+		overflow: hidden;
+	}
+	
+	#menu:hover > div{
+		transform: translate(-504px,0px);
+	}
+	
+	#menu > div {
+		border: 0px solid red;
+		width: 630px;
+		transition: all 1s;
+	}
+	
+	#menu > div > img {
+		float: left;
+	}
+	
+	#rbMenu1:checked ~ #menu > div {
+		transform : translate(0px,0px);
+	}
+	
+	#rbMenu2:checked ~ #menu > div {
+		transform : translate(-126px,0px);
+	}
+	
+	#rbMenu3:checked ~ #menu > div {
+		transform : translate(-252px,0px);
+	}
+	
+	#rbMenu4:checked ~ #menu > div {
+		transform : translate(-378px,0px);
+	}
+	#rbMenu5:checked ~ #menu > div {
+		transform : translate(-504px,0px);
+	}
+</style>
+</head>
+<body>
+
+	<input type="checkbox" id="cb1" /><label for="cb1">펼치기</label>
+	<div id="txt" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur pariatur dignissimos aliquid eaque nostrum omnis optio cupiditate minima natus veniam sapiente dolores obcaecati ad qui distinctio impedit corrupti necessitatibus molestiae possimus odio voluptates. Eos sequi iusto voluptatem iste doloribus soluta est delectus provident impedit veritatis ipsam dolorem facere molestiae asperiores ea accusamus qui! Necessitatibus neque quae ipsa quam nam dolore hic in aut id dolor excepturi nisi quas placeat laboriosam ut et iste labore dolorem optio quis maxime amet eum nihil. Suscipit repellat sint odio sapiente atque animi quibusdam accusantium quas ex facere rem alias quam minima nesciunt ab maxime.</div>
+
+<hr>
+
+	<div class="switch">
+		<input type="checkbox" id="cb2"/>
+		<label for="cb2"></label>
+		<img src="../images/rect_icon01.png"/>
+	</div>
+	
+	<hr>
+	
+	<div id="panel">
+	
+		<div></div>
+		<div>상</div>
+		<div></div>
+		<div>좌</div>
+		<div></div>
+		<div>우</div>
+		<div></div>
+		<div>하</div>
+		<div></div>
+		<img src="../images/catty10.png" id="cat" />
+	</div>
+	
+	<hr>
+	
+	<div id="dog">
+		<img src="../images/dog01.jpg" alt="" />
+		<img src="../images/dog02.jpg" alt="" />
+		<img src="../images/dog03.jpg" alt="" />
+		<img src="../images/dog04.jpg" alt="" />
+		<img src="../images/dog05.jpg" alt="" />
+	</div>
+	
+
+		<input type="radio" name="rbMenu" id= "rbMenu1" checked/><label for="rbMenu1" >헤드폰</label>
+		<input type="radio" name="rbMenu" id= "rbMenu2"/><label for="rbMenu2">쇼파</label>
+		<input type="radio" name="rbMenu" id= "rbMenu3"/><label for="rbMenu3">집</label>
+		<input type="radio" name="rbMenu" id= "rbMenu4"/><label for="rbMenu4">통화중</label>
+		<input type="radio" name="rbMenu" id= "rbMenu5"/><label for="rbMenu5">전화기</label>
+
+	
+	<div id="menu">
+		<div>
+			<img src="../images/rect_icon01.png" alt="" />
+			<img src="../images/rect_icon02.png" alt="" />
+			<img src="../images/rect_icon03.png" alt="" />
+			<img src="../images/rect_icon04.png" alt="" />
+			<img src="../images/rect_icon05.png" alt="" />
+		</div>
+	</div>
+	
+
+</body>
+</html>

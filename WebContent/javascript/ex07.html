@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	// 문자열 함수
+	
+	var txt = "안녕하세요. 홍길동님. 안녕히가세요. 홍길동님";
+	
+	// 1. 길이
+	console.log(txt.length); // 프로퍼티 (Property), 속성(Attribute)
+	
+	// 2. 검색
+	//  - indexOf()
+	//  - lastIndexOf()
+	console.log(txt.indexOf("요")); // zero - based index
+	console.log(txt.indexOf("홍길동",10)); // start-index
+	console.log(txt.lastIndexOf("요")); 
+	console.log(txt.indexOf("아무개")); // 없는 문자열
+	
+	// 3. 대소문자 변환
+	txt = "Hello~ Hong~";
+	console.log(txt.toUpperCase());
+	console.log(txt.toLowerCase());
+	
+	// 4. 치환
+	// - 처음 만나는 요소만 치환한다. (반복X)
+	// - 모든 요소를 치환 > 정규 표현식 사용
+	console.log(txt.replace("Hong","Lee"));
+	console.log(txt.replace("H","A")); // 처음 만나는 요소만 치환한다.
+	console.log(txt.replace(/H/gi,"A")); //    /정규표현식/
+	
+	// 5. 추출
+	console.log(txt.substring(3,8)); // 3(포함) ~ 8(미포함)
+	console.log(txt.substring(3)); // 3 ~
+	
+	console.log(txt.substr(3,6)); // 3번쨰 위치에서 6개 문자를 가져온다.
+
+	// 6. 추출
+	console.log(txt.charAt(0)); // 문자반환
+	console.log(txt.charCodeAt(0)); // 문자코드 반환 (유효성 검사)
+	
+	//console.log((int)'H');
+	//console.log(parseInt('H')); // NaN
+	
+	// 7.분할
+	var names = "홍길동,아무개,하하하,호호호";
+	console.log(names.split(','));
+	
+	console.clear();
+	
+	// Array, Date, Math
+	
+	// 날짜 , 시간 자료형
+	// - 객체(Object 형)
+	// - Date 클래스 제공
+	
+	// 현재시간
+	var now = new Date(); // Calendar.getInstance();
+	console.log(now);
+	
+	// c.get(Calendar.YEAR)
+	console.log(now.getYear());			// 2자리 년도
+	console.log(now.getFullYear());		// 4자리 년도
+	console.log(now.getMonth());		// 월 (0~11)
+	console.log(now.getDate());			// 일
+	console.log(now.getDay());			// 요일(일요일(0)~토요일(6))
+	console.log(now.getHours());		// 시
+	console.log(now.getMinutes());		// 분
+	console.log(now.getSeconds());		// 초
+	console.log(now.getMilliseconds());	// 밀리초
+	console.log(now.getTime());			// Tick 값 (ms)
+	
+	// 출력
+	console.log(now);
+	console.log(now.toString()); // 내부 데이터 덤프
+	
+	console.log(now.toDateString());
+	console.log(now.toTimeString());
+	
+	// 로케일 형식 출력
+	console.log(now.toLocaleString());
+	console.log(now.toLocaleDateString());
+	console.log(now.toLocaleTimeString());
+	
+	// 특정 시각
+	var christmas = new Date(2018,11,25,11,30,40);
+	console.log(christmas.toLocaleString());
+	
+	// 연산
+	console.log(christmas - now);
+	console.log(christmas.getTime() - now.getTime());
+	
+	console.log((christmas - now) / 1000/ 60/ 60/ 24);
+	
+	// 오늘 커플 -> 100일 뒤?
+	console.log(now.getTime() + (100 *24 * 60 *60 *1000));
+	
+	var day = new Date();
+	day.setTime(now.getTime() + (100 *24 * 60 *60 *1000));
+	console.log(day.toLocaleString());
+	
+	
+	// 배열
+	//	- Array + Collection : 길이 가변
+	
+	//int[] nums = new int[3];
+	var nums = new Array(); // new ArrayList();
+	
+	nums[0] = 100;
+	nums[1] = 200;
+	nums[2] = 300;
+	nums[5] = 500;	
+	
+	console.log(nums.length);
+	
+	for(var i=0; i<nums.length; i++){
+		console.log(i,nums[i]);
+	}
+	
+	console.log(nums[6]);
+	
+	var nums = new Array();
+	
+	nums["one"] = "하나";
+	nums["two"] = "둘";
+	
+	console.log(nums["one"]);
+	
+	nums[0] = "셋";
+	console.log(nums[0]);
+	
+	// 배열 초기화 리스트
+	//int[] nums2 = new int[]{100,200,300};
+	//int[] nums2 = {100,200,300};
+	
+	var nums2 = new Array(100,200,300);
+	var nums3 = [100,200,300]; // ***
+	
+	console.log(nums2);
+	console.log(nums3);
+	
+	var nums4 = new Array(); // 빈배열
+	var nums5 = []; // 빈배열
+	
+	// 0~99
+	for(var i =0; i<=99; i++){
+		nums5[i] = i;
+	}
+	
+	console.log(nums5);
+	
+	// 3의 배수 x 100개
+	var nums6 = [];
+	
+	for(var i =3; i<=300; i+=3){
+		//nums6[i] = i;
+		nums6.push(i); // ArrayList.add() - append
+	}
+	console.log(nums6);
+	
+	console.log(typeof(nums6));
+	
+	// Math 클래스
+	console.log(Math.round(3.5));
+	console.log(Math.ceil(3.1));
+	console.log(Math.floor(3.9));
+	console.log(Math.pow(2,8));
+	console.log(Math.sqrt(4)); // 루트
+	console.log(Math.random()); // 0~1
+	
+	console.log(parseInt(Math.random()*10+1)); // 1~10
+	
+	// 예외 처리
+	
+	try{
+		//var n = 0;
+		//console.log(100 /n);
+		throw "exception";
+		console.log("결과");
+	} catch(e){
+		console.log("예외처리");
+		console.log(e);
+	}
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>

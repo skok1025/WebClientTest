@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#box{
+		border:10px solid;
+		width: 1200px;
+		height: 460px;
+		column-count: 3;
+		column-width: 400px;
+		column-gap: 0px;
+	}
+
+	.big{
+		height:300px;
+		width: 400px;
+	}
+	.middle{
+		width: 200px;
+	}
+	.small{
+		width: 100px;
+		height: 150px;
+	}
+	
+	#box > img{
+		float: left;
+		opacity: 0.5;
+		border-radius: 10px;
+		
+		transition : all 1s;
+	}
+	#box > img:hover {
+		opacity: 1;
+		border-radius:0px; 
+	}
+
+</style>
+</head>
+<body>
+
+	<div id="box">
+		<img src="../images/cat01.jpg" class="big"/>
+		<img src="../images/dog01.jpg" class="middle"/>
+		<img src="../images/cat02.jpg" class="middle"/>
+		<img src="../images/dog03.jpg" class="middle"/>
+		<img src="../images/cat03.jpg" class="middle"/>
+		<img src="../images/cat02.jpg" class="big"/>
+		<img src="../images/cat04.jpg" class="big"/>
+		<img src="../images/cat04.jpg" class="middle"/>
+		<img src="../images/cat04.jpg" class="middle"/>
+		<div style="clear: both;"></div>
+	</div>
+
+</body>
+</html>

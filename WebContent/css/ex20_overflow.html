@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	/*  
+	1. 부모의 width(x), height(x)
+		- width(100%)
+		- height(컨텐츠의 높이)
+	
+	2. 부모의 width(o), height(x)
+		-width(정해진 값)
+		- height(컨텐츠의 높이 = 부모의 높이)
+		
+	3. 부모의 width(x), height(o)
+		- 부모를 빠져 나감
+	
+	4. width(o), height(o)
+		- width(정해진 값)
+		- height (정해진 값) > 오버플로우 > 부모를 벗어남
+
+	*/
+
+
+	#box1{
+		border: 1px solid black;
+		width:200px;	
+		height: 200px; 
+		/* 오버플로우 제어(visible, hidden, auto)  */ 
+		overflow: auto;
+		
+	}
+	
+	#tbl1 {
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 200px;
+		height: 200px;
+	}
+	
+	#tbl1 td{
+		border: 1px solid black;
+		width: 100px; /* 정확하게 100 px 이 아님  */
+		height: 100px; /* 정확하게 100 px  */
+	}
+
+</style>
+</head>
+<body>
+	<div id="box1">상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다.상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다.</div>
+	
+	<table id="tbl1">
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td><div style="background-color: yellow; width: 100px; height:100px; overflow:auto;" >상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다상자입니다</div></td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

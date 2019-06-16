@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	/*  
+	1. 태그 선택자
+	2. id 선택자
+	3. class 선택자
+	4. 그룹 선택자
+	5. 자손 선택자, Descendant Selector
+		- 친자식 + 손자 + 증손자 + 고손자...
+	6. 자식 선택자, Child Selector
+		- 친자식
+	*/
+	
+	/* b{ color: blue;} */
+	
+	/* id, class 선택자 : 모든 태그에 일일히 식별자를 붙여야 한다.(비용 발생) */
+	/* #name{ color: red;} */
+
+	/* 자손 선택자 
+	- 부모선택자 자손선택자{  }
+	*/
+	/* span b { color:orange; } */
+	/*  
+		자식 선택자
+		- 부모선택자 > 자식선택자 {  }
+	*/
+	/* div > span > b { color: blue;} */
+	
+	.item{color: red;}
+	
+	#list2 > li { color: blue;}
+	
+	table#tbl1 > tbody >tr > td { color: blue; } 
+	table#tbl1 td{color: red;}
+	
+</style>
+
+</head>
+<body>
+
+	<h1>게시판</h1>
+	
+	<table border="1" width = "600" id = "tbl1">
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+	
+	
+	</table>
+
+
+
+<h1>게시판</h1>
+	<table border="1" width = "600">
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+		
+		<tr>
+			<td>1</td>
+			<td>게시판 제목입니다.</td>
+			<td>2018-08-15</td>
+			<td>홍길동</td>
+			<td>11</td>
+		</tr>
+	
+	
+	</table>
+
+	<hr>
+	
+	<!-- ex05_selector.html  -->
+	
+	<h1>오늘의 할일</h1>
+	<ul>
+		<li class="item">자바 정리</li>
+		<li class="item">오라클 정리</li>
+		<li class="item">JDBC 정리</li>
+		<li class="item">프로젝트 정리</li>
+	</ul>
+	
+	<hr>
+	
+	<h1>오늘의 할일</h1>
+	<ul id ="list2">
+		<li>자바 정리</li>
+		<li>오라클 정리</li>
+		<li>JDBC 정리</li>
+		<li>프로젝트 정리</li>
+	</ul>
+	
+	<hr>
+	
+	<div>
+		<span>
+			안녕하세요. 저는 <b>홍길동</b> 입니다.
+		</span>
+	</div>
+	
+	<p>
+		<span>
+			안녕하세요. 저는 <b>홍길동</b> 입니다.
+		</span>
+	</p>
+
+
+</body>
+</html>

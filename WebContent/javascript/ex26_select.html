@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	window.onload = function(){
+		
+	};
+	
+	function test1(){
+		// 폼 컨트롤
+		// 1. 텍스트박스, 암호박스, 멀티라인텍스트 -> txt1.value
+		// 2. 체크박스, 라디오 버튼 -> cb1.checked, cb1.value
+		// 3. 셀렉트 박스 -> sel1.value
+		
+		alert(document.all.sel1.value);
+	}
+	
+	function test2(){
+		document.all.sel1.value = 4; 
+	}
+	
+	function test3(){
+		// 애완동물을 반드시 선택하기 위한 유효성 검사
+		var sel1 = document.all.sel1;
+		// 브라우저는 value 값이 없는 <option>은 자동으로 PCDATA를 value 속성에 대입
+		//alert(sel1.value);
+		
+		//if(sel1.value == "선택하세요."){
+		//	alert("애완동물을 선택하세요.");
+		//	return;
+		//}
+		
+		/* 
+		if(sel1.value == 0){
+			alert("경고 애완동물을 선택하세요");
+			return ;
+		} 
+		*/
+		
+		//alert(sel1.selectedIndex);
+		
+		if(sel1.selectedIndex == 0){
+			alert("애완동물을 선택하세요.");
+			return;	
+		}
+		
+		// 폼전송
+		alert("완료");
+	}
+	
+	function test4(){
+		
+		var sel1 = document.all.sel1;
+		
+		// <option> 태그 접근
+		//alert(sel1.options.length);
+		//alert(sel1.options[1].value);
+		//alert(sel1.options[1].innerText);
+		
+		//alert(sel1.option[1].text);
+		
+		alert(sel1.value);
+		
+		// 선택한 text
+		alert(sel1.options[sel1.selectedIndex].text);
+	}
+	
+	function test5(){
+		var sel1 = document.all.sel1;
+		
+		//1. <option>
+	}
+</script>
+</head>
+<body>
+
+	<h1>Select 박스</h1>
+
+	<label for="">애완동물</label>
+	
+	<select name="sel1" id="">
+		<!-- <option value="0">선택하세요</option> -->
+		<option>선택하세요.</option>
+		<option value="1">강아지</option>
+		<option value="2">고양이</option>
+		<option value="3">병아리</option>
+		<option value="4">거북이</option>
+		<option value="5">토끼</option>
+		<option value="6">도마뱀</option>
+	
+	</select>
+	
+	<hr />
+	<input type="button" value="선택 항목 쓰기" onclick="test2();"/><br />
+	<input type="button" value="선택 항목 읽기" onclick="test1();"/><br />
+	<input type="button" value="유효성 검사" onclick="test3();"/><br />
+	<input type="button" value="요소 접근하기" onclick="test4();"/><br />
+	
+</body>
+</html>

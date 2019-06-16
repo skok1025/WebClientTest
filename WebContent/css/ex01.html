@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<style type="text/css">
+
+	/* div{color: blue; font-size: 150pt; background-color: yellow;} */
+
+	div { font-size: 2rem;}
+</style>
+
+<!-- 외부 CSS 파일을 현재 HTML 페이지에 적용해라  -->
+<link rel="stylesheet" href="/WebClientTest/css/ex01.css">
+
+</head>
+<body>
+	<!--
+	
+	CSS, Cascading Style Sheet
+	- HTML 의 요소(태그) 에 서식을 적용하는 언어
+	- 디자인 담당
+	- 독립 사용이 불가능. HTML 언어에 기생하는 언어
+	
+	CSS 특징
+	1. 골격(태그 + 데이터) 과 서식을 분리
+	2. 서식 관련 기능 강화 
+	
+	CSS 적용 방법
+	
+	1. Inline Style Sheet , 인라인 스타일 시트
+		- HTML 태그에 style 속성을 사용해서 적용하는 방식
+		- style ="CSS 구문"
+		- 특정 태그 1개에 적용하는 서식
+		- 단점 : 서식 코드를 재사용 불가능
+		- 장점 : 가독성 높음
+		- (*) 재사용이 필요없는 서식을 적용하는 용도. 1회용 서식
+		- 현재 페이지에서만 재사용이되는 서식이 필요할 때
+	
+	2. Embeded Style Sheet, 내부 스타일 시트
+		- 페이지 상단에 <style> 태그를 사용해서 적용하는 방식
+		- 여러개의 태그에 모두 적용하는 서식
+		- 현재 페이지 내에서 재사용 가능(페이지가 바뀌면 불가능)
+		- 장점 : 서식 코드를 여러번 재사용 가능
+		- 단점 : 가독성 낮음
+		
+	
+	3. External Style Sheet, 외부 스타일 시트
+		- 서식 코드를 별도의 파일로 제작해서 적용하는 방식
+		- *.css 작성 + <link> 적용
+		- 장점 : 재사용성이 가장 높음(****)                                                
+		- 단점 : 가독성 최악
+		- 모든 페이지에 공통으로 적용해야 하는 서식이 필요할 때
+	
+	-->
+	
+	<p><font color="red" size="10">문단입니다.</font></p>
+	<p><font color="red">문단입니다.</font></p>
+	<p><font color="red">문단입니다.</font></p>
+	
+	<hr>
+	
+	<div>영역입니다.</div>
+	<div style="/* CSS영역 */ color: blue;">영역입니다.</div>
+	<div>영역입니다.</div>
+
+	<hr>
+	
+	<h1>제목입니다.</h1>
+	<h1>제목입니다.</h1>
+	<h1>제목입니다.</h1>
+	
+
+</body>
+</html>

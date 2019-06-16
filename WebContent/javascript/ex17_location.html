@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	var btn1;
+	var txtURL, btn2;
+
+	window.onload = function() {
+		
+		//window.screen.availWidth
+		//screen.availWidth
+		
+		//btn1 = window.document.all.btn1;
+		btn1 = document.all.btn1;
+		
+		txtURL = document.forms[0].txtURL;
+		btn2 = document.forms[0].btn2;
+		
+		btn1.onclick = function() {
+			
+			//location 객체
+			// - window 자식 객체
+			// - 브라우저 보고있는 문서의 위치(주소, URL)를 제어하는 객체
+			//alert(location.href);
+			
+			//location.href = "ex16_screen.htm"; //링크 역할(**************)
+			
+			//기타 기능
+			console.log(location.href); //전체 URL
+			console.log(location.host); //도메인 + 포트
+			console.log(location.hostname); //도메인
+			console.log(location.port); //포트
+			console.log(location.protocol); //http://
+			
+			//location.href = "http://naver.com";
+			//location.replace("http://naver.com"); //페이지 이동하기
+			
+			//location.reload(); //새로고침, F5
+			location.href = "ex17_location.htm";
+			
+			
+		};
+		
+		
+		btn2.onclick = function() {
+			
+			//http://naver.com
+			//naver.com
+			//location.href = txtURL.value;
+		
+			if (txtURL.value.indexOf("http://") == 0) {
+				location.href = txtURL.value;
+			} else {
+				location.href = "http://" + txtURL.value;
+			}
+			
+			
+			//ex17_location.htm?txtURL=naver.com
+			
+		};
+		
+		
+		//자바스크립트는 모든 이벤트 함수에 return false; 걸면 해당 이벤트 취소가 된다.(사건이 없었던 일이 된다..)
+		//<form onsubmit="return false;">
+		document.forms[0].onsubmit = function() {
+			return false;
+		};
+		
+		
+		//1. 사전에 form submit 기능을 일단 제거
+		//2. 텍스트박스에 URL을 작성 후 엔터를 치면 이동하기 버튼을 클릭한것과 동일 처리
+		txtURL.onkeydown = function() {
+			if (event.keyCode == 13) {
+				//alert("test");
+				btn2.click();//btn2을 클릭한 것과 동일한 행동을 발생(에뮬레이터 함수)
+			}
+		};
+		
+		document.forms[1].btnSubmit.onclick = function(){
+				//alert("test");
+				
+				// 아이디를 입력? > 암호를 입력? > 전송
+				var txtID = document.forms[1].txtID;
+				var txtPW = document.forms[1].txtPW;
+				
+				if(txtID.value == ""){
+					alert("아이디를 입력하세요!!");
+					txtID.focus();
+					return; // 함수 종료
+				}
+				if(txtPW.value == ""){
+					alert("비밀번호를 입력하세요!!");
+					txtPW.focus();
+					return; // 함수 종료	
+				}
+				
+				// 유효성 검사를 모두 통과 > 전송해도 괜찮은 상황
+				document.forms[1].submit(); // 전송해라 애뮬레이터 함수
+				
+		};
+		
+	};//window.onload
+	
+	
+	
+	//전역 이벤트
+	window.onkeydown = function() {
+		
+		//alert(event.keyCode);
+		if (event.keyCode == 65 && event.altKey) {
+			location.href = "ex14_collection.htm";
+		} else if (event.keyCode == 66 && event.altKey) {
+			location.href = "ex15_window.htm";
+		} else if (event.keyCode == 67 && event.altKey) {
+			location.href = "ex16_screen.htm";
+		}
+		
+	};
+	
+</script>
+</head>
+<body>
+	<!-- ex17_location.htm -->
+	
+	<input type="button" name="btn1" value="테스트">
+	
+	<h1>메뉴</h1>
+	<nav>
+		<a href="ex14_collection.htm">14번 예제(a)</a>
+		<a href="ex15_window.htm">15번 예제(b)</a>
+		<a href="ex16_screen.htm">16번 예제(c)</a>
+	</nav>
+	
+	
+	<hr>
+	
+	<!-- <form method="get" action="자기자신"> -->
+	<!-- onsubmit: 폼이 전송되기 직전(***)에 발생되는 이벤트 -->
+	<form onsubmit="return false;">
+		<!-- <form> 태그내에 텍스트박스가 유일하면 텍스트박스에서의 엔터는 submit 기능을 가진다. -->
+		<input type="text" name="txtURL" size="50">
+		<!-- <input type="text"> -->
+		<input type="button" value="이동하기" name="btn2">
+		<input type="submit" value="전송하기">
+	</form>
+	
+	<hr />
+	
+	<!-- 전송하는 작업 + 엔터를 submit 작업으로 바꾸는 작업 : 로그인  -->
+	
+	<h1>로그인</h1>
+	<form action="login.jsp" onsubmit="return false;">
+	
+		<table class="table" style="width: 300px;">
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="txtID" size="12" autofocus/></td>
+			</tr>
+
+			<tr>
+				<th>패스워드</th>
+				<td><input type="password" name="txtPW" size="12" /></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" value="로그인" name="btnSubmit" /></td>
+			</tr>
+		
+		</table>
+	
+	</form>
+	
+	
+	<hr />
+	
+	<form action="test.jsp">
+	
+		<input type="text" /><br />
+		<input type="text" /><br />
+		<input type="submit" value="전송" />
+	
+	</form>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/ex01.css">
+</head>
+<body>
+	<!--
+	
+	List, 목록
+	
+	1. <ol>
+		- 순서가 있는 목록
+		- Ordered List
+	
+	2. <ul>
+		- 순서가 없는 목록
+		- Unordered List
+		
+	3. <dl>
+		- 정의 목록 (용어 목록)
+		- Definition List
+		
+	4. <li>
+		- 목록의 항목
+		- List Item
+	-->
+	
+	<h1>오늘의 할일</h1>
+	
+	<ol type="A">
+		<li><b>마트</b>에서 장보기</li>
+		<li>
+		HTML 정리하기
+			<ol type="a">
+				<li>태그 정리하기</li>
+				<li>속성 정리하기</li>
+				<li>PCDATA 정리하기</li>
+			</ol>
+		</li>
+		<li>강아지 밥주기</li>
+		<li>이클립스 설치하기</li>
+	</ol>
+	
+	<h1>내일의 할일</h1>
+	<!-- bullet : 불릿  -->
+	<ul type="square">
+		<li>팀회식</li>
+		<li>사우나 가기</li>
+		<li>오라클 설치하기</li>
+		<li>고양이 밥주기</li>
+	</ul>
+	
+	
+	<h1>오늘의 할일</h1>
+	
+	<ol start = "5">
+		<li><b>마트</b>에서 장보기</li>
+		<li>HTML 정리하기</li>
+		<li value="10">강아지 밥주기</li>
+		<li>이클립스 설치하기</li>
+	</ol>
+	
+	<h1>오늘의 할일</h1>
+	<ol reversed>
+		<li><b>마트</b>에서 장보기</li>
+		<li>HTML 정리하기</li>
+		<li>강아지 밥주기</li>
+		<li>이클립스 설치하기</li>
+	</ol>
+	
+	
+	<h1>자바 용어</h1>
+	
+	<dl>
+		<dt>클래스</dt><!--definition term. 용어  -->
+		<dd>클래스가클래스가클래스가클래스가클래스가클래스가클래스가클래스가클래스가클래스가클래스가 어쩌구저쩌구클래스가 어쩌구저쩌구클래스가 어쩌구저쩌구클래스가 어쩌구저쩌구클래스가 어쩌구저쩌구
+		</dd><!--definition description 용어 설명  -->
+		
+		<dt>오라클</dt>
+		<dd>어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구어쩌구저쩌구
+		</dd>
+	</dl>
+	
+	
+	<h1>오늘의 할일</h1>
+	<ol id = "list1">
+		<li>마트에서 장보기</li>
+		<li>HTML 정리하기</li>
+		<li>강아지 밥주기</li>
+		<li>이클립스 설치하기</li>
+	</ol>
+	
+	<style>
+		#list1{list-style:none; padding-left: 0px;}
+		#list1 > li{ float:left; background: yellow; margin: 10px;}
+	</style>
+	
+	
+	
+</body>
+</html>

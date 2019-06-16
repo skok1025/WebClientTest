@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+	window.onload = function(){
+		document.all.btn1.onclick = function(){
+			
+			var link1 = document.links["link1"];
+			link1.href = "http://google.com";
+			link1.title = "구글로 이동합니다.";
+			
+			// PCDATA 조작 (BOM(X), DOM(O))
+			link1.innerText = "구글";
+			link1.target = "_blank";
+		};
+	};
+</script>
+</head>
+<body>
+
+	<a href="http://naver.com" name = "link1">네이버</a>
+	<hr />
+	<input type="button" value="테스트" name="btn1" />
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	form{
+		margin: 10px;
+	}
+	form input{
+		margin-bottom: 5px;
+	}
+
+</style>
+<script>
+/*  
+	자바 스크립트 기능
+	- 코어(Core) + 브라우저(BOM,DOM) +확장 라이브러리
+	
+BOM, Browser Object Model
+	- 자바스크립트로 html 문서상의 객체를 접근 + 조작하기 위한 객체 모델(체계)
+	- 모든 브라우저 지원함
+	- 문서상의 일부 객체(태그)를 이미 정해진 트리구조를 통해서 접근 + 제어 모델 (***)
+	- 객체(태그)를 식별하기 위한 식별자를 name 속성을 사용한다. (id, class 인식 못함.)
+	- 객체(태그) 중 유일한 객체는 예약어를 제공한다. (window, document 등...)
+	- BOM 트리에 포함되어 있지 않은 태그들은 접근 불가능 (조작 불가능)
+	- DOM Level 0 (정식 X)
+	
+DOM, Document Object Model
+	- XML 인터페이스의 한 종류
+	- JavaScript DOM : HTML 을 조작하기 위해 DOM 구현한 결과 집합 (기능 집합)
+	- Java DOM: XML 을 조작하기 위해 DOM 구현한 결과 집합
+	
+	- DOM Level 1
+	- DOM Level 2
+	- DOM Level 3
+	
+	
+*/
+</script>
+</head>
+<body>
+
+	<form name="form1">
+		<input type="text"  name = "txt1"/><br>
+		<input type="text"  name = "txt2" value="아무개"/><br>
+		<input type="text"  name = "txt3"/><br>
+	</form>
+	
+	<form name="form2">
+		<input type="text"  name = "txt4"/><br>
+		<input type="text"  name = "txt5"/><br>
+		<input type="text"  name = "txt6"/><br>
+	</form>
+	
+	<script>
+	
+		// window : BOM의 최상위 객체, 예약어, 브라우저 창을 참조하는 객체
+		//window.close();
+		// document : 문서 객체, 예약어, HTML 문서 자체를 참조하는 객체 (<html>)
+	
+		// BOM으로 찾은 객체(태그)는 .을 통해서 HTML이 가지고 있는 속성 대부분을 접근(제어) 할 수 있다.
+	
+		window.document.form1.txt1.value = "홍길동";
+		console.log(window.document.form1.txt2.value); // 읽기
+		window.document.form1.txt3.size = 50;
+	
+		
+		
+		var now = new Date();
+		var flag = now.getHours() < 12 ? true : false;
+		
+		if(flag){
+			window.document.body.bgColor = "yellow";
+		} else{
+			window.document.body.bgColor = "blue";
+		}
+	</script>
+
+</body>
+</html>

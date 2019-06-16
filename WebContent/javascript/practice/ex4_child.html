@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+</style>
+<script>
+
+	var address_bt1,address_bt2,address_bt3;
+	window.onload = function(){
+		address_bt1 = document.all.address_bt1;
+		address_bt2 = document.all.address_bt2;
+		address_bt3 = document.all.address_bt3;
+		
+		
+		address_bt1.onclick = function(){
+			//alert(address_bt1.value);
+			opener.document.all.post1.value = "100";
+			opener.document.all.post2.value = "200";
+			opener.document.all.addressTxt.value = address_bt1.value; 
+			
+			window.close();
+		};
+		address_bt2.onclick = function(){
+			//alert(address_bt1.value);
+			opener.document.all.post1.value = "300";
+			opener.document.all.post2.value = "400";
+			opener.document.all.addressTxt.value = address_bt1.value; 
+			
+			window.close();
+		};
+		address_bt3.onclick = function(){
+			//alert(address_bt1.value);
+			opener.document.all.post1.value = "500";
+			opener.document.all.post2.value = "600";
+			opener.document.all.addressTxt.value = address_bt1.value; 
+			
+			window.close();
+		};
+		
+		
+	};
+</script>
+</head>
+<body>
+
+	<input type="button" name="address_bt1" value="서울시 동대문구 회기동" /> <br />
+	<input type="button" name="address_bt2" value="서울시 동대문구 휘경동" /> <br />
+	<input type="button" name="address_bt3" value="서울시 동대문구 이문동" /> <br />
+
+</body>
+</html>

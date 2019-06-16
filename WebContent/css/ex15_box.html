@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+
+	.box{
+		border: 10px solid black;
+		width: 200px;
+		height: 200px;
+	}
+	
+	/*  
+	
+	박스 모델
+	1. 테두리
+	2. 너비, 높이
+	3. 여백
+		a. padding
+			- 테두리와 내용물 사이의 거리
+			- 안쪽 여백
+		b. margin
+		
+	
+	*/
+	
+	#box1{background-color: tomato;}
+	#box2{
+		background-color: cornflowerblue;
+		/* padding: 20px; */
+		/*
+		padding-top: 40px;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		*/
+		/* 순서 : 12 시 기준 + 시계방향  */
+		padding: 20px 20px 20px 20px;
+		
+		/* 위 아래, 좌우 */
+		/* padding: 50px 20px; */
+		
+		/* 위, 우, 아래, 좌 */
+		/* padding: 50px; */
+	}
+	#box3{background-color: lightgreen;}
+
+</style>
+</head>
+<body>
+
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+
+</body>
+</html>
